@@ -1,14 +1,161 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> <!-- Conjunto de caracteres de la página Web(char set). Este es el conjunto de caracteres más completo. Permite
+        que los símbolos especiales como las "ñ", las dildes, diéresis, acento circunflejo, grave, etc., se muestre correctamente en el sitio Web.  -->
+        
+        <!-- La etiqueta de este comentario no es parte de las etiquetas básicas de HTML, como se está trbajando con Visual Studio Code, cuyo propiedad es de Microsoft,
+            esta etiqueta mejora la compatibilidad entre el sitio Web y el navegador "edge" o el antiguo "Internet Explirer". 
+            Sin embargo, no es una etiqueta necesaria, así que no se agregará al sitio Web.
+                <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+        -->
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- El "viewport" es la zona visible del navegador, es decir, el área donde se renderiza
+        el contenido del sitio Web dentro del navegador. Esta etiqueta le indica al navegador de qué manera se adaptará el contenido del sitio Web al tamaño
+        del dispositivo. 
+        
+        "width=device-width"   ->  Indica que el ancho del "viewport" será igual al ancho del dispositivo en el cual se abra el sitio Web.
+        "initial-scale=1.0"  ->  Indica a qué escala se abrirá el contenido, siempre se abrirá a la escala original "initial-scale=1.0".
+        -->
+        <title>Andrei Arriaza - Capacitador, programador y desarrollador Web</title> <!-- Es recomendable que el título tenga entre 55 y 65 caracteres. Esto se debe a que tanto el título
+        como la descripción de la etiqueta meta name="description" son las que se muestran en el buscador de Google. Cuando la cantidad máxima de caracteres
+        recomendada se supera, eso provocará que los resultados de las búsquedas de Google que correspondan a la página, muestren incompletos el título y la descripción,
+        mostrando puntos suspensivos para indicar que hay más texto ya sea en el título o en la descripción, pero que no cabe en el espacio que Google asigna
+        para mostrar la información de la página.
+        -->
+         <meta name="description" content="Sitio Web profesional para la prestación de servicios de Capacitación, Programación y Desarrollo Web."/>  <!-- Se recomienda que la descripción tenga como máximo 165 caractres. -->
+         <!-- Es recomendable que cada página de nuestro sitio Web tenga un título y una sdecripción diferentes, pues esto ayuda a mejorar su posicionamiento. -->
     
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="icon" href="https://i.imgur.com/Q11WFez.png">
-    <meta name="theme-color" content="#0040FF"> 
-    <link rel="apple-touch-icon" href="https://i.imgur.com/Q11WFez.png">
-    <link rel="stylesheet" type = "text/css" href="https://github.com/andreiDev1/andreiDev1.github.io/blob/main/styles.css">
+         <!-- La Tabla Periódica de HTML es una tabla con todas las etiquetas HTML agrupadas por colores, e identificando a qué tipo de etiqueta corresponde cada una.
+            https://joshduck.com/periodic-table.html
+            https://ryanhayes.net/periodic-table-of-the-html-5-elements/
+        -->
+    
+        <meta name="theme-color" content="#2E64FE"> <!-- Permite definir un color hexadecimal para la barra de direcciones del sitio Web; pero este cambio
+                                                    de color, solo será visible al acceder al sitio Web desde dispositivos móviles. -->
+    
+        <link rel="canonical" href="http://andreidev1.github.io/"> <!-- La palabra "canónico" hace referncia a algo original. 
+        ¿Qué es la etiqueta rel=canonical?
+            El canonical es una etiqueta HTML que no es visible para los usuarios y que se añade al head de las páginas de una web con el objetivo de solventar un problema de contenido duplicado.
+            Su objetivo es que, cuando un buscador encuentre una página duplicada, le muestre cuál de las páginas duplicadas es la buena.
+    
+            Seguramente esta explicación se entienda mejor con un ejemplo:
+    
+            Imaginemos que tenemos una tienda de zapatos (www.zapatosseo.com). 
+            En la sección de zapatos para hombre (www.zapatosseo.com/zapatos-hombre), para que los usuarios puedan encontrar de manera más sencilla el zapato que necesitan, 
+            hemos añadido un filtro que ordena todos los zapatos por precio.
+    
+            Este filtro, añade a la url un parámetro de filtrado, generando una url como: www.zapatosseo.com/zapatos-hombre?precio
+    
+            Este filtro añade un factor de usabilidad muy importante para el usuario, que ahora puede ver de manera ordenada todos los zapatos, según su precio.
+    
+            Sin embargo, hemos generado dos urls que muestran el mismo contenido aunque lo hagan en un orden diferente:
+    
+                www.zapatosseo.com/zapatos-hombre
+    
+                www.zapatosseo.com/zapatos-hombre?precio
+        
+        ¿Cómo se usa la etiqueta Canonical?
+            Lo que tienes que tener claro para implementar una etiqueta canónica es cual es tu página preferida para posicionar y cuales son las páginas secundarias que podrían 
+            competir con ella por tener contenidos muy parecidos.
+    
+            En las páginas secundarias tendrás que añadir dentro de la cabecera (<head></head>) la etiqueta canónica apuntando a la principal, 
+            y en la principal también deberás añadirla apuntando a sí misma. 
+            
+            El formato de esa canonical debería ser el siguiente:
+    
+                <link rel=”canonical” href=”https://url-destino.com” />
+        
+        -->
+    
+        
+    
+        <!-- Link Hoja Externa de CSS-->
+        <link rel="stylesheet" href="assets/styles.css"> <!-- href = hiper referencia -->
+        
+        <!-- Etiqueta para agregar Favicon al sitio Web. -->
+        <link rel="icon" href="img/android-chrome-512x512.png"> <!-- Sitio Web para descargar Favicon: https://favicon.io/-->
+    
+        <!-- Etiqueta para agrega ícono para que sea visible en Dispositivos Móviles cuando se agregue un sitio Web a la pantalla del escritorio en un Smartphone, es decir, 
+            cuando se cree un acceso directo para el mismo. Tiene en el atributro "rel" el nombre "apple-touch-icon", porque este ícono fue utilizado
+            inicialmente por dispositivos Apple únicamente, pero luego, su uso se volvió general, aunque siguió conservando el nombre "apple-touch-icon".
+            
+            Para agregar un sitio Web a la pantalla de inicio en un Smartphone:
+                1. Abrir el navegador
+                2. Clic en el botón de los tres puntos para desplegar el menú principal.
+                3. Seleccionar "Agregar a la pantalla principal".
+        -->
+        <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+        
+        <style> /* La etiqueta "styles" permite incluir CSS dentro de la misma página Web. */
+            h2{
+                color: orangered;
+            }
+        </style>
+    
+        <!-- Etiquetas OpenGraph para redes sociales -->
+        <!-- 
+            Sitio oficial de OpenGraph: https://ogp.me/
+    
+        ¿Qué son las etiquetas Open Graph?
+        Las meta etiquetas o protocolo Open Graph fue creado por Facebook y permite mostrar cualquier página web con un 
+        formato enriquecido en redes sociales. Estas etiquetas HTML serán las encargadas de mostrar el contenido (título, la descripción, la imagen de la página…) 
+        de una página que se comparte en las redes sociales. Si estas etiquetas no existen o no se indican, se mostrará aleatoriamente la información, 
+        escogiendo una fotografía al azar, un titulo o descripción poco descriptivos.
+    
+        Las meta etiquetas OpenGraph son interpretadas por Facebook y LinkedIn; pero la red social Twitter, además de reconocer las
+        etiquetas "OpenGraph" requiere algunas etiquetas propias. 
+        -->
+    
+        <!-- Link para corroborar que las etiquetas meta OpenGraph funcionen correctamente en Facebook, se pude 
+        utilizar la siguiente herramientas creada por los desarrolladores de dicha red social: 
+            https://developers.facebook.com/tools/debug/
+    
+        
+        -->
+    
+        <!-- Listado de etiquetas OpenGraph de Facebook:
+            https://developers.facebook.com/docs/sharing/webmasters/
+        -->
+    
+        
+        <!-- Listado de etiquetas meta para Twitter: 
+            https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started
+        -->
+    
+    
+        <meta property="og:title" content="Andrei Arriaza - Capacitador, programador y desarrollador Web">
+        <meta property="og:description" content="Sitio Web profesional para la prestación de servicios de Capacitación, Programación y Desarrollo Web.">
+        <meta property="og:image" content="https://i.imgur.com/JQyyGtG.jpg"> <!-- IMPORTANTE: El tamaño ideal para la imagen OpenGraph es de: 1200*630 pixeles,
+        aunque se puede cambiar,el tamaño anterior es el ideal, pero si es necesario mencionar que el tamaño mínimo de la imagen es de 200*200 pixeles, de lo contrario
+        no será visible correctamente; además, se debe usar una ruta absoluta para agregarla, ejemplo: https://www.plastikito.com/img/logoOpenGraph.png -->
+    
+        <!-- Los enlaces de Internet están formados por una serie de rutas (también conocidos 
+        con el término inglés ‘path’), donde se le indica la dirección a la que tiene que ir el navegador cuando pulsamos sobre ese link.
+        Nos podemos encontrar dos tipos de rutas distintas:
+            - Ruta absoluta: Incluye el nombre del dominio.
+                Ejemplo: https://www.hostalia.com/contratacion/openxchange/
+            
+            -Ruta relativa: Sólo indica el orden de directorios.
+                Ejemplo: /img/ejemplo.png 
+            
+        Para que etiqueta "meta" que permite agregar una imagen para redes sociales se visualice correctamente, es indispensable que la ruta de la imagen que se agregue
+        sea una ruta ABSOLUTA. Ej: https://www.cemaco.com/img/ejemplo.png
+        
+        De lo contrario, la imagen no se verá correctamente. 
+        -->
+        <meta property="og:url" content="http://andreidev1.github.io/"> <!-- El nombre del dominio de la URL que se agregue a esta etiqueta "meta", 
+        debe ser el mismo que el de la etiqueta <link rel="canonical"> que se agregó anteriormente. Tanto la etiqueta "canonical" como esta etiqueta "meta", tienen
+        el mismo dominio, puede cambiar entre ellas el nombre de la sección de la página a la que se accederá, pero el dominio debe ser el mismo
+        para ambas.
+        -->
+            <!-- Etiquetas para Twitter -->
+            <meta name="twitter:card" content="summary">
+            <meta name="twitter:site" content="@andrei_arriaza"> <!-- Dentro de esta etiqueta "meta" se debe agregar el nombre del usuario de Twitter
+            de la empresa o de la persona para la que se diseña el sitio Web. -->
+           
+        <!-- Hoja Externa de CSS -->
+        <link rel="stylesheet" type = "text/css" href="https://github.com/andreiDev1/andreiDev1.github.io/blob/main/styles.css">
 </head>
 <body>
     <h1>Ejemplo</h1>
