@@ -1,19 +1,82 @@
-p {
-color: #457845;
-}
+
+html { /* Se le está asignando el valor de la propiedad "box-sizing: border-box" al elemento "html", el cual es el nodo raíz o no principal del sitio Web, 
+    del que dependen todos los demás elementos. Esto permitirá que a todos los elementos dentro del sitio Web, se les asigne
+    automáticamente la propiead "border-sizing: border-box". */
+
+    box-sizing: border-box; /*Si no se colocara esta propiedad, o bien, si se le asignara el valor "content-box"(predeterminado), se comprobará
+    que no se mostrará el texto en tres columnas; ¿por qué sucede esto?, porque cada elemento hijo mide 200px, los 3 elementos hijos en total miden 600px, que es
+    el ancho total asignado al elemento, pero a esa medida se le debería sumar el padding, margin, border, etc., con lo cual ya las
+    3 columnas no cabrían juntas porque sobrepasarían el ancho máximo de 600px. 
+    
+    Usando el valor "border-box", sin embargo, eso se corrige, porque cada elemento hijo medirá 200px de ancho real, y al sumar los 3, equivalen a los 600px
+    de ancho que se definieron en la propiedad "width". Dentro del valor de 200px de ancho de cada elemento, ya se incluyen los valores
+    de padding, margin, border, etc. 
+  
+    He ahí la importancia de asignar un valor "border-box" a la propiedad "box-sizing".
+    
+    */
+    font-family: sans-serif;
+    font-size: 16px;
+  }
+  
+  
+  *, 
+  *::before, 
+  *::after { /* Se agregan además los selectores que indicarán que a todos los elementos del sitio Web,
+  y a aquellos elementos a los que se les haya asignado el pseudoelemento "::before", y a los que se les haya aplicado
+  el pseudoelemento "::after", se les asignará la propiedad "box-sizing" que heredará (inherit) su valor 
+  del elemento padre, el cual es el elemento "html". 
+  
+  El pseudoelemento "before", puede escribirse tanto así ::before como así :before. Aunque, la forma más apropiada de escribir un pseudoelemento es así "::before".
+  El pseudoelemento "after", puede escribirse tanto así ::after como así :after. Aunque, la forma más apropiada de escribir un pseudoelemento es así "::after".
+  
+  */
+    box-sizing: inherit;
+    
+    margin: 0px 0px; /* Se resetea (normaliza) el márgen a 0px para que no se le aplique el márgen predeterminado que
+    cada navegador asigna como márgen, de estar forma, el sitio Web abarcará todo el ancho del navegador. */
+  }
+
+  
+
+
 
 .hero-image {
-    margin: 2rem auto;
+    margin: auto auto;
     width: 100%;
     height: 100vh;
    
-    padding: 1rem;
+    
+    background-color: #000;
     background-image: url("../assets/computer.jpg");
     max-width: 100%;
     background-size: cover;
     background-attachment: fixed;
+
+    
+    
+   
+   
+  
+ 
+}
+
+.hero-text {
+    
+    font-size: 2rem;
+    width: 100%;
+    height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #fff;
 }
+
+
+
+    
+
+
+
 
