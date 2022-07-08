@@ -4,12 +4,12 @@ color: #457845;
 
 .hero-image {
     margin: 2rem auto;
-    width: 100%;
+    max-width: 100%;
     height: 50vh;
    
 }
 
-.image-fixed {
+.hero-image {
     padding: 1rem;
     background-image: url("../assets/computer.jpg");
     width: 100%;
