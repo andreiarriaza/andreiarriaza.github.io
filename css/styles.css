@@ -48,7 +48,7 @@ html { /* Se le está asignando el valor de la propiedad "box-sizing: border-box
    
     
     background-color: #000;
-    background-image: url("../assets/computer.jpg");
+    background-image: url("../assets/computer-hero-image.jpg");
     max-width: 100%;
     background-size: cover;
     background-attachment: fixed;
