@@ -1,54 +1,1685 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8"> 
-        
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Andrei Arriaza - Capacitador, programador y desarrollador Web</title> 
-    <meta name="description" content="Sitio Web profesional para la prestación de servicios de Capacitación, Programación y Desarrollo Web."/> 
-    <meta name="theme-color" content="#2E64FE"> 
-    <link rel="canonical" href="http://walterarriaza.github.io/"> 
-    
- 
-    
-        
-    <link rel="icon" href="assets/android-chrome-512x512.png"> <!-- Sitio Web para descargar Favicon: https://favicon.io/-->
-    
-    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-     
-    <!-- Etiquetas Open Graph -->
-    <meta property="og:title" content="Andrei Arriaza - Capacitador, programador y desarrollador Web">
-    <meta property="og:description" content="Sitio Web profesional para la prestación de servicios de Capacitación, Programación y Desarrollo Web.">
-    <meta property="og:image" content="assets/imagenOpenGraph.jpg"> 
-    <meta property="og:url" content="http://walterarriaza.github.io/">
-            
-    <!-- Etiquetas para Twitter -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@andrei_arriaza"> 
-           
-    <!-- Hoja Externa CSS -->
-    <link rel="stylesheet" href="css/styles.css"> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio CV - andreiarriaza</title>
 
- 
-</head>
-<body>
-    <section >
-        <article class="hero-image">
-         
-          <div class="hero-text">
-            <h2 style="text-align:center;"> Profesor y Desarrollador Web</h2>
-            
-            <h1>Andrei Arriaza</h1>
+    <!-- Importación de los estilos "regular 400" (fuente normal) y "Bold 700" (negrita) fuente Raleway de Google Fonts.
+    Estas etiquetas deben colocarse antes de la etiqueta "Link" que corresponde a la hoja externa de CSS. 
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Hoja de estilos CSS-->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- **************** Etiquetas SEO básicas **************** -->
+
+    <!-- La etiqueta meta "description" es fundamental pues es la que se despliega en los Rich Snippets (Texto enriquecido) de Google, 
+         es decir, los pequeños fragmentos informativos que se despliegan en Google cuando se realiza una búsqueda y los cuales dan más 
+         información sobre el sitio Web. 
+
+        
+    -->
+    <!-- Es recomendable que cada página de nuestro sitio Web tenga un título y una descripción diferentes, pues esto ayuda a mejorar su posicionamiento. -->
+    <meta
+      name="description"
+      content="Bienvenidos a mi Portafolio Profesional."
+    />
+    <!-- La etiqueta meta "canonical" le indica a los buscadores cuál es la URL principal 
+    que tiene que posicionar. En este caso, como es una Landing Page, es decir, como hay una sola página, 
+    no causa mucho problema, pero si la página tuviera varios sitios Web, entonces sí es indispensable definirla
+    par que los buscadores sepan distinguir cuál de todas es la página principal del sitio Web, aunque haya otras
+    páginas dentro del mismo. -->
+
+    <!-- La palabra "canónico" hace referencia a algo original. 
+    ¿Qué es la etiqueta rel=canonical?
+        El canonical es una etiqueta HTML que no es visible para los usuarios y que se añade al head de las páginas de una web con el objetivo de solventar un problema de 
+        contenido duplicado.
+
+        Su objetivo es que, cuando un buscador encuentre una página duplicada, le muestre cuál de las páginas duplicadas es la buena.
+
+        Seguramente esta explicación se entienda mejor con un ejemplo:
+
+        Imaginemos que tenemos una tienda de zapatos (www.zapatosseo.com). 
+        En la sección de zapatos para hombre (www.zapatosseo.com/zapatos-hombre), para que los usuarios puedan encontrar de manera más sencilla el zapato que necesitan, 
+        hemos añadido un filtro que ordena todos los zapatos por precio.
+
+        Este filtro, añade a la url un parámetro de filtrado, generando una url como: www.zapatosseo.com/zapatos-hombre?precio
+
+        Este filtro añade un factor de usabilidad muy importante para el usuario, que ahora puede ver de manera ordenada todos los zapatos, según su precio.
+
+        Sin embargo, hemos generado dos urls que muestran el mismo contenido aunque lo hagan en un orden diferente:
+
+            www.zapatosseo.com/zapatos-hombre
+
+            www.zapatosseo.com/zapatos-hombre?precio
+    
+    ¿Cómo se usa la etiqueta Canonical?
+        Lo que tienes que tener claro para implementar una etiqueta canónica es cual es tu página preferida para posicionar y cuales son las páginas secundarias que podrían 
+        competir con ella por tener contenidos muy parecidos.
+
+        En las páginas secundarias tendrás que añadir dentro de la cabecera (<head></head>) la etiqueta canónica apuntando a la principal, 
+        y en la principal también deberás añadirla apuntando a sí misma. 
+        
+        La etiqueta canónica a agregar tanto en las páginas secundarias como en la principal, debería ser como la siguiente:
+
+            <link rel="canonical" href="https://url-destino.com" />
+
+        En este ejemplo, la página canónica quedaría así: 
+            www.zapatosseo.com/zapatos-hombre
+
+    ¿Cuándo y cómo deben usarse las etiquetas canónicas?
+      Ahora que ya sabes qué son las etiquetas canónicas y su importancia para el SEO, veamos cuándo y cómo usarlas.
+
+      Usa etiquetas canónicas siempre que tengas contenido duplicado en tu sitio.
+      Úsalas cuando ofrezcas productos similares con una pequeña diferencia, especialmente si tienes una tienda de comercio online.
+      Úsalas al estructurar información adicional para una URL específica. Ordenan y especifican el contenido de una página web (parámetros de URL).
+    -->
+    <link
+      rel="canonical"
+      href="https://andreiarriaza.github.io/taller-maquetacion/portafolio-cv/"
+    />
+    <!-- Favicon: para que el favicon se despliegue correctamente es indispensable
+    que se agregue la ruta relativa del Favicon que se incluirá, es decir, una ruta como: https://www.walterarriaza.github.io/favicon.png 
+    De lo contrario, el Favicon no se visualizará correctamente.  -->
+
+    <!-- Sitio Web para descargar Favicon y Apple Touch Icons: https://favicon.io/ 
+    Para descargar las  imágenes deseadas, se debe aceder a la opción "emojis". Al elegir la imagen deseada, dar clic en el botón "descargar", 
+    y se descargará todo el paquete de imágenes, entre ellas se incluy el "favicon" y la imagen "apple-touch-icon".
+
+    El tamaño ideal para un favicon es 16*16 pixeles o 32*32 pixeles. Sin embargo, si le da un tamaño mayor, como en este caso, 
+    se agregará sin problemas a menos que sea un tamaño muy grande.  
+
+    IMPORTANTE: en algunos sitios Web de consulta, e inclusive, cuando se genera automáticamente en Visual Studio Code la etiqueta
+    de "favicon", se mostrará la siguiente etiqueta: 
+        <link rel="shortcut icon" href="favicon.ico"">
+
+    Sin embargo, el estándar es utilizar la etiqueta "icon", pues el atributo "shortcut" se agregaba anteriormente
+    solo para la compatibilidad del favicon con Internet Explorer:
+        <link rel="icon" href="favicon.ico">      (sin el atributo "shortcut")
+
+    Aunque la etiqueta "favicon" acepta tanto archivos ".png" como ".ico", el tipo de archivo "ico" siempre
+    tendrá preeminencia sobre el tipo de archivo ".png" si es que existen ambos en el mismo sitio Web.
+    -->
+
+    <link
+      rel="icon"
+      href="https://andreiarriaza.github.io/taller-maquetacion/portafolio-cv/assets/favicon.png"
+    />
+
+    <!-- Etiqueta para agregar ícono para que sea visible en Dispositivos Móviles cuando se agregue un sitio Web a la pantalla del escritorio en un Smartphone,
+        es decir, cuando se cree un acceso directo para el mismo. Tiene en el atributo "rel" el nombre "apple-touch-icon", porque este ícono fue utilizado
+        inicialmente por dispositivos Apple únicamente, pero luego, su uso se volvió general, aunque siguió conservando el nombre "apple-touch-icon".
+        
+        Para agregar un sitio Web a la pantalla de inicio en un Smartphone:
+            1. Abrir el navegador
+            2. Clic en el botón de los tres puntos para desplegar el menú principal.
+            3. Seleccionar "Agregar a la pantalla principal".
+
+        Tamaño de imagen para el "apple-touch-icon" 180*180 pixeles o bien 192*192 pixeles.
+    -->
+    <link
+      rel="apple-touch-icon"
+      href="https://andreiarriaza.github.io/taller-maquetacion/portafolio-cv/favicon.png"
+    />
+
+    <!-- Permite definir un color hexadecimal para la barra de direcciones del sitio Web; pero este cambio
+         de color, solo será visible al acceder al sitio Web desde dispositivos móviles. -->
+    <meta name="theme-color" content="#d9006" />
+
+    <!-- **************** Twitter Cards **************** -->
+
+    <!-- Para este ejemplo se utilizó el Twitter Card de tipo "summary", sin embargo, existen
+    otros tipos de Twitter Cards que se puede utilizar, las cuales varían entre
+    sí el tamaño de la imagen, campos de información que mostrará, etc. 
+      
+    Si se desea conocer los demás tipos de Twitter Card disponibles, 
+    se debe acceder a la documentacion oficial de Twitter 
+    por medio del siguiente link: https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards
+    -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Portafolio CV - Andrei Arriaza" />
+    <meta
+      name="twitter:image"
+      content="https://andreiarriaza.github.io/taller-maquetacion/portafolio-cv/assets/hero-image-home.jpg"
+    />
+    <meta
+      name="twitter:url"
+      content="https://andreiarriaza.github.io/taller-maquetacion/portafolio-cv/"
+    />
+    <meta
+      name="twitter:description"
+      content="Bienvenidos a mi Portafolio Profesional."
+    />
+
+    <!-- **************** Etiquetas Open Graph (Facebook, LinkedIn, etc.) **************** -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Portafolio CV - Andrei Arriaza" />
+    <meta
+      property="og:description"
+      content="Bienvenidos a mi Portafolio Profesional."
+    />
+    <meta property="og:image" content="assets/hero-image-home.jpg" />
+    <meta
+      property="og:url"
+      content="https://andreiarriaza.github.io/taller-maquetacion/portafolio-cv/"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <section class="container">
+        <div class="logo">
+          <a href="index.html">jonmircha</a>
+        </div>
+        <button class="menu-btn">
+          <!-- Como las siguientes son imágenes vectoriales, sus respecitivos códigos
+               se copiaron desde los archivos "menu-bars.svg" y "menu-close.svg", los cuales
+               se encuentran dentro de la carpeta "assets".
+            -->
+
+          <!--
+            Dentro de JavaScript se utilizará el método "firstElementChild.classList.toggle("none")" para agregar y quitar
+          automáticamente con cada clic la clase "none". Pero como desde el principio la clase "none" NO ESTÁ ASIGNADA 
+          a la imagen SVG del botón "hamburguesa", esto conseguirá que cuando se dé el primer clic sobre el botón del menú
+          hamburguesa, se agregue la clase "none" a la imagen del botón "hamburguesa", logrando con esto que dicha imagen se oculte.
+          -->
+
+          <!-- El código "svg" agregado a continuación, fue copiado de la imagen "assets/menu-bar.svg" -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path d="M4 6H20V8H4zM4 11H20V13H4zM4 16H20V18H4z" />
+          </svg>
+
+          <!-- A esta etiqueta se le agregó la clase "none" para controlar por medio de ella, 
+               cuando mostrar u ocultar la imagen "menu-close.svg". Esto se conseguirá por medio de JavaScript.
+          
+          Dentro de JavaScript se utilizará el método "lastElementChild.classList.toggle("none")" para agregar y quitar
+          automáticamente con cada clic la clase "none". Pero como desde el principio la clase "none" ya está asignada 
+          a la imagen SVG del botón "cerrar", esto conseguirá que cuando se dé el primer clic sobre el botón hamburguesa,
+          se quite la clase "none" de la imagen del botón "cerrar", logrando con esto que dicha imagen se haga visible.
+          -->
+
+          <!-- El código "svg" agregado a continuación, fue copiado de la imagen "assets/menu-close.svg" -->
+          <svg
+            class="none"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.192 6.344L11.949 10.586 7.707 6.344 6.293 7.758 10.535 12 6.293 16.242 7.707 17.656 11.949 13.414 16.192 17.656 17.606 16.242 13.364 12 17.606 7.758z"
+            />
+          </svg>
+        </button>
+
+        <nav class="menu">
+          <a href="#inicio">Inicio</a>
+          <a href="#acerca">Acerca</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#portafolio">Portafolio</a>
+          <a href="#testimonios">Testimonios</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+      </section>
+    </header>
+
+    <!-- A las clases se les asignó el nombre en inglés, porque es el idioma que generalmente se utiliza
+    para asignar los estilos dentro del sitio Web. 
+    
+    Ahora bien, a los id's se les asignó el nombre en español, porque los id's permitirán redirigir 
+    al usuario a cada sección de la página mediante vínculos internos. Cuando el usuario dé clic en alguno de los
+    vínculos correspondientes, el nombre del id de destino se mostrará en la URL. Y como
+    la página en español, es necesario que dichos id's estén también en español, pues también serán visibles para el usuario. 
+-->
+    <section id="inicio" class="home">
+      <!-- Utilizar el atributo "style" es una mala práctica, excepto cuando se utiliza
+      para declarar Custom Properties o variables. 
+    
+      Estas variables no se declararon en CSS dentro
+      el elemento "root", porque se desea que el ámbito o alcance de estas variables
+      solo sea dentro del elemento al que se le asignó la clase "hero-image", 
+      es decir, dentro del elemento "article". -->
+      <article
+        class="hero-image"
+        style="
+          --hero-image: url('../assets/hero-image-home.jpg');
+          --hero-attachment: fixed;
+        "
+      >
+        <!-- Utilizar el atributo "style" es una mala práctica, excepto cuando se utiliza
+      para declarar Custom Properties o variables. 
+    
+      
+    
+      Estas variables no se declararon en CSS dentro
+      el elemento "root", porque se desea que el ámbito o alcance de estas variables
+      solo sea dentro del elemento al que se le asignó la clase "hero-image-opacity", 
+      es decir, dentro del elemento "article". 
+      
+      IMPORTANTE: la variable "--black-alpha-color" fue definida dentro del elemento "root", 
+      por ello es posible utilizarla. 
+    
+      -->
+        <aside
+          class="hero-image-opacity"
+          style="--hero-opacity-color: var(--black-alpha-color)"
+        >
+          <div class="hero-image-content">
+            <h2
+              class="hero-image-title"
+              style="--hero-text-color: var(--white-color)"
+            >
+              Bienvenidos<br />
+              a mi sitio
+            </h2>
+            <a href="#contacto" class="btn">CONTÁCTAME</a>
           </div>
+        </aside>
+      </article>
+    </section>
 
+    <section id="acerca" class="about section container full-lg-screen">
+      <!-- La clase "text-lg-right" solo comenzará a existitr, gracias a una Media Query, 
+           cuando se alcance como mínimo un ancho de pantalla de 1024px, por
+           lo que, cuando eso suceda, todo el contenido del siguiente artículo quedará alineado a la derecha. 
+      -->
+      <article class="text-lg-right">
+        <!--
+          IMPORTANTE: en este proyecto, la alineación de algunos elementos cambiará
+          dependiendo del tamaño de pantalla del dispositivo en el que se esté visualizando. 
+
+          Al elemento "aside" que está a continuación, se le asignó
+          la clase "text-center", la cual permitirá que en teléfono móviles, el texto quede centrado. 
+
+          Sin embargo, también se asignó la clase "text-lg-right", dicha clase se encuentra agregada
+          en CSS dentro de una media query, la cual comienza a ejecutarse cuando el tamaño de pantalla
+          es mayor o igual a 1024px. Esto significa que cuando el tamaño de pantalla alcanza por lo menos
+          los 1024px, la clase "text-lg-right" comienza realmente a existir, consiguiendo así que 
+          el texto se alinee a la derecha. 
+        -->
+        <aside class="slogan text-center text-lg-right">
+          <h1>Jon Mircha</h1>
+          <h5>Profesor & Desarrollador Web</h5>
+        </aside>
+        <p>
+          <!-- Según las buenas prácticas del UX (User Experience), se recomienda
+          colocar todas las palabras que sean términos anglosajones (anglicismos, es decir, palabras en inglés) en letras itálicas. 
         
+          Como por ejemplo:  <i>web</i>
+        -->
+          Desde 2004 tengo experiencia en el área del desarrollo <i> web</i> y
+          la educación. Imparto clases, conferencias y capacitaciones para
+          personas, empresas, instituciones educativas y comunidades en
+          Internet.
+        </p>
 
+        <p>
+          También colaboro en proyectos como <i>Freelance FullStack</i>. Estoy
+          más orientado al <i>Frontend</i>, pero también hago <i>Backend</i>.
+        </p>
+        <p>
+          Disfruto llevar a cabo la maquetación e interactividad de interfaces
+          <i>web</i>, así como la optimización, para el buen posicionamiento y
+          el rendimiento de carga de sitios y aplicaciones <i>web</i>.
+        </p>
+        <p>
+          También cuento con experiencia en el área de <i>Social Media</i>,
+          <i>Marketing</i> de Contenidos y <i>SEO</i>.
+        </p>
+
+        <div class="text-center text-lg-left">
+          <!--
+             Atributo "rel="noopener noreferrer": estas dos características fueron introducidas en WordPress para eliminar una vulnerabilidad de seguridad que es 
+                utilizada por sitios web con malas intenciones y ganas de hacer daño con contenidos maliciosos.
+
+            Existen algunas características de JavaScript que permiten que una nueva pestaña obtenga el control de una ventana de referencia.
+            Si se vincula a un sitio web externo afectado por el código malicioso, ese sitio web puede usar la propiedad de JavaScript "window.opener" para 
+            cambiar la página original (tu sitio web) para robar información y difundir códigos maliciosos.
+          
+            - Atributo rel = «noopener» sirve para ser agregado a enlaces e impide que la página que se abrirá obtenga algún tipo de acceso a la página original.
+            - Atributo rel = «noreferrer» Este atributo evita pasar la información de referencia al sitio web de destino eliminando la 
+              información de referencia del encabezado HTTP de la página de origen(en la que se encuentra el enlace).
+            
+            -- Diferencias entre noopener – noreferrer
+             - Rel=»noopener» se usa para que cuando se cree una nueva ventana al hacer clic en un enlace, el código malicioso que se ejecuta en la nueva 
+               ventana no acceda a la ventana anterior a través del atributo window.opener. 
+             - Por otro lado «rel=noreferrer» se utiliza para que cuando un usuario haga clic en un hipervínculo y se transfiera a una nueva ubicación, 
+               no se filtre información de referencia al enlace de destino. Es decir, no será posible que el destino sepa de dónde vino ese usuario.
+               Con el manejo de los atributos noopener noreferrer vas a mejorar el desarrollo de tus sitios, así como el posicionamiento SEO de ellos.
+        -->
+          <a
+            class="btn"
+            href="assets/cv-jonmircha.pdf"
+            target="_blank"
+            rel="noopener"
+            >DESCARGA MI CV</a
+          >
+        </div>
+      </article>
+      <article>
+        <img class="gray-scale" src="assets/jonmircha.jpg" alt="jonmircha" />
+      </article>
+      <article>
+        <h2 class="text-center text-lg-left">Mis Habilidades</h2>
+        <div class="progress">
+          <p>
+            <b>Desarrollo <i>Web Frontend</i></b>
+            <b>90%</b>
+          </p>
+          <progress value="90" min="0" max="100"></progress>
+        </div>
+
+        <div class="progress">
+          <p>
+            <b>Diseño <i>Web</i></b>
+            <b>85%</b>
+          </p>
+          <progress value="85" min="0" max="100"></progress>
+        </div>
+
+        <div class="progress">
+          <p>
+            <!--
+              WPO es una sigla para la expresión anglosajona "Web Performance Optimization". Consiste en un conjunto de estrategias y buenas prácticas para mejorar el desempeño de un sitio web en su aspecto técnico, como en la velocidad de carga de las páginas y la experiencia de navegación del usuario.
+            -->
+            <b><i>WPO</i> y <i>SEO</i></b>
+            <b>80%</b>
+          </p>
+          <progress value="80" min="0" max="100"></progress>
+        </div>
+
+        <div class="progress">
+          <p>
+            <!--
+              WPO es una sigla para la expresión anglosajona "Web Performance Optimization". Consiste en un conjunto de estrategias y buenas prácticas para mejorar el desempeño de un sitio web en su aspecto técnico, como en la velocidad de carga de las páginas y la experiencia de navegación del usuario.
+            -->
+            <b>Desarrollo <i>Web Backend</i></b>
+            <b>75%</b>
+          </p>
+          <progress value="75" min="0" max="100"></progress>
+        </div>
+
+        <div class="progress">
+          <p>
+            <!--
+              WPO es una sigla para la expresión anglosajona "Web Performance Optimization". Consiste en un conjunto de estrategias y buenas prácticas para mejorar el desempeño de un sitio web en su aspecto técnico, como en la velocidad de carga de las páginas y la experiencia de navegación del usuario.
+            -->
+            <b><i>Social Media</i> y <i>Marketing</i> de Contenidos</b>
+            <b>60%</b>
+          </p>
+          <progress value="60" min="0" max="100"></progress>
+        </div>
+      </article>
+    </section>
+
+    <section id="servicios" class="services section bg-gray-light">
+      <div class="container full-lg-screen">
+        <h2 class="section-title">¿Qué te ofrezco?</h2>
+        <article class="service-card">
+          <!-- El código "svg" agregado a continuación, fue copiado de la imagen "assets/service-code.svg" -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M20,3H4C2.897,3,2,3.897,2,5v14c0,1.103,0.897,2,2,2h16c1.103,0,2-0.897,2-2V5C22,3.897,21.103,3,20,3z M4,19V7h16 l0.002,12H4z"
+            />
+            <path
+              d="M9.293 9.293L5.586 13 9.293 16.707 10.707 15.293 8.414 13 10.707 10.707zM14.707 9.293L13.293 10.707 15.586 13 13.293 15.293 14.707 16.707 18.414 13z"
+            />
+          </svg>
+          <h3>Programación <i>Web</i></h3>
+          <p>
+            Desarrollo sitios y aplicaciones para plataformas <i>web</i>. Te
+            ayudo a construir tu proyecto de principio a fin: <i>Frontend</i>,
+            <i>Backend</i> y Base de Datos.
+          </p>
         </article>
-  </section>
-    
 
+        <article class="service-card">
+          <!-- El código "svg" agregado a continuación, fue copiado de la imagen "assets/service-design.svg" -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M20,3H7C5.897,3,5,3.897,5,5v2H4C2.897,7,2,7.897,2,9v10c0,1.103,0.897,2,2,2h6c1.103,0,2-0.897,2-2h8c1.103,0,2-0.897,2-2 V5C22,3.897,21.103,3,20,3z M6,9h4l-0.003,9H4V9H6z M12,17V9c0-1.103-0.897-2-2-2H7V5h11v12H12z"
+            />
+          </svg>
+          <h3>Diseño <i>Web</i></h3>
+          <p>
+            Prototipo y maqueto tus diseños estáticos y los convierto en
+            increíbles sitios y aplicaciones <i>web</i>
+            responsivas, óptimas y accesibles.
+          </p>
+        </article>
 
-    <br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-</body>
+        <article class="service-card">
+          <!-- El código "svg" agregado a continuación, fue copiado de la imagen "assets/service-wpo.svg" -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <circle cx="12" cy="20" r="2" />
+            <circle cx="12" cy="4" r="2" />
+            <circle cx="6.343" cy="17.657" r="2" />
+            <circle cx="17.657" cy="6.343" r="2" />
+            <circle cx="4" cy="12" r="2.001" />
+            <circle cx="20" cy="12" r="2" />
+            <circle cx="6.343" cy="6.344" r="2" />
+            <circle cx="17.657" cy="17.658" r="2" />
+          </svg>
+          <h3><i>WPO</i></h3>
+          <p>
+            <i>Web Performance Optimization</i>: hago que tus sitios y
+            aplicaciones <i>web</i> mejoren su tiempo de carga y respuesta.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <!-- El código "svg" agregado a continuación, fue copiado de la imagen "assets/service-seo.svg" -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M10,18c1.846,0,3.543-0.635,4.897-1.688l4.396,4.396l1.414-1.414l-4.396-4.396C17.365,13.543,18,11.846,18,10 c0-4.411-3.589-8-8-8s-8,3.589-8,8S5.589,18,10,18z M10,4c3.309,0,6,2.691,6,6s-2.691,6-6,6s-6-2.691-6-6S6.691,4,10,4z"
+            />
+            <path
+              d="M11.412,8.586C11.791,8.966,12,9.468,12,10h2c0-1.065-0.416-2.069-1.174-2.828c-1.514-1.512-4.139-1.512-5.652,0 l1.412,1.416C9.346,7.83,10.656,7.832,11.412,8.586z"
+            />
+          </svg>
+          <h3><i>SEO</i></h3>
+          <p>
+            <i>Search Engine Optimization</i>: optimizo tus sitios y
+            aplicaciones <i>web</i> para que mejoren su posición en los
+            buscadores orgánicamente.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <!-- El código "svg" agregado a continuación, fue copiado de la imagen "assets/service-smo.svg" -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.018,3.815L15.232,8h-4.966l0.716-3.815L9.018,3.815L8.232,8H4v2h3.857l-0.751,4H3v2h3.731l-0.714,3.805l1.965,0.369 L8.766,16h4.966l-0.714,3.805l1.965,0.369L15.766,16H20v-2h-3.859l0.751-4H21V8h-3.733l0.716-3.815L16.018,3.815z M14.106,14H9.141 l0.751-4h4.966L14.106,14z"
+            />
+          </svg>
+          <h3><i>SMO</i></h3>
+          <p>
+            <i>Social Media Optimization</i> y <i>Marketing</i> de contenidos:
+            te ayudo a elegir los canales digitales correctos para llegar a tu
+            audiencia ideal.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <!-- El código "svg" agregado a continuación, fue copiado de la imagen "assets/service-hosting.svg" -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="none"
+              d="M4 15v4h16.002L20 15H4zM16 18h-2v-2h2V18zM19 18h-2v-2h2V18zM4 5v4h16.002L20 5H4zM16 8h-2V6h2V8zM19 8h-2V6h2V8z"
+            />
+            <path
+              d="M20 3H4C2.897 3 2 3.897 2 5v4c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V5C22 3.897 21.103 3 20 3zM4 9V5h16l.002 4H4zM20 13H4c-1.103 0-2 .897-2 2v4c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2v-4C22 13.897 21.103 13 20 13zM4 19v-4h16l.002 4H4z"
+            />
+            <path
+              d="M17 6H19V8H17zM14 6H16V8H14zM17 16H19V18H17zM14 16H16V18H14z"
+            />
+          </svg>
+          <h3><i>Web Hosting</i></h3>
+          <p>
+            ¿No cuentas con dominio y hospedaje <i>web</i> para tu proyecto? No
+            te preocupes de esas cosas ténicas me encargo yo.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="portafolio" class="portfolio section">
+      <div class="container">
+        <h2 class="section-title">Mis Trabajos</h2>
+        <a href="#trabajo-1" class="portfolio-card">
+          <img src="assets/portfolio-1.jpg" alt="Trabajo 1" />
+          <aside class="portfolio-card-info">
+            <div>
+              <h3>Proyecto 1</h3>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Cupiditate illo et laudantium repellendus vitae in doloremque
+                vel quo voluptatem nemo! Quia natus eius possimus, molestias
+                molestiae necessitatibus officia corrupti at.
+              </p>
+            </div>
+          </aside>
+        </a>
+
+        <a href="#trabajo-2" class="portfolio-card">
+          <img src="assets/portfolio-2.jpg" alt="Trabajo 2" />
+          <aside class="portfolio-card-info">
+            <div>
+              <h3>Proyecto 2</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Cupiditate illo et laudantium repellendus vitae in doloremque
+                vel quo voluptatem nemo! Quia natus eius possimus, molestias
+                molestiae necessitatibus officia corrupti at.
+              </p>
+            </div>
+          </aside>
+        </a>
+
+        <a href="#trabajo-3" class="portfolio-card">
+          <img src="assets/portfolio-3.jpg" alt="Trabajo 3" />
+          <aside class="portfolio-card-info">
+            <div>
+              <h3>Proyecto 3</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Cupiditate illo et laudantium repellendus vitae in doloremque
+                vel quo voluptatem nemo! Quia natus eius possimus, molestias
+                molestiae necessitatibus officia corrupti at.
+              </p>
+            </div>
+          </aside>
+        </a>
+
+        <a href="#trabajo-4" class="portfolio-card">
+          <img src="assets/portfolio-4.jpg" alt="Trabajo 4" />
+          <aside class="portfolio-card-info">
+            <div>
+              <h3>Proyecto 4</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Cupiditate illo et laudantium repellendus vitae in doloremque
+                vel quo voluptatem nemo! Quia natus eius possimus, molestias
+                molestiae necessitatibus officia corrupti at.
+              </p>
+            </div>
+          </aside>
+        </a>
+
+        <a href="#trabajo-5" class="portfolio-card">
+          <img src="assets/portfolio-5.jpg" alt="Trabajo 5" />
+          <aside class="portfolio-card-info">
+            <div>
+              <h3>Proyecto 5</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Cupiditate illo et laudantium repellendus vitae in doloremque
+                vel quo voluptatem nemo! Quia natus eius possimus, molestias
+                molestiae necessitatibus officia corrupti at.
+              </p>
+            </div>
+          </aside>
+        </a>
+
+        <a href="#trabajo-6" class="portfolio-card">
+          <img src="assets/portfolio-6.jpg" alt="Trabajo 6" />
+          <aside class="portfolio-card-info">
+            <div>
+              <h3>Proyecto 6</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Cupiditate illo et laudantium repellendus vitae in doloremque
+                vel quo voluptatem nemo! Quia natus eius possimus, molestias
+                molestiae necessitatibus officia corrupti at.
+              </p>
+            </div>
+          </aside>
+        </a>
+      </div>
+    </section>
+
+    <!-- *************** Ventanas Modales *************** -->
+
+    <!-- ****************** MODAL 1 ****************** -->
+
+    <article class="modal" id="trabajo-1">
+      <div class="modal-content">
+        <!-- Al vinculo "modal-close" se le asigna el id "#close" para que se modifique el objetivo (target) de la URL, 
+        y así la ventana modal se cierre. 
+        
+        
+        Para comprender mejor esto, véase en el archivo "styles.css" el 
+      siguiente selector: 
+
+            .modal#trabajo-1:target {
+               opacity: 1;
+               pointer-events: auto;
+
+      El modal se abrirá cuando el foco u objetivo (target) del sitio web sea el id "trabajo-1". En el momento
+      que se presiona el vínculo "modal-close", el objetivo (target) del sitio web será ahora el id llamado "cerrar". En ese preciso
+      instante, la pseudoclase .modal#trabajo-1:target deja de aplicarse, consiguiendo con esto que la ventana modal se cierre nuevamente. 
+}-->
+        <a href="#cerrar" class="modal-close">
+          <!-- El código "svg" agregado a continuación, fue copiado de la imagen "assets/modal-close.svg" -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12,2C6.486,2,2,6.486,2,12s4.486,10,10,10s10-4.486,10-10S17.514,2,12,2z M16.207,14.793l-1.414,1.414L12,13.414 l-2.793,2.793l-1.414-1.414L10.586,12L7.793,9.207l1.414-1.414L12,10.586l2.793-2.793l1.414,1.414L13.414,12L16.207,14.793z"
+            />
+          </svg>
+        </a>
+        <article class="portfolio-modal">
+          <img src="assets/portfolio-1.jpg" alt="Trabajo 1" />
+          <div class="portfolio-info">
+            <h3>NOMBRE DEL PROYECTO 1</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Distinctio voluptate veniam veritatis molestias inventore est
+              beatae eos aliquid expedita ipsa sint, impedit animi magni neque,
+              alias ab consequatur incidunt nisi!
+            </p>
+            <aside class="portfolio-details">
+              <!--
+                Abreviatura EMMET:
+                  small*4>b
+
+              -->
+              <small>
+                <b>CLIENTE:</b>
+              </small>
+              <small>Nombre del Cliente</small>
+              <small>
+                <b>FECHA:</b>
+              </small>
+              <small>04/10/22</small>
+              <small>
+                <b>TIPO:</b>
+              </small>
+              <small>Tipo de Proyecto</small>
+
+              <small>
+                <b>ENLACE:</b>
+              </small>
+              <small>
+                <!--
+                  Atributo "rel="noopener noreferrer": estas dos características fueron introducidas en WordPress para eliminar una vulnerabilidad de seguridad que es 
+                      utilizada por sitios web con malas intenciones y ganas de hacer daño con contenidos maliciosos.
+
+                  Existen algunas características de JavaScript que permiten que una nueva pestaña obtenga el control de una ventana de referencia.
+                  Si se vincula a un sitio web externo afectado por el código malicioso, ese sitio web puede usar la propiedad de JavaScript "window.opener" para 
+                  cambiar la página original (tu sitio web) para robar información y difundir códigos maliciosos.
+                
+                  - Atributo rel = «noopener» sirve para ser agregado a enlaces e impide que la página que se abrirá obtenga algún tipo de acceso a la página original.
+                  - Atributo rel = «noreferrer» Este atributo evita pasar la información de referencia al sitio web de destino eliminando la 
+                    información de referencia del encabezado HTTP de la página de origen(en la que se encuentra el enlace).
+                  
+                  -- Diferencias entre noopener – noreferrer
+                  - Rel=»noopener» se usa para que cuando se cree una nueva ventana al hacer clic en un enlace, el código malicioso que se ejecuta en la nueva 
+                    ventana no acceda a la ventana anterior a través del atributo window.opener. 
+                  - Por otro lado «rel=noreferrer» se utiliza para que cuando un usuario haga clic en un hipervínculo y se transfiera a una nueva ubicación, 
+                    no se filtre información de referencia al enlace de destino. Es decir, no será posible que el destino sepa de dónde vino ese usuario.
+                    Con el manejo de los atributos noopener noreferrer vas a mejorar el desarrollo de tus sitios, así como el posicionamiento SEO de ellos.
+                 -->
+                <a
+                  href="https://www.costeoplastikito.plastikito.com/"
+                  target="_blank"
+                  rel="noopener"
+                  >www.costeoplastikito.plastikito.com/</a
+                >
+              </small>
+            </aside>
+          </div>
+        </article>
+      </div>
+    </article>
+
+    <!-- ****************** MODAL 2 ****************** -->
+
+    <article class="modal" id="trabajo-2">
+      <div class="modal-content">
+        <!-- Al vinculo "modal-close" se le asigna el id "#close" para que se modifique el objetivo (target) de la URL, 
+        y así la ventana modal se cierre. 
+        
+        
+        Para comprender mejor esto, véase en el archivo "styles.css" el 
+      siguiente selector: 
+
+            .modal#trabajo-1:target {
+               opacity: 1;
+               pointer-events: auto;
+
+      El modal se abrirá cuando el foco u objetivo (target) del sitio web sea el id "trabajo-1". En el momento
+      que se presiona el vínculo "modal-close", el objetivo (target) del sitio web será ahora el id llamado "cerrar". En ese preciso
+      instante, la pseudoclase .modal#trabajo-1:target deja de aplicarse, consiguiendo con esto que la ventana modal se cierre nuevamente. 
+}-->
+        <a href="#cerrar" class="modal-close">
+          <!-- El código "svg" agregado a continuación, fue copiado de la imagen "assets/modal-close.svg" -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12,2C6.486,2,2,6.486,2,12s4.486,10,10,10s10-4.486,10-10S17.514,2,12,2z M16.207,14.793l-1.414,1.414L12,13.414 l-2.793,2.793l-1.414-1.414L10.586,12L7.793,9.207l1.414-1.414L12,10.586l2.793-2.793l1.414,1.414L13.414,12L16.207,14.793z"
+            />
+          </svg>
+        </a>
+        <article class="portfolio-modal">
+          <img src="assets/portfolio-2.jpg" alt="Trabajo 2" />
+          <div class="portfolio-info">
+            <h3>NOMBRE DEL PROYECTO 2</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Distinctio voluptate veniam veritatis molestias inventore est
+              beatae eos aliquid expedita ipsa sint, impedit animi magni neque,
+              alias ab consequatur incidunt nisi!
+            </p>
+            <aside class="portfolio-details">
+              <!--
+                Abreviatura EMMET:
+                  small*4>b
+
+              -->
+              <small>
+                <b>CLIENTE:</b>
+              </small>
+              <small>Nombre del Cliente</small>
+              <small>
+                <b>FECHA:</b>
+              </small>
+              <small>04/10/22</small>
+              <small>
+                <b>TIPO:</b>
+              </small>
+              <small>Tipo de Proyecto</small>
+
+              <small>
+                <b>ENLACE:</b>
+              </small>
+              <small>
+                <!--
+                  Atributo "rel="noopener noreferrer": estas dos características fueron introducidas en WordPress para eliminar una vulnerabilidad de seguridad que es 
+                      utilizada por sitios web con malas intenciones y ganas de hacer daño con contenidos maliciosos.
+
+                  Existen algunas características de JavaScript que permiten que una nueva pestaña obtenga el control de una ventana de referencia.
+                  Si se vincula a un sitio web externo afectado por el código malicioso, ese sitio web puede usar la propiedad de JavaScript "window.opener" para 
+                  cambiar la página original (tu sitio web) para robar información y difundir códigos maliciosos.
+                
+                  - Atributo rel = «noopener» sirve para ser agregado a enlaces e impide que la página que se abrirá obtenga algún tipo de acceso a la página original.
+                  - Atributo rel = «noreferrer» Este atributo evita pasar la información de referencia al sitio web de destino eliminando la 
+                    información de referencia del encabezado HTTP de la página de origen(en la que se encuentra el enlace).
+                  
+                  -- Diferencias entre noopener – noreferrer
+                  - Rel=»noopener» se usa para que cuando se cree una nueva ventana al hacer clic en un enlace, el código malicioso que se ejecuta en la nueva 
+                    ventana no acceda a la ventana anterior a través del atributo window.opener. 
+                  - Por otro lado «rel=noreferrer» se utiliza para que cuando un usuario haga clic en un hipervínculo y se transfiera a una nueva ubicación, 
+                    no se filtre información de referencia al enlace de destino. Es decir, no será posible que el destino sepa de dónde vino ese usuario.
+                    Con el manejo de los atributos noopener noreferrer vas a mejorar el desarrollo de tus sitios, así como el posicionamiento SEO de ellos.
+                 -->
+                <a
+                  href="https://www.testcleaver.plastikito.com/"
+                  target="_blank"
+                  rel="noopener"
+                  >www.testcleaver.plastikito.com/</a
+                >
+              </small>
+            </aside>
+          </div>
+        </article>
+      </div>
+    </article>
+
+    <!-- ****************** MODAL 3 ****************** -->
+
+    <article class="modal" id="trabajo-3">
+      <div class="modal-content">
+        <!-- Al vinculo "modal-close" se le asigna el id "#close" para que se modifique el objetivo (target) de la URL, 
+        y así la ventana modal se cierre. 
+        
+        
+        Para comprender mejor esto, véase en el archivo "styles.css" el 
+      siguiente selector: 
+
+            .modal#trabajo-1:target {
+               opacity: 1;
+               pointer-events: auto;
+
+      El modal se abrirá cuando el foco u objetivo (target) del sitio web sea el id "trabajo-1". En el momento
+      que se presiona el vínculo "modal-close", el objetivo (target) del sitio web será ahora el id llamado "cerrar". En ese preciso
+      instante, la pseudoclase .modal#trabajo-1:target deja de aplicarse, consiguiendo con esto que la ventana modal se cierre nuevamente. 
+}-->
+        <a href="#cerrar" class="modal-close">
+          <!-- El código "svg" agregado a continuación, fue copiado de la imagen "assets/modal-close.svg" -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12,2C6.486,2,2,6.486,2,12s4.486,10,10,10s10-4.486,10-10S17.514,2,12,2z M16.207,14.793l-1.414,1.414L12,13.414 l-2.793,2.793l-1.414-1.414L10.586,12L7.793,9.207l1.414-1.414L12,10.586l2.793-2.793l1.414,1.414L13.414,12L16.207,14.793z"
+            />
+          </svg>
+        </a>
+        <article class="portfolio-modal">
+          <img src="assets/portfolio-3.jpg" alt="Trabajo 3" />
+          <div class="portfolio-info">
+            <h3>NOMBRE DEL PROYECTO 3</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Distinctio voluptate veniam veritatis molestias inventore est
+              beatae eos aliquid expedita ipsa sint, impedit animi magni neque,
+              alias ab consequatur incidunt nisi!
+            </p>
+            <aside class="portfolio-details">
+              <!--
+                Abreviatura EMMET:
+                  small*4>b
+
+              -->
+              <small>
+                <b>CLIENTE:</b>
+              </small>
+              <small>Nombre del Cliente</small>
+              <small>
+                <b>FECHA:</b>
+              </small>
+              <small>04/10/22</small>
+              <small>
+                <b>TIPO:</b>
+              </small>
+              <small>Tipo de Proyecto</small>
+
+              <small>
+                <b>ENLACE:</b>
+              </small>
+              <small>
+                <!--
+                  Atributo "rel="noopener noreferrer": estas dos características fueron introducidas en WordPress para eliminar una vulnerabilidad de seguridad que es 
+                      utilizada por sitios web con malas intenciones y ganas de hacer daño con contenidos maliciosos.
+
+                  Existen algunas características de JavaScript que permiten que una nueva pestaña obtenga el control de una ventana de referencia.
+                  Si se vincula a un sitio web externo afectado por el código malicioso, ese sitio web puede usar la propiedad de JavaScript "window.opener" para 
+                  cambiar la página original (tu sitio web) para robar información y difundir códigos maliciosos.
+                
+                  - Atributo rel = «noopener» sirve para ser agregado a enlaces e impide que la página que se abrirá obtenga algún tipo de acceso a la página original.
+                  - Atributo rel = «noreferrer» Este atributo evita pasar la información de referencia al sitio web de destino eliminando la 
+                    información de referencia del encabezado HTTP de la página de origen(en la que se encuentra el enlace).
+                  
+                  -- Diferencias entre noopener – noreferrer
+                  - Rel=»noopener» se usa para que cuando se cree una nueva ventana al hacer clic en un enlace, el código malicioso que se ejecuta en la nueva 
+                    ventana no acceda a la ventana anterior a través del atributo window.opener. 
+                  - Por otro lado «rel=noreferrer» se utiliza para que cuando un usuario haga clic en un hipervínculo y se transfiera a una nueva ubicación, 
+                    no se filtre información de referencia al enlace de destino. Es decir, no será posible que el destino sepa de dónde vino ese usuario.
+                    Con el manejo de los atributos noopener noreferrer vas a mejorar el desarrollo de tus sitios, así como el posicionamiento SEO de ellos.
+                 -->
+                <a
+                  href="https://www.plastikito.com/"
+                  target="_blank"
+                  rel="noopener"
+                  >www.plastikito.com/</a
+                >
+              </small>
+            </aside>
+          </div>
+        </article>
+      </div>
+    </article>
+
+    <!-- ****************** MODAL 4 ****************** -->
+
+    <article class="modal" id="trabajo-4">
+      <div class="modal-content">
+        <!-- Al vinculo "modal-close" se le asigna el id "#close" para que se modifique el objetivo (target) de la URL, 
+        y así la ventana modal se cierre. 
+        
+        
+        Para comprender mejor esto, véase en el archivo "styles.css" el 
+      siguiente selector: 
+
+            .modal#trabajo-1:target {
+               opacity: 1;
+               pointer-events: auto;
+
+      El modal se abrirá cuando el foco u objetivo (target) del sitio web sea el id "trabajo-1". En el momento
+      que se presiona el vínculo "modal-close", el objetivo (target) del sitio web será ahora el id llamado "cerrar". En ese preciso
+      instante, la pseudoclase .modal#trabajo-1:target deja de aplicarse, consiguiendo con esto que la ventana modal se cierre nuevamente. 
+}-->
+        <a href="#cerrar" class="modal-close">
+          <!-- El código "svg" agregado a continuación, fue copiado de la imagen "assets/modal-close.svg" -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12,2C6.486,2,2,6.486,2,12s4.486,10,10,10s10-4.486,10-10S17.514,2,12,2z M16.207,14.793l-1.414,1.414L12,13.414 l-2.793,2.793l-1.414-1.414L10.586,12L7.793,9.207l1.414-1.414L12,10.586l2.793-2.793l1.414,1.414L13.414,12L16.207,14.793z"
+            />
+          </svg>
+        </a>
+        <article class="portfolio-modal">
+          <img src="assets/portfolio-4.jpg" alt="Trabajo 4" />
+          <div class="portfolio-info">
+            <h3>NOMBRE DEL PROYECTO 4</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Distinctio voluptate veniam veritatis molestias inventore est
+              beatae eos aliquid expedita ipsa sint, impedit animi magni neque,
+              alias ab consequatur incidunt nisi!
+            </p>
+            <aside class="portfolio-details">
+              <!--
+                Abreviatura EMMET:
+                  small*4>b
+
+              -->
+              <small>
+                <b>CLIENTE:</b>
+              </small>
+              <small>Nombre del Cliente</small>
+              <small>
+                <b>FECHA:</b>
+              </small>
+              <small>04/10/22</small>
+              <small>
+                <b>TIPO:</b>
+              </small>
+              <small>Tipo de Proyecto</small>
+
+              <small>
+                <b>ENLACE:</b>
+              </small>
+              <small>
+                <!--
+                  Atributo "rel="noopener noreferrer": estas dos características fueron introducidas en WordPress para eliminar una vulnerabilidad de seguridad que es 
+                      utilizada por sitios web con malas intenciones y ganas de hacer daño con contenidos maliciosos.
+
+                  Existen algunas características de JavaScript que permiten que una nueva pestaña obtenga el control de una ventana de referencia.
+                  Si se vincula a un sitio web externo afectado por el código malicioso, ese sitio web puede usar la propiedad de JavaScript "window.opener" para 
+                  cambiar la página original (tu sitio web) para robar información y difundir códigos maliciosos.
+                
+                  - Atributo rel = «noopener» sirve para ser agregado a enlaces e impide que la página que se abrirá obtenga algún tipo de acceso a la página original.
+                  - Atributo rel = «noreferrer» Este atributo evita pasar la información de referencia al sitio web de destino eliminando la 
+                    información de referencia del encabezado HTTP de la página de origen(en la que se encuentra el enlace).
+                  
+                  -- Diferencias entre noopener – noreferrer
+                  - Rel=»noopener» se usa para que cuando se cree una nueva ventana al hacer clic en un enlace, el código malicioso que se ejecuta en la nueva 
+                    ventana no acceda a la ventana anterior a través del atributo window.opener. 
+                  - Por otro lado «rel=noreferrer» se utiliza para que cuando un usuario haga clic en un hipervínculo y se transfiera a una nueva ubicación, 
+                    no se filtre información de referencia al enlace de destino. Es decir, no será posible que el destino sepa de dónde vino ese usuario.
+                    Con el manejo de los atributos noopener noreferrer vas a mejorar el desarrollo de tus sitios, así como el posicionamiento SEO de ellos.
+                 -->
+                <a
+                  href="http://huevito.plastikito.com/"
+                  target="_blank"
+                  rel="noopener"
+                  >www.huevito.plastikito.com/</a
+                >
+              </small>
+            </aside>
+          </div>
+        </article>
+      </div>
+    </article>
+
+    <!-- ****************** MODAL 5 ****************** -->
+
+    <article class="modal" id="trabajo-5">
+      <div class="modal-content">
+        <!-- Al vinculo "modal-close" se le asigna el id "#close" para que se modifique el objetivo (target) de la URL, 
+        y así la ventana modal se cierre. 
+        
+        
+        Para comprender mejor esto, véase en el archivo "styles.css" el 
+      siguiente selector: 
+
+            .modal#trabajo-1:target {
+               opacity: 1;
+               pointer-events: auto;
+
+      El modal se abrirá cuando el foco u objetivo (target) del sitio web sea el id "trabajo-1". En el momento
+      que se presiona el vínculo "modal-close", el objetivo (target) del sitio web será ahora el id llamado "cerrar". En ese preciso
+      instante, la pseudoclase .modal#trabajo-1:target deja de aplicarse, consiguiendo con esto que la ventana modal se cierre nuevamente. 
+}-->
+        <a href="#cerrar" class="modal-close">
+          <!-- El código "svg" agregado a continuación, fue copiado de la imagen "assets/modal-close.svg" -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12,2C6.486,2,2,6.486,2,12s4.486,10,10,10s10-4.486,10-10S17.514,2,12,2z M16.207,14.793l-1.414,1.414L12,13.414 l-2.793,2.793l-1.414-1.414L10.586,12L7.793,9.207l1.414-1.414L12,10.586l2.793-2.793l1.414,1.414L13.414,12L16.207,14.793z"
+            />
+          </svg>
+        </a>
+        <article class="portfolio-modal">
+          <img src="assets/portfolio-5.jpg" alt="Trabajo 5" />
+          <div class="portfolio-info">
+            <h3>NOMBRE DEL PROYECTO 5</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Distinctio voluptate veniam veritatis molestias inventore est
+              beatae eos aliquid expedita ipsa sint, impedit animi magni neque,
+              alias ab consequatur incidunt nisi!
+            </p>
+            <aside class="portfolio-details">
+              <!--
+                Abreviatura EMMET:
+                  small*4>b
+
+              -->
+              <small>
+                <b>CLIENTE:</b>
+              </small>
+              <small>Nombre del Cliente</small>
+              <small>
+                <b>FECHA:</b>
+              </small>
+              <small>04/10/22</small>
+              <small>
+                <b>TIPO:</b>
+              </small>
+              <small>Tipo de Proyecto</small>
+
+              <small>
+                <b>ENLACE:</b>
+              </small>
+              <small>
+                <!--
+                  Atributo "rel="noopener noreferrer": estas dos características fueron introducidas en WordPress para eliminar una vulnerabilidad de seguridad que es 
+                      utilizada por sitios web con malas intenciones y ganas de hacer daño con contenidos maliciosos.
+
+                  Existen algunas características de JavaScript que permiten que una nueva pestaña obtenga el control de una ventana de referencia.
+                  Si se vincula a un sitio web externo afectado por el código malicioso, ese sitio web puede usar la propiedad de JavaScript "window.opener" para 
+                  cambiar la página original (tu sitio web) para robar información y difundir códigos maliciosos.
+                
+                  - Atributo rel = «noopener» sirve para ser agregado a enlaces e impide que la página que se abrirá obtenga algún tipo de acceso a la página original.
+                  - Atributo rel = «noreferrer» Este atributo evita pasar la información de referencia al sitio web de destino eliminando la 
+                    información de referencia del encabezado HTTP de la página de origen(en la que se encuentra el enlace).
+                  
+                  -- Diferencias entre noopener – noreferrer
+                  - Rel=»noopener» se usa para que cuando se cree una nueva ventana al hacer clic en un enlace, el código malicioso que se ejecuta en la nueva 
+                    ventana no acceda a la ventana anterior a través del atributo window.opener. 
+                  - Por otro lado «rel=noreferrer» se utiliza para que cuando un usuario haga clic en un hipervínculo y se transfiera a una nueva ubicación, 
+                    no se filtre información de referencia al enlace de destino. Es decir, no será posible que el destino sepa de dónde vino ese usuario.
+                    Con el manejo de los atributos noopener noreferrer vas a mejorar el desarrollo de tus sitios, así como el posicionamiento SEO de ellos.
+                 -->
+                <a href="http://proyecto-5.com/" target="_blank" rel="noopener"
+                  >www.proyecto-5.com/</a
+                >
+              </small>
+            </aside>
+          </div>
+        </article>
+      </div>
+    </article>
+
+    <!-- ****************** MODAL 6 ****************** -->
+
+    <article class="modal" id="trabajo-6">
+      <div class="modal-content">
+        <!-- Al vinculo "modal-close" se le asigna el id "#close" para que se modifique el objetivo (target) de la URL, 
+        y así la ventana modal se cierre. 
+        
+        
+        Para comprender mejor esto, véase en el archivo "styles.css" el 
+      siguiente selector: 
+
+            .modal#trabajo-1:target {
+               opacity: 1;
+               pointer-events: auto;
+
+      El modal se abrirá cuando el foco u objetivo (target) del sitio web sea el id "trabajo-1". En el momento
+      que se presiona el vínculo "modal-close", el objetivo (target) del sitio web será ahora el id llamado "cerrar". En ese preciso
+      instante, la pseudoclase .modal#trabajo-1:target deja de aplicarse, consiguiendo con esto que la ventana modal se cierre nuevamente. 
+}-->
+        <a href="#cerrar" class="modal-close">
+          <!-- El código "svg" agregado a continuación, fue copiado de la imagen "assets/modal-close.svg" -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12,2C6.486,2,2,6.486,2,12s4.486,10,10,10s10-4.486,10-10S17.514,2,12,2z M16.207,14.793l-1.414,1.414L12,13.414 l-2.793,2.793l-1.414-1.414L10.586,12L7.793,9.207l1.414-1.414L12,10.586l2.793-2.793l1.414,1.414L13.414,12L16.207,14.793z"
+            />
+          </svg>
+        </a>
+        <article class="portfolio-modal">
+          <img src="assets/portfolio-6.jpg" alt="Trabajo 6" />
+          <div class="portfolio-info">
+            <h3>NOMBRE DEL PROYECTO 6</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Distinctio voluptate veniam veritatis molestias inventore est
+              beatae eos aliquid expedita ipsa sint, impedit animi magni neque,
+              alias ab consequatur incidunt nisi!
+            </p>
+            <aside class="portfolio-details">
+              <!--
+                Abreviatura EMMET:
+                  small*4>b
+
+              -->
+              <small>
+                <b>CLIENTE:</b>
+              </small>
+              <small>Nombre del Cliente</small>
+              <small>
+                <b>FECHA:</b>
+              </small>
+              <small>04/10/22</small>
+              <small>
+                <b>TIPO:</b>
+              </small>
+              <small>Tipo de Proyecto</small>
+
+              <small>
+                <b>ENLACE:</b>
+              </small>
+              <small>
+                <!--
+                  Atributo "rel="noopener noreferrer": estas dos características fueron introducidas en WordPress para eliminar una vulnerabilidad de seguridad que es 
+                      utilizada por sitios web con malas intenciones y ganas de hacer daño con contenidos maliciosos.
+
+                  Existen algunas características de JavaScript que permiten que una nueva pestaña obtenga el control de una ventana de referencia.
+                  Si se vincula a un sitio web externo afectado por el código malicioso, ese sitio web puede usar la propiedad de JavaScript "window.opener" para 
+                  cambiar la página original (tu sitio web) para robar información y difundir códigos maliciosos.
+                
+                  - Atributo rel = «noopener» sirve para ser agregado a enlaces e impide que la página que se abrirá obtenga algún tipo de acceso a la página original.
+                  - Atributo rel = «noreferrer» Este atributo evita pasar la información de referencia al sitio web de destino eliminando la 
+                    información de referencia del encabezado HTTP de la página de origen(en la que se encuentra el enlace).
+                  
+                  -- Diferencias entre noopener – noreferrer
+                  - Rel=»noopener» se usa para que cuando se cree una nueva ventana al hacer clic en un enlace, el código malicioso que se ejecuta en la nueva 
+                    ventana no acceda a la ventana anterior a través del atributo window.opener. 
+                  - Por otro lado «rel=noreferrer» se utiliza para que cuando un usuario haga clic en un hipervínculo y se transfiera a una nueva ubicación, 
+                    no se filtre información de referencia al enlace de destino. Es decir, no será posible que el destino sepa de dónde vino ese usuario.
+                    Con el manejo de los atributos noopener noreferrer vas a mejorar el desarrollo de tus sitios, así como el posicionamiento SEO de ellos.
+                 -->
+                <a href="http://proyecto-6.com/" target="_blank" rel="noopener"
+                  >www.proyecto-6.com/</a
+                >
+              </small>
+            </aside>
+          </div>
+        </article>
+      </div>
+    </article>
+
+    <section id="testimonios" class="testimonials">
+      <!-- Utilizar el atributo "style" es una mala práctica, excepto cuando se utiliza
+        para declarar Custom Properties o variables. 
+      
+        Estas variables no se declararon en CSS dentro
+        el elemento "root", porque se desea que el ámbito o alcance de estas variables
+        solo sea dentro del elemento al que se le asignó la clase "hero-image", 
+        es decir, dentro del elemento "article". -->
+      <article
+        class="hero-image"
+        style="
+          --hero-image: url('../assets/hero-image-customers.jpg');
+          --hero-attachment: scroll;
+        "
+      >
+        <!-- Utilizar el atributo "style" es una mala práctica, excepto cuando se utiliza
+        para declarar Custom Properties o variables. 
+      
+        Estas variables no se declararon en CSS dentro
+        el elemento "root", porque se desea que el ámbito o alcance de estas variables
+        solo sea dentro del elemento al que se le asignó la clase "hero-image-opacity", 
+        es decir, dentro del elemento "article". 
+        
+        IMPORTANTE: la variable "--black-alpha-color" fue definida dentro del elemento "root", 
+        por ello es posible utilizarla. 
+      
+        -->
+        <aside
+          class="hero-image-opacity"
+          style="--hero-opacity-color: var(--white-alpha-color)"
+        >
+          <div class="hero-image-content">
+            <div class="container">
+              <h2 class="section-title">Mis clientes dicen</h2>
+              <article
+                class="carousel"
+                style="--carousel-bg-color: var(--white-alpha-color)"
+              >
+                <!-- El atributo "checked" indica que este elemento será el que estará seleccionado por defecto. -->
+
+                <!-- IMPORTANTE: los input de tipo "radio" se ocultarán en CSS, y lo que será visible
+                para el usuario, y donde él podrá dar clic, serán realmente los label que acompañan a cada input de tipo
+                radio, los cuales se encuentran dentro de la etiqueta "aside", unas líneas abajo. -->
+                <input type="radio" name="slides" id="slide-1" checked />
+                <input type="radio" name="slides" id="slide-2" />
+                <input type="radio" name="slides" id="slide-3" />
+                <input type="radio" name="slides" id="slide-4" />
+
+                <ul class="slides">
+                  <li class="slide">
+                    <img
+                      class="avatar"
+                      src="assets/customer-1.jpg"
+                      alt="Cliente 1"
+                    />
+                    <blockquote>
+                      "Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                      Voluptatem minima commodi sint cupiditate blanditiis
+                      magnam dolor at soluta obcaecati voluptas esse incidunt
+                      error provident, dolorem quidem reprehenderit, autem
+                      pariatur amet!"
+                    </blockquote>
+                    <h3 class="text-first-color">NOMBRE DEL CLIENTE</h3>
+                    <h6>Puesto del Cliente</h6>
+                  </li>
+                  <li class="slide">
+                    <img
+                      class="avatar"
+                      src="assets/customer-2.jpg"
+                      alt="Cliente 2"
+                    />
+                    <blockquote>
+                      "Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                      Voluptatem minima commodi sint cupiditate blanditiis
+                      magnam dolor at soluta obcaecati voluptas esse incidunt
+                      error provident, dolorem quidem reprehenderit, autem
+                      pariatur amet!"
+                    </blockquote>
+                    <h3 class="text-first-color">NOMBRE DEL CLIENTE</h3>
+                    <h6>Puesto del Cliente</h6>
+                  </li>
+                  <li class="slide">
+                    <img
+                      class="avatar"
+                      src="assets/customer-1.jpg"
+                      alt="Cliente 1"
+                    />
+                    <blockquote>
+                      "Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                      Voluptatem minima commodi sint cupiditate blanditiis
+                      magnam dolor at soluta obcaecati voluptas esse incidunt
+                      error provident, dolorem quidem reprehenderit, autem
+                      pariatur amet!"
+                    </blockquote>
+                    <h3 class="text-first-color">NOMBRE DEL CLIENTE</h3>
+                    <h6>Puesto del Cliente</h6>
+                  </li>
+                  <li class="slide">
+                    <img
+                      class="avatar"
+                      src="assets/customer-2.jpg"
+                      alt="Cliente 2"
+                    />
+                    <blockquote>
+                      "Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                      Voluptatem minima commodi sint cupiditate blanditiis
+                      magnam dolor at soluta obcaecati voluptas esse incidunt
+                      error provident, dolorem quidem reprehenderit, autem
+                      pariatur amet!"
+                    </blockquote>
+                    <h3 class="text-first-color">NOMBRE DEL CLIENTE</h3>
+                    <h6>Puesto del Cliente</h6>
+                  </li>
+                </ul>
+
+                <aside class="slides-nav">
+                  <!-- Como se dijo antes, los input de tipo "radio" se ocultarán. Serán las etiquetas label
+                  las que fungirán como los controles del carrusel. -->
+                  <label for="slide-1" id="dot-1"></label>
+                  <label for="slide-2" id="dot-2"></label>
+                  <label for="slide-3" id="dot-3"></label>
+                  <label for="slide-4" id="dot-4"></label>
+                </aside>
+              </article>
+            </div>
+          </div>
+        </aside>
+      </article>
+    </section>
+
+    <section id="contacto" class="contact section">
+      <div class="container">
+        <h2 class="section-title">¿Interesado?</h2>
+        <article class="contact-cards">
+          <aside class="contact-card box-shadow-1">
+            <!-- Como la siguiente imagen es vectorial, su respecitivo código
+               se copió desde el archivo "contact-location.svg", el cual
+               se encuentra dentro de la carpeta "assets".
+            -->
+            <svg
+              width="37"
+              height="28"
+              viewBox="0 0 37 28"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18.5 7.3125L7 16.8125V27C7 27.5625 7.4375 28 8 28H15C15.5 28 15.9375 27.5625 15.9375 27V21C15.9375 20.5 16.4375 20 16.9375 20H20.9375C21.5 20 21.9375 20.5 21.9375 21V27C21.9375 27.5625 22.4375 28 22.9375 28H30C30.5 28 31 27.5625 31 27V16.75L19.4375 7.3125C19.3125 7.1875 19.125 7.125 19 7.125C18.8125 7.125 18.625 7.1875 18.5 7.3125ZM36.6875 13.75L31.5 9.4375V0.8125C31.5 0.375 31.125 0.0625 30.75 0.0625H27.25C26.8125 0.0625 26.5 0.375 26.5 0.8125V5.3125L20.875 0.6875C20.375 0.3125 19.6875 0.0625 19 0.0625C18.25 0.0625 17.5625 0.3125 17.0625 0.6875L1.25 13.75C1.0625 13.875 0.9375 14.125 0.9375 14.3125C0.9375 14.5 1.0625 14.6875 1.125 14.8125L2.75 16.75C2.875 16.9375 3.0625 17 3.3125 17C3.5 17 3.6875 16.9375 3.8125 16.8125L18.5 4.75C18.625 4.625 18.8125 4.5625 19 4.5625C19.125 4.5625 19.3125 4.625 19.4375 4.75L34.125 16.8125C34.25 16.9375 34.4375 17 34.625 17C34.875 17 35.0625 16.9375 35.1875 16.75L36.8125 14.8125C36.9375 14.6875 37 14.5 37 14.3125C37 14.125 36.875 13.875 36.6875 13.75Z"
+                fill="#D90062"
+              />
+            </svg>
+
+            <h5>UBICACIÓN</h5>
+            <small>Villa Nueva, Guatemala</small>
+          </aside>
+
+          <aside class="contact-card box-shadow-1">
+            <!-- Como la siguiente imagen es vectorial, su respecitivo código
+               se copió desde el archivo "contact-phone.svg", el cual
+               se encuentra dentro de la carpeta "assets".
+            -->
+            <svg
+              width="33"
+              height="32"
+              viewBox="0 0 33 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M31.8125 1.5625L25.3125 0.0625C24.625 -0.125 23.875 0.25 23.5625 0.9375L20.5625 7.9375C20.3125 8.5625 20.5 9.25 21 9.6875L24.8125 12.8125C22.5625 17.5625 18.625 21.5625 13.75 23.875L10.625 20.0625C10.1875 19.5625 9.5 19.375 8.875 19.625L1.875 22.625C1.1875 22.9375 0.875 23.6875 1 24.375L2.5 30.875C2.6875 31.5625 3.25 32 4 32C20 32 33 19.0625 33 3C33 2.3125 32.5 1.75 31.8125 1.5625Z"
+                fill="#D90062"
+              />
+            </svg>
+
+            <h5>TELÉFONO</h5>
+            <small><a href="tel:50299999999">(+502) 99999999</a></small>
+          </aside>
+
+          <aside class="contact-card box-shadow-1">
+            <!-- Como la siguiente imagen es vectorial, su respecitivo código
+               se copió desde el archivo "contact-email.svg", el cual
+               se encuentra dentro de la carpeta "assets".
+            -->
+            <svg
+              width="32"
+              height="24"
+              viewBox="0 0 32 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M31.375 7.9375C29.9375 9.0625 28.125 10.4375 21.75 15.0625C20.5 16 18.1875 18.0625 16 18.0625C13.75 18.0625 11.5 16 10.1875 15.0625C3.8125 10.4375 2 9.0625 0.5625 7.9375C0.3125 7.75 0 7.9375 0 8.25V21C0 22.6875 1.3125 24 3 24H29C30.625 24 32 22.6875 32 21V8.25C32 7.9375 31.625 7.75 31.375 7.9375ZM16 16C17.4375 16.0625 19.5 14.1875 20.5625 13.4375C28.875 7.4375 29.5 6.875 31.375 5.375C31.75 5.125 32 4.6875 32 4.1875V3C32 1.375 30.625 0 29 0H3C1.3125 0 0 1.375 0 3V4.1875C0 4.6875 0.1875 5.125 0.5625 5.375C2.4375 6.875 3.0625 7.4375 11.375 13.4375C12.4375 14.1875 14.5 16.0625 16 16Z"
+                fill="#D90062"
+              />
+            </svg>
+
+            <h5>E-MAIL</h5>
+            <small
+              ><a href="mailto:andreiarriaza@gmail.com"
+                >andreiarriaza@gmail.com</a
+              ></small
+            >
+          </aside>
+
+          <aside class="contact-card box-shadow-1">
+            <!-- Como la siguiente imagen es vectorial, su respecitivo código
+               se copió desde el archivo "service-smo.svg", el cual
+               se encuentra dentro de la carpeta "assets".
+            -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M16.018,3.815L15.232,8h-4.966l0.716-3.815L9.018,3.815L8.232,8H4v2h3.857l-0.751,4H3v2h3.731l-0.714,3.805l1.965,0.369 L8.766,16h4.966l-0.714,3.805l1.965,0.369L15.766,16H20v-2h-3.859l0.751-4H21V8h-3.733l0.716-3.815L16.018,3.815z M14.106,14H9.141 l0.751-4h4.966L14.106,14z"
+              />
+            </svg>
+
+            <h5>SOCIAL MEDIA</h5>
+            <small class="social-media">
+              <!--
+              Atributo "rel="noopener noreferrer": estas dos características fueron introducidas en WordPress para eliminar una vulnerabilidad de seguridad que es 
+                  utilizada por sitios web con malas intenciones y ganas de hacer daño con contenidos maliciosos.
+
+              Existen algunas características de JavaScript que permiten que una nueva pestaña obtenga el control de una ventana de referencia.
+              Si se vincula a un sitio web externo afectado por el código malicioso, ese sitio web puede usar la propiedad de JavaScript "window.opener" para 
+              cambiar la página original (tu sitio web) para robar información y difundir códigos maliciosos.
+            
+              - Atributo rel = «noopener» sirve para ser agregado a enlaces e impide que la página que se abrirá obtenga algún tipo de acceso a la página original.
+              - Atributo rel = «noreferrer» Este atributo evita pasar la información de referencia al sitio web de destino eliminando la 
+                información de referencia del encabezado HTTP de la página de origen(en la que se encuentra el enlace).
+              
+              -- Diferencias entre noopener – noreferrer
+              - Rel=»noopener» se usa para que cuando se cree una nueva ventana al hacer clic en un enlace, el código malicioso que se ejecuta en la nueva 
+                ventana no acceda a la ventana anterior a través del atributo window.opener. 
+              - Por otro lado «rel=noreferrer» se utiliza para que cuando un usuario haga clic en un hipervínculo y se transfiera a una nueva ubicación, 
+                no se filtre información de referencia al enlace de destino. Es decir, no será posible que el destino sepa de dónde vino ese usuario.
+                Con el manejo de los atributos noopener noreferrer vas a mejorar el desarrollo de tus sitios, así como el posicionamiento SEO de ellos.
+          -->
+              <a
+                href="https://www.youtube.com/channel/UCUXh944a7Gv6l9u6grBkKnw"
+                target="_blank"
+                rel="noopener"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M21.593,7.203c-0.23-0.858-0.905-1.535-1.762-1.766C18.265,5.007,12,5,12,5S5.736,4.993,4.169,5.404	c-0.84,0.229-1.534,0.921-1.766,1.778c-0.413,1.566-0.417,4.814-0.417,4.814s-0.004,3.264,0.406,4.814	c0.23,0.857,0.905,1.534,1.763,1.765c1.582,0.43,7.83,0.437,7.83,0.437s6.265,0.007,7.831-0.403c0.856-0.23,1.534-0.906,1.767-1.763	C21.997,15.281,22,12.034,22,12.034S22.02,8.769,21.593,7.203z M9.996,15.005l0.005-6l5.207,3.005L9.996,15.005z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://twitter.com/Andrei_Arriaza"
+                target="_blank"
+                rel="noopener"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M19.633,7.997c0.013,0.175,0.013,0.349,0.013,0.523c0,5.325-4.053,11.461-11.46,11.461c-2.282,0-4.402-0.661-6.186-1.809	c0.324,0.037,0.636,0.05,0.973,0.05c1.883,0,3.616-0.636,5.001-1.721c-1.771-0.037-3.255-1.197-3.767-2.793	c0.249,0.037,0.499,0.062,0.761,0.062c0.361,0,0.724-0.05,1.061-0.137c-1.847-0.374-3.23-1.995-3.23-3.953v-0.05	c0.537,0.299,1.16,0.486,1.82,0.511C3.534,9.419,2.823,8.184,2.823,6.787c0-0.748,0.199-1.434,0.548-2.032	c1.983,2.443,4.964,4.04,8.306,4.215c-0.062-0.3-0.1-0.611-0.1-0.923c0-2.22,1.796-4.028,4.028-4.028	c1.16,0,2.207,0.486,2.943,1.272c0.91-0.175,1.782-0.512,2.556-0.973c-0.299,0.935-0.936,1.721-1.771,2.22	c0.811-0.088,1.597-0.312,2.319-0.624C21.104,6.712,20.419,7.423,19.633,7.997z"
+                  />
+                </svg>
+              </a>
+
+              <a
+                href="https://github.com/walterarriaza"
+                target="_blank"
+                rel="noopener"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M12.026,2c-5.509,0-9.974,4.465-9.974,9.974c0,4.406,2.857,8.145,6.821,9.465	c0.499,0.09,0.679-0.217,0.679-0.481c0-0.237-0.008-0.865-0.011-1.696c-2.775,0.602-3.361-1.338-3.361-1.338	c-0.452-1.152-1.107-1.459-1.107-1.459c-0.905-0.619,0.069-0.605,0.069-0.605c1.002,0.07,1.527,1.028,1.527,1.028	c0.89,1.524,2.336,1.084,2.902,0.829c0.091-0.645,0.351-1.085,0.635-1.334c-2.214-0.251-4.542-1.107-4.542-4.93	c0-1.087,0.389-1.979,1.024-2.675c-0.101-0.253-0.446-1.268,0.099-2.64c0,0,0.837-0.269,2.742,1.021	c0.798-0.221,1.649-0.332,2.496-0.336c0.849,0.004,1.701,0.115,2.496,0.336c1.906-1.291,2.742-1.021,2.742-1.021	c0.545,1.372,0.203,2.387,0.099,2.64c0.64,0.696,1.024,1.587,1.024,2.675c0,3.833-2.33,4.675-4.552,4.922	c0.355,0.308,0.675,0.916,0.675,1.846c0,1.334-0.012,2.41-0.012,2.737c0,0.267,0.178,0.577,0.687,0.479	C19.146,20.115,22,16.379,22,11.974C22,6.465,17.535,2,12.026,2z"
+                  />
+                </svg>
+              </a>
+
+              <a
+                href="www.linkedin.com/in/andreiarriaza"
+                target="_blank"
+                rel="noopener"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M8.339,18.337H5.667	v-8.59h2.672V18.337z M7.003,8.574c-0.856,0-1.548-0.694-1.548-1.548s0.691-1.548,1.548-1.548c0.854,0,1.548,0.693,1.548,1.548	S7.857,8.574,7.003,8.574z M18.338,18.337h-2.669V14.16c0-0.996-0.018-2.277-1.388-2.277c-1.39,0-1.601,1.086-1.601,2.207v4.248	h-2.667v-8.59h2.56v1.174h0.037c0.355-0.675,1.227-1.387,2.524-1.387c2.704,0,3.203,1.778,3.203,4.092V18.337z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://www.instagram.com/andrei_arriaza/"
+                target="_blank"
+                rel="noopener"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M11.999,7.377c-2.554,0-4.623,2.07-4.623,4.623c0,2.554,2.069,4.624,4.623,4.624c2.552,0,4.623-2.07,4.623-4.624	C16.622,9.447,14.551,7.377,11.999,7.377L11.999,7.377z M11.999,15.004c-1.659,0-3.004-1.345-3.004-3.003	c0-1.659,1.345-3.003,3.004-3.003s3.002,1.344,3.002,3.003C15.001,13.659,13.658,15.004,11.999,15.004L11.999,15.004z"
+                  />
+                  <circle cx="16.806" cy="7.207" r="1.078" />
+                  <path
+                    d="M20.533,6.111c-0.469-1.209-1.424-2.165-2.633-2.632c-0.699-0.263-1.438-0.404-2.186-0.42	c-0.963-0.042-1.268-0.054-3.71-0.054s-2.755,0-3.71,0.054C7.548,3.074,6.809,3.215,6.11,3.479C4.9,3.946,3.945,4.902,3.477,6.111	c-0.263,0.7-0.404,1.438-0.419,2.186c-0.043,0.962-0.056,1.267-0.056,3.71c0,2.442,0,2.753,0.056,3.71	c0.015,0.748,0.156,1.486,0.419,2.187c0.469,1.208,1.424,2.164,2.634,2.632c0.696,0.272,1.435,0.426,2.185,0.45	c0.963,0.042,1.268,0.055,3.71,0.055s2.755,0,3.71-0.055c0.747-0.015,1.486-0.157,2.186-0.419c1.209-0.469,2.164-1.424,2.633-2.633	c0.263-0.7,0.404-1.438,0.419-2.186c0.043-0.962,0.056-1.267,0.056-3.71s0-2.753-0.056-3.71C20.941,7.57,20.801,6.819,20.533,6.111z M19.315,15.643c-0.007,0.576-0.111,1.147-0.311,1.688c-0.305,0.787-0.926,1.409-1.712,1.711c-0.535,0.199-1.099,0.303-1.67,0.311	c-0.95,0.044-1.218,0.055-3.654,0.055c-2.438,0-2.687,0-3.655-0.055c-0.569-0.007-1.135-0.112-1.669-0.311	c-0.789-0.301-1.414-0.923-1.719-1.711c-0.196-0.534-0.302-1.099-0.311-1.669c-0.043-0.95-0.053-1.218-0.053-3.654	c0-2.437,0-2.686,0.053-3.655c0.007-0.576,0.111-1.146,0.311-1.687c0.305-0.789,0.93-1.41,1.719-1.712	c0.534-0.198,1.1-0.303,1.669-0.311c0.951-0.043,1.218-0.055,3.655-0.055c2.437,0,2.687,0,3.654,0.055	c0.571,0.007,1.135,0.112,1.67,0.311c0.786,0.303,1.407,0.925,1.712,1.712c0.196,0.534,0.302,1.099,0.311,1.669	c0.043,0.951,0.054,1.218,0.054,3.655c0,2.436,0,2.698-0.043,3.654H19.315z"
+                  />
+                </svg>
+              </a>
+            </small>
+          </aside>
+        </article>
+        <form class="contact-form box-shadow-1">
+          <!-- Se debe recordar que el atributo "title" se agrega, porque contiene
+          el texto que se mostrará si el usuario no ingresa un nombre válido. -->
+
+          <!-- El atributo "pattern" permite incluir expresiones regulares que validen que el contenido ingresado
+        en un "Input" cumpla con el formato deseado.
+        
+        La expresión regultar utilizada dentro del atributo "pattern", verifica lo siguiente:
+        El acento circunflejo(^) indica que no puede haber ningún caracter antes de la expresión regular, mientras que
+        el signo de dólar($) indica que no puede haber nada después de la expresión regular. Tanto el acento circunflejo(^) como el signo de dólar ($)
+        permiten que la expresión regular se busque en cada uno de los caracteres de la cadena de texto.
+        
+        Los corchetes [A-Za-zÑñÁáÉéÍíÓóÚúÜü\s] indican que se va evaluar un grupo de posibles valores: de la A hasta la Z mayúsculas y minúsculas, 
+        la letra Ñ y ñ, las vocales tiladas mayúsculas y minúsculas y la Ü y ü (con diéresis), y "\s" permite el ingreso de espacios en blanco, además, el signo + 
+        indica que se va a realizar la verificación por cada caracter
+        de la cadena de texto.
+        -->
+          <!-- El asterisco (*) dentro de los "placeholder" se utiliza para indicar que es un campo
+        "requerido". -->
+          <input
+            type="text"
+            name="name"
+            placeholder="Ingresa tu nombre *"
+            title="Este campo solo acepta letras y espacios en blanco."
+            pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+            required
+          />
+
+          <!-- El asterisco (*) dentro de los "placeholder" se utiliza para indicar que es un campo
+        "requerido". -->
+          <input
+            type="email"
+            name="email"
+            placeholder="Ingresa tu correo electrónico *"
+            title="E-mail incorrecto"
+            patter="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
+            required
+          />
+
+          <!-- El asterisco (*) dentro de los "placeholder" se utiliza para indicar que es un campo
+        "requerido". -->
+          <textarea
+            name="comments"
+            cols="30"
+            rows="10"
+            placeholder="Déjame tus comentarios *"
+          ></textarea>
+
+          <div class="contact-form-loader text-center none">
+            <img src="assets/loader.svg" alt="Enviando..." />
+          </div>
+          <input class="btn" type="submit" value="ENVIAR MENSAJE" />
+        </form>
+        <article id="gracias" class="modal">
+          <div class="modal-content">
+            <article class="contact-form-response">
+              <h3>
+                ¡Muchas gracias!
+                <br />
+                Por tus comentarios.
+              </h3>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path d="M12,18c4,0,5-4,5-4H7C7,14,8,18,12,18z" />
+                <path
+                  d="M12,2C6.486,2,2,6.486,2,12c0,5.514,4.486,10,10,10s10-4.486,10-10C22,6.486,17.514,2,12,2z M12,20c-4.411,0-8-3.589-8-8 s3.589-8,8-8s8,3.589,8,8S16.411,20,12,20z"
+                />
+                <path
+                  d="M13 12l2 .012C15.012 11.55 15.194 11 16 11s.988.55 1 1h2c0-1.206-.799-3-3-3S13 10.794 13 12zM8 11c.806 0 .988.55 1 1h2c0-1.206-.799-3-3-3s-3 1.794-3 3l2 .012C7.012 11.55 7.194 11 8 11z"
+                />
+              </svg>
+            </article>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <small
+        >Sitio Web diseñado por
+        <!--
+             Atributo "rel="noopener noreferrer": estas dos características fueron introducidas en WordPress para eliminar una vulnerabilidad de seguridad que es 
+                utilizada por sitios web con malas intenciones y ganas de hacer daño con contenidos maliciosos.
+
+            Existen algunas características de JavaScript que permiten que una nueva pestaña obtenga el control de una ventana de referencia.
+            Si se vincula a un sitio web externo afectado por el código malicioso, ese sitio web puede usar la propiedad de JavaScript "window.opener" para 
+            cambiar la página original (tu sitio web) para robar información y difundir códigos maliciosos.
+          
+            - Atributo rel = «noopener» sirve para ser agregado a enlaces e impide que la página que se abrirá obtenga algún tipo de acceso a la página original.
+            - Atributo rel = «noreferrer» Este atributo evita pasar la información de referencia al sitio web de destino eliminando la 
+              información de referencia del encabezado HTTP de la página de origen(en la que se encuentra el enlace).
+            
+            -- Diferencias entre noopener – noreferrer
+             - Rel=»noopener» se usa para que cuando se cree una nueva ventana al hacer clic en un enlace, el código malicioso que se ejecuta en la nueva 
+               ventana no acceda a la ventana anterior a través del atributo window.opener. 
+             - Por otro lado «rel=noreferrer» se utiliza para que cuando un usuario haga clic en un hipervínculo y se transfiera a una nueva ubicación, 
+               no se filtre información de referencia al enlace de destino. Es decir, no será posible que el destino sepa de dónde vino ese usuario.
+               Con el manejo de los atributos noopener noreferrer vas a mejorar el desarrollo de tus sitios, así como el posicionamiento SEO de ellos.
+        -->
+        <a href="http://walterarriaza.github.io" target="_blank" rel="noopener">
+          @andrei_arriaza</a
+        ></small
+      >
+    </footer>
+
+    <!-- Hoja externa de JavaScript -->
+    <script src="js/script.js"></script>
+  </body>
 </html>
