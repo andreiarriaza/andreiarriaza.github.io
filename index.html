@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Andrei Arriaza - Programador y Desarrollador Web</title>
 
-    <!-- Importación de los estilos "regular 400" (fuente normal) y "Bold 700" (negrita) fuente Raleway de Google Fonts.
-    Estas etiquetas deben colocarse antes de la etiqueta "Link" que corresponde a la hoja externa de CSS. 
-    -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,126 +17,27 @@
 
     <!-- **************** Etiquetas SEO básicas **************** -->
 
-    <!-- La etiqueta meta "description" es fundamental pues es la que se despliega en los Rich Snippets (Texto enriquecido) de Google, 
-         es decir, los pequeños fragmentos informativos que se despliegan en Google cuando se realiza una búsqueda y los cuales dan más 
-         información sobre el sitio Web. 
-
-        
-    -->
-    <!-- Es recomendable que cada página de nuestro sitio Web tenga un título y una descripción diferentes, pues esto ayuda a mejorar su posicionamiento. -->
     <meta
       name="description"
       content="Bienvenidos a mi sitio web profesional."
     />
-    <!-- La etiqueta meta "canonical" le indica a los buscadores cuál es la URL principal 
-    que tiene que posicionar. En este caso, como es una Landing Page, es decir, como hay una sola página, 
-    no causa mucho problema, pero si la página tuviera varios sitios Web, entonces sí es indispensable definirla
-    par que los buscadores sepan distinguir cuál de todas es la página principal del sitio Web, aunque haya otras
-    páginas dentro del mismo. -->
 
-    <!-- La palabra "canónico" hace referencia a algo original. 
-    ¿Qué es la etiqueta rel=canonical?
-        El canonical es una etiqueta HTML que no es visible para los usuarios y que se añade al head de las páginas de una web con el objetivo de solventar un problema de 
-        contenido duplicado.
-
-        Su objetivo es que, cuando un buscador encuentre una página duplicada, le muestre cuál de las páginas duplicadas es la buena.
-
-        Seguramente esta explicación se entienda mejor con un ejemplo:
-
-        Imaginemos que tenemos una tienda de zapatos (www.zapatosseo.com). 
-        En la sección de zapatos para hombre (www.zapatosseo.com/zapatos-hombre), para que los usuarios puedan encontrar de manera más sencilla el zapato que necesitan, 
-        hemos añadido un filtro que ordena todos los zapatos por precio.
-
-        Este filtro, añade a la url un parámetro de filtrado, generando una url como: www.zapatosseo.com/zapatos-hombre?precio
-
-        Este filtro añade un factor de usabilidad muy importante para el usuario, que ahora puede ver de manera ordenada todos los zapatos, según su precio.
-
-        Sin embargo, hemos generado dos urls que muestran el mismo contenido aunque lo hagan en un orden diferente:
-
-            www.zapatosseo.com/zapatos-hombre
-
-            www.zapatosseo.com/zapatos-hombre?precio
-    
-    ¿Cómo se usa la etiqueta Canonical?
-        Lo que tienes que tener claro para implementar una etiqueta canónica es cual es tu página preferida para posicionar y cuales son las páginas secundarias que podrían 
-        competir con ella por tener contenidos muy parecidos.
-
-        En las páginas secundarias tendrás que añadir dentro de la cabecera (<head></head>) la etiqueta canónica apuntando a la principal, 
-        y en la principal también deberás añadirla apuntando a sí misma. 
-        
-        La etiqueta canónica a agregar tanto en las páginas secundarias como en la principal, debería ser como la siguiente:
-
-            <link rel="canonical" href="https://url-destino.com" />
-
-        En este ejemplo, la página canónica quedaría así: 
-            www.zapatosseo.com/zapatos-hombre
-
-    ¿Cuándo y cómo deben usarse las etiquetas canónicas?
-      Ahora que ya sabes qué son las etiquetas canónicas y su importancia para el SEO, veamos cuándo y cómo usarlas.
-
-      Usa etiquetas canónicas siempre que tengas contenido duplicado en tu sitio.
-      Úsalas cuando ofrezcas productos similares con una pequeña diferencia, especialmente si tienes una tienda de comercio online.
-      Úsalas al estructurar información adicional para una URL específica. Ordenan y especifican el contenido de una página web (parámetros de URL).
-    -->
     <link rel="canonical" href="https://andreiarriaza.github.io/" />
-    <!-- Favicon: para que el favicon se despliegue correctamente es indispensable
-    que se agregue la ruta relativa del Favicon que se incluirá, es decir, una ruta como: https://www.walterarriaza.github.io/favicon.png 
-    De lo contrario, el Favicon no se visualizará correctamente.  -->
-
-    <!-- Sitio Web para descargar Favicon y Apple Touch Icons: https://favicon.io/ 
-    Para descargar las  imágenes deseadas, se debe aceder a la opción "emojis". Al elegir la imagen deseada, dar clic en el botón "descargar", 
-    y se descargará todo el paquete de imágenes, entre ellas se incluy el "favicon" y la imagen "apple-touch-icon".
-
-    El tamaño ideal para un favicon es 16*16 pixeles o 32*32 pixeles. Sin embargo, si le da un tamaño mayor, como en este caso, 
-    se agregará sin problemas a menos que sea un tamaño muy grande.  
-
-    IMPORTANTE: en algunos sitios Web de consulta, e inclusive, cuando se genera automáticamente en Visual Studio Code la etiqueta
-    de "favicon", se mostrará la siguiente etiqueta: 
-        <link rel="shortcut icon" href="favicon.ico"">
-
-    Sin embargo, el estándar es utilizar la etiqueta "icon", pues el atributo "shortcut" se agregaba anteriormente
-    solo para la compatibilidad del favicon con Internet Explorer:
-        <link rel="icon" href="favicon.ico">      (sin el atributo "shortcut")
-
-    Aunque la etiqueta "favicon" acepta tanto archivos ".png" como ".ico", el tipo de archivo "ico" siempre
-    tendrá preeminencia sobre el tipo de archivo ".png" si es que existen ambos en el mismo sitio Web.
-    -->
 
     <link
       rel="icon"
       href="https://andreiarriaza.github.io/assets/favicon.png"
     />
 
-    <!-- Etiqueta para agregar ícono para que sea visible en Dispositivos Móviles cuando se agregue un sitio Web a la pantalla del escritorio en un Smartphone,
-        es decir, cuando se cree un acceso directo para el mismo. Tiene en el atributo "rel" el nombre "apple-touch-icon", porque este ícono fue utilizado
-        inicialmente por dispositivos Apple únicamente, pero luego, su uso se volvió general, aunque siguió conservando el nombre "apple-touch-icon".
-        
-        Para agregar un sitio Web a la pantalla de inicio en un Smartphone:
-            1. Abrir el navegador
-            2. Clic en el botón de los tres puntos para desplegar el menú principal.
-            3. Seleccionar "Agregar a la pantalla principal".
-
-        Tamaño de imagen para el "apple-touch-icon" 180*180 pixeles o bien 192*192 pixeles.
-    -->
     <link
       rel="apple-touch-icon"
       href="https://andreiarriaza.github.io/assets/apple-touch-icon.png"
     />
 
-    <!-- Permite definir un color hexadecimal para la barra de direcciones del sitio Web; pero este cambio
-         de color, solo será visible al acceder al sitio Web desde dispositivos móviles. -->
     <meta name="theme-color" content="#d9006" />
 
     <!-- **************** Twitter Cards **************** -->
 
-    <!-- Para este ejemplo se utilizó el Twitter Card de tipo "summary", sin embargo, existen
-    otros tipos de Twitter Cards que se puede utilizar, las cuales varían entre
-    sí el tamaño de la imagen, campos de información que mostrará, etc. 
-      
-    Si se desea conocer los demás tipos de Twitter Card disponibles, 
-    se debe acceder a la documentacion oficial de Twitter 
-    por medio del siguiente link: https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards
-    -->
     <meta name="twitter:card" content="summary" />
     <meta
       name="twitter:title"
@@ -156,6 +54,7 @@
     <meta name="twitter:url" content="https://andreiarriaza.github.io/" />
 
     <!-- **************** Etiquetas Open Graph (Facebook, LinkedIn, etc.) **************** -->
+
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
@@ -177,6 +76,7 @@
         <div class="logo">
           <a href="index.html">andreiarriaza</a>
         </div>
+
         <button class="menu-btn">
           <!-- Como las siguientes son imágenes vectoriales, sus respecitivos códigos
                se copiaron desde los archivos "menu-bars.svg" y "menu-close.svg", los cuales
@@ -231,6 +131,7 @@
           <a href="#testimonios">Testimonios</a>
           <a href="#contacto">Contacto</a>
         </nav>
+        <nav class="icons"></nav>
       </section>
     </header>
 
