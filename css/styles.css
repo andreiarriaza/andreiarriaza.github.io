@@ -1,82 +1,1573 @@
+/* IMPORTANTE: el diseño preliminar de este sitio Web, se realiza dentro del curso de FIGMA, y se puede acceder
+   a dicho diseño mediante el siguiente enlace: 
+                https://www.figma.com/file/8T65vTpkmTi9phvNafUNax/CV-Portafolio?node-id=118%3A85
+*/
 
-html { /* Se le está asignando el valor de la propiedad "box-sizing: border-box" al elemento "html", el cual es el nodo raíz o no principal del sitio Web, 
-    del que dependen todos los demás elementos. Esto permitirá que a todos los elementos dentro del sitio Web, se les asigne
-    automáticamente la propiead "border-sizing: border-box". */
+/* 
+IMPORTANTE2: este sitio Web se maquetó mediante la técnica de "Mobile First", lo que
+significa que primero se diseña el sitio Web para móviles, y luego
+se irá configurando como se irá adaptando a los diferentes dispositivos.
+*/
 
-    box-sizing: border-box; /*Si no se colocara esta propiedad, o bien, si se le asignara el valor "content-box"(predeterminado), se comprobará
-    que no se mostrará el texto en tres columnas; ¿por qué sucede esto?, porque cada elemento hijo mide 200px, los 3 elementos hijos en total miden 600px, que es
-    el ancho total asignado al elemento, pero a esa medida se le debería sumar el padding, margin, border, etc., con lo cual ya las
-    3 columnas no cabrían juntas porque sobrepasarían el ancho máximo de 600px. 
-    
-    Usando el valor "border-box", sin embargo, eso se corrige, porque cada elemento hijo medirá 200px de ancho real, y al sumar los 3, equivalen a los 600px
-    de ancho que se definieron en la propiedad "width". Dentro del valor de 200px de ancho de cada elemento, ya se incluyen los valores
-    de padding, margin, border, etc. 
+/* ******************** Custom Properties ******************** */
+/* 
+En esta sección van todas las variables (Custom Properties) de CSS utilizadas en el proyecto.
+*/
+
+:root {
+  --first-color: #d90062;
+  --first-alpha-color: rgba(217, 0, 98, 0.75);
+  --second-color: #14192d;
+  --second-alpha-color: rgba(20, 25, 45, 0.75);
+  --third-color: #501464;
+  --third-alpha-color: rgba(50, 20, 100, 0.75);
+  --white-color: #fff;
+  --gray-light-color: #f3f3f3;
+  --gray-color: #ccc;
+  --gray-dark-color: #666;
+  --black-color: #000;
+  --link-color: #509ee3;
+  --title-color: #333;
+  --white-alpha-color: rgba(255, 255, 255, 0.5);
+  --black-alpha-color: rgba(0, 0, 0, 0.5);
+  --font: "Raleway", sans-serif; /* Si no encontrara la fuente "Raleway", asignará la fuente "sans-serif". 
+  La tipografía "Raleway" será consumida desde Google Fonts. */
+
+  /* Ancho máximo. */
+  --max-width: 1200px;
+
+  /* Altura del elemento "header". Se asignó una altura de "4rem", porque el área del 
+  header tendrá "1rem" de padding (lo cual se indica más abajo). En lo que respecta a la altura, si sumamos el padding de arriba y abajo, 
+  nos dará un total de "2rem".
   
-    He ahí la importancia de asignar un valor "border-box" a la propiedad "box-sizing".
-    
-    */
-    font-family: sans-serif;
-    font-size: 16px;
+  Y el tamaño de fuente del vínculo que se encuentra dentro del elemento "header", es de 2rem. 
+
+  Si se suman los padding superior e inferior (1rem + 1rem) más el tamaño de fuente de 2rem, da un total de 4rem.
+  */
+  --header-height: 4rem; /* Como el tamaño de fuente definido dentro del elemento "body" es igual a 16px, 
+  entonces 4rem = 4 * 16 = 64px. */
+}
+
+/* ******************** Reset ******************** */
+
+/* 
+Área de reseteo del sitio Web. 
+*/
+
+html {
+  box-sizing: border-box;
+  font-family: var(--font);
+  font-size: 16px;
+
+  /* Aplica el efecto "smooth" al dar clic en un vínculo y desplazarse a la sección correspondiente. */
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+
+  /* Todo el contenido que desborde el "body", será ocultado, para evitar que aparezca la barra de scroll horizontal. */
+  overflow-x: hidden;
+
+  color: var(--text-color);
+}
+
+a {
+  color: var(--link-color);
+  transition: all 0.5s ease-out;
+}
+
+a:hover {
+  opacity: 0.75;
+}
+
+h1 {
+  /* Es recomendable resetar el márgen predeterminado de los encabezados (headers) y asignarle a cada uno
+    el márgen deseado. */
+  margin: 0;
+
+  /* En FIGMA se definieron los tamaños de encabezados en pixeles, sin embargo,
+  debido a que los pixeles son unidades absolutas, se hizo la conversión correspondiente
+  a rem's (root em). */
+  font-size: 2rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+h5 {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+h6 {
+  margin: 0;
+  font-size: 0.7rem;
+}
+
+img {
+  /* Convertir las imágenes en "responsive". */
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  /* Se asigna a los párrafos un interlineado de "1.6". */
+  line-height: 1.6; /* Altura de la línea, es decir, el interlineado. Puede agregarse un número SIN UNIDADES DE MEDIDA, pero
+                       también se pueden agregar las unidades de medida "px" o "em".  */
+}
+
+/* ******************** Components ******************** */
+/* 
+En esta sección se incluirán todas aquellas modificaciones de estilos que involucren a los componentes del sitio Web. 
+*/
+
+/* ********** Carousel ********** */
+
+@keyframes carousel-slide {
+  0% {
+    /* Como se desean mostrar los datos del primer cliente,no se desea quese desplace, sino que mantenga la posición original,
+  por ello se asignó el valor "0%". */
+    /* IMPORTANTE: para calcular el porcentaje que debe desplazarse en "x" la información de cada cliente,
+  se debe divir el "100%" entre el número de clientes que se agregaron. 
+
+  Como en este caso, solamente hay 4 clientes, la división quedaría así: 
+        100 / 4 = 25
+  Eso significa que cada cliente debe sufrir un desplazamiento de "25%" para que se visualice correctamente. 
+  */
+    transform: translateX(0%);
   }
+  25% {
+    /* Como se desean mostrar los datos del segundo cliente, se asignó el valor "-25%". */
+    /* IMPORTANTE: para calcular el porcentaje que debe desplazarse en "x" la información de cada cliente,
+  se debe divir el "100%" entre el número de clientes que se agregaron. 
+
+  Como en este caso, solamente hay 4 clientes, la división quedaría así: 
+        100 / 4 = 25
+  Eso significa que cada cliente debe sufrir un desplazamiento de "25%" para que se visualice correctamente. 
+  */
+    /*Como se desea que el desplazamiento del "id" sea hacia la izquierda, se le asignó una posición en "x" de -25%.  */
+    transform: translateX(-25%);
+  }
+  50% {
+    /* Como se desean mostrar los datos del tercer cliente, se asignó el valor "-50%". */
+    /* IMPORTANTE: para calcular el porcentaje que debe desplazarse en "x" la información de cada cliente,
+  se debe divir el "100%" entre el número de clientes que se agregaron. 
+
+  Como en este caso, solamente hay 4 clientes, la división quedaría así: 
+        100 / 4 = 25
+  Eso significa que cada cliente debe sufrir un desplazamiento de "25%" para que se visualice correctamente. 
+  */
+
+    /*Como se desea que el desplazamiento del "id" sea hacia la izquierda, se le asignó una posición en "x" de -50%.  */
+    transform: translateX(-50%);
+  }
+  75% {
+    /* Como se desean mostrar los datos del cuarto cliente, se asignó el valor "-75%". */
+    /* IMPORTANTE: para calcular el porcentaje que debe desplazarse en "x" la información de cada cliente,
+  se debe divir el "100%" entre el número de clientes que se agregaron. 
+
+  Como en este caso, solamente hay 4 clientes, la división quedaría así: 
+        100 / 4 = 25
+  Eso significa que cada cliente debe sufrir un desplazamiento de "25%" para que se visualice correctamente. 
+  */
+
+    /*Como se desea que el desplazamiento del "id" sea hacia la izquierda, se le asignó una posición en "x" de -75%.  */
+    transform: translateX(-75%);
+  }
+}
+
+.carousel {
+  margin: 2rem auto;
+  padding: 2rem 0;
+  max-width: 800px;
+  text-align: center;
+  background-color: var(--carousel-bg-color);
+
+  /* La propiedad "overflow-x" es indispensable, pues al selector que se encuentra justo a continuación (.carousel .slides),
+  se le asignó un ancho de "400%", lo que significa que desbordará horizontalmente el ancho del elemento que tiene asignada
+  la clase "carousel". Para que ese contenido que se desborda no sea visible, 
+  es necesario agregar la propiedad "overflow-x".  
+  */
+  overflow-x: hidden;
+}
+
+/* Selector de hijos descendientes. */
+.carousel .slides {
+  /* Es necesario asignar un valor de "padding-left: 0", porque se debe recordar
+  que el navegador asigna de forma predeterminada una sangría o identación a la izquierda de cada elemnto "li", debido
+  a que son elementos que forman parte de una lista. 
   
+  Para que los "li" queden totalmente centrados horizontalmente, se le quita el padding izquierdo. 
+  */
+  padding-left: 0;
+  /* Por cada "slide" que haya en el carrusel, se le debe sumar al ancho un valor igual a "100%. 
   
-  *, 
-  *::before, 
-  *::after { /* Se agregan además los selectores que indicarán que a todos los elementos del sitio Web,
-  y a aquellos elementos a los que se les haya asignado el pseudoelemento "::before", y a los que se les haya aplicado
-  el pseudoelemento "::after", se les asignará la propiedad "box-sizing" que heredará (inherit) su valor 
-  del elemento padre, el cual es el elemento "html". 
+  Como en este caso hay solamente 4 slides. El ancho asignado es igual a "400%".
+  */
+  width: 400%;
+  display: flex;
+  list-style-type: none;
+
+  transition: transform 0.5s ease-in-out;
+
+  /* Esta animación tendrá una duración de 12 segundos, además
+  se le asignó un delay de 3 segundos y se repetirá una sola vez. 
   
-  El pseudoelemento "before", puede escribirse tanto así ::before como así :before. Aunque, la forma más apropiada de escribir un pseudoelemento es así "::before".
-  El pseudoelemento "after", puede escribirse tanto así ::after como así :after. Aunque, la forma más apropiada de escribir un pseudoelemento es así "::after".
+  IMPORTANTE: durante el tiempo que dure la animación "carousel-slide", 
+  al dar clic en alguno de los controles del carrusel, no redirigirá
+  al usuario al elemento del carrusel que corresponda, esto debido
+  a que la animación se está reproduciendo. 
+
+  Si se desean utilizar los controles de navegación del carrusel, 
+  hay que esperar que la animcación "carousel-slide" termine. 
+  */
+  animation: carousel-slide 12s ease-in-out 3s 1;
+}
+
+/* Este selector se aplicará a los elementos "input" que sean hijos descendientes
+del elemento al que se le asignó la clase "carousel". */
+.carousel input {
+  /* Se oculta el carrusel. */
+  display: none;
+}
+
+.carousel label {
+  border: medium solid var(--gray-dark-color);
+  /* Al asignársele a este elemento la propiedad "border-radius: 50%", se convierte en un elemento circular. */
+  border-radius: 50%;
+  margin: 0 0.25rem;
+  /* Como los elementos "label" son elementos en línea,
+  se convierten en elementos de tipo "inline-block" para que así
+  tengan también características de elementos de bloque como: ancho, alto, etc.   */
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+
+  cursor: pointer;
+}
+
+/* Este selector se aplicará a los elementos que sean hermanos en general del elemento que tiene asignado
+el id "#slide-1", y que tengan asignada la clase "slides"; 
+pero solamente cuando el elemento que tiene asignado el id "slide-1" (el cual es un input de tipo "radio"), 
+haya sido seleccionado, es decir, cuando su propiedad "checked" sea VERDADERA.
+*/
+
+/* Utiliza el símbolo "~" (virgulilla). El Selector de Hermanos (en general), aplica el estilo indicado únicamente a los hermanos del elemento señalado.
+En este caso, el elemento que tiene asignada la clase ".slides" es el elemento "ul". 
+
+Acá se está indicado que el estilo únicamente se aplicará
+ a los elementos que sean hermanos en general del elemento que tiene asignado el id "#slide-1", y que tengan asignada
+ la clase "slides". 
+
+Los selectores de hermanos van a aplicarse únicamente a los elementos que son hermanos del elemento de referencia (el que tiene asignada la clase "slides")
+y que estén por debajo de dicho elemento.
+
+*/
+#slide-1:checked ~ .slides {
+  /* Como se desean mostrar los datos del primer cliente,no se desea quese desplace, sino que mantenga la posición original,
+  por ello se asignó el valor "0%". */
+  /* IMPORTANTE: para calcular el porcentaje que debe desplazarse en "x" la información de cada cliente,
+  se debe divir el "100%" entre el número de clientes que se agregaron. 
+
+  Como en este caso, solamente hay 4 clientes, la división quedaría así: 
+        100 / 4 = 25
+  Eso significa que cada cliente debe sufrir un desplazamiento de "25%" para que se visualice correctamente. 
+  */
+  transform: translateX(0%);
+}
+
+#slide-2:checked ~ .slides {
+  /* Como se desean mostrar los datos del segundo cliente, se asignó el valor "-25%". */
+  /* IMPORTANTE: para calcular el porcentaje que debe desplazarse en "x" la información de cada cliente,
+  se debe divir el "100%" entre el número de clientes que se agregaron. 
+
+  Como en este caso, solamente hay 4 clientes, la división quedaría así: 
+        100 / 4 = 25
+  Eso significa que cada cliente debe sufrir un desplazamiento de "25%" para que se visualice correctamente. 
+  */
+  /*Como se desea que el desplazamiento del "id" sea hacia la izquierda, se le asignó una posición en "x" de -25%.  */
+  transform: translateX(-25%);
+}
+
+#slide-3:checked ~ .slides {
+  /* Como se desean mostrar los datos del tercer cliente, se asignó el valor "-50%". */
+  /* IMPORTANTE: para calcular el porcentaje que debe desplazarse en "x" la información de cada cliente,
+  se debe divir el "100%" entre el número de clientes que se agregaron. 
+
+  Como en este caso, solamente hay 4 clientes, la división quedaría así: 
+        100 / 4 = 25
+  Eso significa que cada cliente debe sufrir un desplazamiento de "25%" para que se visualice correctamente. 
+  */
+
+  /*Como se desea que el desplazamiento del "id" sea hacia la izquierda, se le asignó una posición en "x" de -50%.  */
+  transform: translateX(-50%);
+}
+
+#slide-4:checked ~ .slides {
+  /* Como se desean mostrar los datos del cuarto cliente, se asignó el valor "-75%". */
+  /* IMPORTANTE: para calcular el porcentaje que debe desplazarse en "x" la información de cada cliente,
+  se debe divir el "100%" entre el número de clientes que se agregaron. 
+
+  Como en este caso, solamente hay 4 clientes, la división quedaría así: 
+        100 / 4 = 25
+  Eso significa que cada cliente debe sufrir un desplazamiento de "25%" para que se visualice correctamente. 
+  */
+
+  /*Como se desea que el desplazamiento del "id" sea hacia la izquierda, se le asignó una posición en "x" de -75%.  */
+  transform: translateX(-75%);
+}
+
+/* El primer selector se aplicará al elemento "label" que sea hijo descendiente del elemento  que tiene asignada la clase "slides-nav", 
+y que sea hermano en general del elemento que tiene asignado el id "slide-1",
+pero solamente cuando el elemento que tiene asignado el id "slide-1" (el cual es un input de tipo "radio"), 
+haya sido seleccionado, es decir, cuando su propiedad "checked" sea VERDADERA.
+
+Esto mismo se aplica para el resto de selectores, solo cambiando el nombre del id del "label": dot-1, dot-2, etc; y
+se modifica también el nombre del id que hace referencia a cada checkbox: slide-1, slide-2. slide-3, etc.  
+*/
+#slide-1:checked ~ .slides-nav label#dot-1,
+#slide-2:checked ~ .slides-nav label#dot-2,
+#slide-3:checked ~ .slides-nav label#dot-3,
+#slide-4:checked ~ .slides-nav label#dot-4 {
+  background-color: var(--gray-dark-color);
+}
+
+/* ********** Contact Form ********** */
+.contact-form {
+  margin: 2rem auto;
+  padding: 1rem;
+  max-width: 800px;
+}
+
+/* Este selector universal se aplicará a todos los elementos que sean hijos directos del elemento
+al que se le asignó la clase "contact-form". */
+.contact-form > * {
+  /* Este valor de padding amplia el espacio entre el borde de cada elemento y el inicio del texto correspondiente al
+  atributo "placeholder". */
+  padding: 0.5rem;
+  margin: 1rem auto;
+  display: block;
+
+  /* Tendrá un ancho del 100% del contenedor padre. */
+  width: 100%;
+}
+
+/* Este selector se asigna a todos los elementos "input" y a todos los elementos "textarea" que
+sean hijos descendientes del elemento al que se le asignó la clase "contact-form". 
+
+IMPORTANTE: si no se define de esta manera el tipo de fuente para los elementos antes mencionados, 
+sucedería que el "textarea" mostraría una tipografía distinta que la mostrada en los elementos "input". 
+Para evitar ese problema, se define un tipo de fuente específico para aplicarse a dichos elementos. 
+*/
+.contact-form input,
+.contact-form textarea {
+  font-size: 0.85rem;
+  font-family: var(--font);
+}
+
+/* Este selector se aplicará a los elementos "input" que sean
+hijos descendientes del elemento al que se le asignó la clase "contact-form". */
+.contact-form input {
+  /* La propiedad "border: 0", le quita TODOS los bordes al elemento. */
+  border: 0;
+  /* Se agrega únicamente el borde inferior para cada elemento*/
+  border-bottom: thin solid var(--gray-dark-color);
+  /* De forma predeterminada, los elementos "input" del formulario tienen un padding. Sin embargo, 
+  como en este caso se quitaron los bordes (excepto el borde inferior), ese padding
+  de cada elemento inut haya que el texto del "placeholder" se muestre desplazado a la derecha, y no
+  comienza donde empieza el borde inferior. 
+  
+  Para que el texto de los placeholder comience desde la misma posición desde la cual comienza
+  el borde inferior, se le asigna a cada elemento "input" un valor de "padding-left: 0". 
   
   */
-    box-sizing: inherit;
-    
-    margin: 0px 0px; /* Se resetea (normaliza) el márgen a 0px para que no se le aplique el márgen predeterminado que
-    cada navegador asigna como márgen, de estar forma, el sitio Web abarcará todo el ancho del navegador. */
+  padding-left: 0;
+}
+
+.contact-form textarea {
+  border: thin solid var(--gray-dark-color);
+  /* La propiedad "resize: none", quita el control deslizable del "textarea" 
+  para que ya no le permita al usuario cambiar el tamaño de dicho "textarea". */
+  resize: none;
+}
+
+.contact-form input[type="submit"] {
+  /* Debido al colapso de márgenes verticales, propio de CSS, se asigna un valor de "margin: 0". 
+  Esto permitirá que el espacio entre el elemento "textarea" y el input de tipo "submit" sea
+  el mismo que el espacio vertical entre los diferentes "input". 
+
+  Se debe recordar que en CSS puede suceder que el márgen vertical entre algunos elementos colapse (o solape),
+  lo cual provoca que el márgen total entre dos elementos contiguos (uno abajo de otro) no sea el que debería ser
+  (aunque así lo indique la imagen del modelo de caja del las herramientas para desarrolladores de Chrome).  Esto es precisamente
+  lo que sucede en este caso, los márgenes verticales entre cada "input" (excepto el de tipo "submit")
+  colapsan, mientras que el márgen del input de tipo "submit" respecto al input superior no colapsa. 
+
+  Se debe tomar en cuenta que esto sucede con la mayoría de elementos
+  del sitio Web, sin embargo, habrá algunos que no experimentarán el colapso de márgenes entre ellos. 
+
+  En este caso no se da un colapso de márgenes verticales entre el último input y el input de tipo "submit".
+
+  Por eso es necesario asignar un valor "margin-top: 0". 
+
+  Si no se asignará el valor "margin-top: 0", el espacio entre el elemento "textarea" y el input de tipo "submit"
+  sería mayor. 
+  */
+  margin-top: 0;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+
+.contact-form input[type="submit"]:hover {
+  opacity: 0.75;
+}
+
+/* Este selector plicará el estilo al pseudolemento "placeholder", que corresponda
+a cada uno de los elementos que sean hijos descendientes
+del elemento al que se le asignó la clase "contact-form".  */
+.contact-form *::placeholder {
+  /* Aunque es casi imperceptible la diferencia de color del texto
+  del placeholder de cada elemento, sí se realizó un ligero cambio de color. */
+  color: var(--gray-dark-color);
+}
+
+.contact-form-response {
+  padding: 1rem;
+  width: 400px;
+  text-align: center;
+  background-color: var(--white-color);
+}
+
+.contact-form-response svg {
+  margin-top: 2rem;
+  width: 4rem;
+  height: 4rem;
+  fill: var(--first-color);
+}
+
+/* La pseudoclase "target", aplica un estilo cuando un elemento recibe el foco u objetivo (target)  en el sitio Web. Por ejemplo,
+  cuando se accede a un vínculo interno dentro del sitio Web, se puede utilizar para que cierto estilo se aplique únicamente
+  cuando se acceda a dicho vínculo en específico. 
+
+Ejemplo: 
+    http://127.0.0.1:5500/1_FundamentosCSS/index.html#temario-css
+
+    En la URL anterior, el foco u objetivo (target) es: "temario-css" y corresponde al "id" llamado "temario-css" dentro de 
+    la página.
+     
+
+/* Este selector de estado únicamente se asignará si se detecta que el foco u objetivo del sitio Web
+es el id llamado "gracias". Si se detecta que la URL redirige al usuario al id llamado "gracias", 
+entonces este estilo se aplicará al elemento que tiene asignados tanto el  
+el id llamado "gracias", como la clase llamada "modal". */
+.modal#gracias:target {
+  /* Se hace visible nuevamente la ventana modal. */
+  opacity: 1;
+  /* Se habilita nuevamente la interacción del elemento que tiene asignado el id "gracias" y la clase "modal". 
+  Se debe recordar que en la clase "modal", se asignó la propiedad "pointerevents: none" cuyo valor
+  impide que se pueda dar clic sobre los vínculos de la ventana modal. 
+  */
+  pointer-events: auto;
+}
+
+@media screen and (min-width: 1024px) {
+  .contact-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* La propiedad "column-gap" permite definir el espaciado entre columnas. */
+    column-gap: 1rem;
   }
 
-  
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 1rem;
+  }
 
+  .contact-form textarea,
+  .contact-form-loader {
+    /* 
+  NOTA: cuando se le asigna a la propiedad "grid-column" el valor "span" sin indicar la Grid Line de columna inicial, el Grid Item tomará el ancho del número
+  que acompaña al valor "span", a partir de su posición original. 
 
+  Ej: 
+    grid-column: span 2 (este Grid Item medirá 2 filas de ancho a partir de su posición original)
+  */
+    grid-column: span 2;
+  }
+
+  .contact-form input[type="submit"] {
+    /* Se le asigna un márgen izquierdo de "0" para
+    que el botón quede alineado a la izquierda.  */
+    margin-left: 0;
+  }
+}
+
+/* ********** Hero Image ********** */
 
 .hero-image {
-    margin: auto auto;
-    width: 100%;
-    height: 100vh;
-   
+  /* Se invocan las variables "--image" y "--attachment", las cuales fueron declaradas por medio del atributo "style" de la etiqueta "article" que tiene
+  asignada la clase "hero-image". Utilizar el atributo "style" es una mala práctica, excepto cuando se utiliza
+      para declarar Custom Properties o variables. 
     
-    background-color: #000;
-    background-image: url("../assets/computer-hero-image.jpg");
-    max-width: 100%;
-    background-size: cover;
-    background-attachment: fixed;
+    
+      Estas variables no se declararon en CSS dentro
+      el elemento "root", porque se desea que el ámbito o alcance de estas variables
+      solo sea dentro del elemento al que se le asignó la clase "hero-image", 
+      es decir, dentro del elemento "article". */
+  background-image: var(--hero-image);
+  background-repeat: no-repeat;
 
-    
-    
-   
-   
+  background-position: center;
+  background-attachment: var(--hero-attachment);
+}
+
+.hero-image-content {
+  width: 100%;
+  min-width: 320px;
+}
+
+.hero-image-opacity {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--hero-opacity-color);
+}
+
+.hero-image-title {
+  /* El tamaño de fuente se asigna mediante unidades del Viewport (vw = viewport width) para
+  que el texto fluya, es decir, se adecúe a los diferentes tamaños de pantalla. */
+  font-size: 7.5vw;
+  color: var(--hero-text-color);
+}
+
+/* ********** Menú ********** */
+
+.menu-btn {
+  /* La propiedad "outline" permite agregar un contorno al elemento. Es importante señalar que esta propiedad no forma parte del BOX MODEL (Model de Caja), esto 
+significa que al agregarse la propiedad "outline" a un elemento, no se afecta ninguna de las dimensiones de la caja del elemento. La propiedad "outline"
+se podría decir que es como una capa que se sobrepone sobre el elemento, por ello, sin importar el grosor de la propiedad "outline", esta
+no afectará en lo absoluto a las dimensiones de la caja. 
+
+La aplicación más frecuente de la propiedad "outline" es cuando se asigna a un elemento "input". 
+
+
+IMPORTANTE: esta propiedad, a diferencia de otras propiedades, como "margin", 
+NO TIENE DISPONIBLES propiedades como: "outline-top", "outline-bottom", etc.  */
+  outline: thin solid var(--first-color);
+
+  /* Se define un valor de borde igual a "0", para que no se muestren los bordes
+  grisáceos predefinidos que HTML asigna a los botones. */
+  border: 0;
+  cursor: pointer;
+  background-color: var(--second-color);
+}
+
+.menu-btn svg {
+  /* La propiedad  "fill" es un atributo de las imágenes SVG que define el color ( o cualquier servidor de pintura SVG como degradados o patrones ) utilizado para pintar el elemento. 
   
- 
+  Es decir, el atributo "fill" permite definir el color de fondo de los archivos SVG. 
+
+  En este caso, a las imágenes "SVG" se les aplicará el color "--first-color", que fue definido al principio de este archivo. 
+  
+  */
+  fill: var(--first-color);
 }
 
-.hero-text {
+.menu {
+  /* Se asigna una posición fija al menú de navegación. Se debe recordar que cuando se asigna la posición "fixed",
+  el elemento pierde sus dimensiones, por lo que es necesario definir tanto el ancho como el ato del elemento. */
+  position: fixed;
+  left: 0;
+
+  width: 100%;
+
+  /* El menú se bicará, en la posición inferior, a partir de la altura que se asignó
+  al elemento "header". Es decir, que verticalmente, el menú se comenzará a mostrar justo después 
+  del elemento "header":  */
+
+  /* Altura del elemento "header". Se asignó una altura de "4rem", porque el área del 
+  header tendrá "1rem" de padding (lo cual se indica más abajo). En lo que respecta a la altura, si sumamos el padding de arriba y abajo, 
+  nos dará un total de "2rem".
+  
+  Y el tamaño de fuente del vínculo que se encuentra dentro del elemento "header", es de 2rem. 
+
+  Si se suman los padding superior e inferior (1rem + 1rem) más el tamaño de fuente de 2rem, da un total de 4rem.
+  */
+  bottom: var(--header-height);
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--second-color);
+
+  opacity: 0; /* El menú tendrá al principio una opacidad "0", es deci, será invisible. */
+  /* Aunque el menú está oculto, si se ubica el puntero sobre alguna de las opciones del menú, el puntero seguirá
+  cambiando de forma (tomará la forma de la manita). Esto debido a que aunque el menú es invisible, los vínculos 
+  siguen estando allí. 
+  
+  Para corregir esto, hay una propiedad llamada "pointer-events", la cual permite
+  controlar la interactivad de un elemento; si se le asigna el valor de "none", 
+  eso provocará que la interactividad ya no esté disponible para el elemento al que se le asignó la 
+  clase "menu", y por lo tanto, el puntero ya no cambiará de forma cuando el usuario se ubique
+  sobre alguna de las opciones del menú. 
+  
+  Cuando se desee habilitar nuevamente la interactividad de un elemento, es necesario
+  agregar la propiedad "pointer-events: auto". 
+  */
+  pointer-events: none;
+
+  transition: opacity 0.5s ease;
+}
+
+/* Este selector afecta al elemento que tenga asignadas tanto la clase "menu", como la clase "is-active". 
+La clase "is-active" será dinámica, y se agregará desde JavaScript.  */
+.menu.is-active {
+  opacity: 1;
+
+  /* Cuando la clase "is-active" se agregue al elemento que tiene asignada la clase "menu", se necesita
+  que los vínculos vuelvan a ser funcionales, es decir, se necesita devolverla la interactivadad al elemento. 
+  Para lograrlo, se agrega la propiedad "pointer-events: auto". */
+  pointer-events: auto;
+}
+
+.menu a {
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: var(--first-color);
+}
+
+/* Al situar el puntero sobre cada opción del menú, se comprobará que se muestra cierta transición 
+al cambiar el color de fuente y color de fondo del elemento. Esto sucede porque más arriba en este documento, 
+cuando se asignaron los estilos al elemento "a" directamente, se agregó la propiedad "transition: all 0.5s ease-out;", 
+lo cual provoca que al colocar el puntero sobre cada vínculo el cambio de colores sea gradual. */
+.menu a:hover {
+  color: var(--white-color);
+  background-color: var(--first-color);
+}
+
+/* 
+IMPORTANTE: se crearon también Media Queries específicas para la sección de "Componentes" del sitio Web. 
+Se hizo de esta manera porque la técnica minimalista que se está implementando, busca poder
+reutilizar el código las veces que sea necesario en otros proyectos. 
+
+Se podrían haber definido las media queries de los componentes en UNA SOLA media query
+que modificara todas las propiedades, pero si se hubiera hecho así, costaría
+más trabajo buscar en esa única media query las propiedades que se desearan copiar
+para ser implementadas en otro proyecto.  */
+
+@media screen and (min-width: 1024px) {
+  .menu-btn {
+    /* Se oculta el botón del menú.  */
+    display: none;
+  }
+
+  .menu {
+    /* En la vista para móviles, se le asignó a la clase "menu" la posición "fixed". 
+    Sin embargo, para la vista Desktop, se cambia el tipo de posicionamiento, y se le 
+    asigna el posicionamiento natural (normal), el cual es: position: static. Con esto se conseguirá que el elemento
+    al que se le asignó la clase "menu" quede ubicado 
+    en la parte superior del sitio Web. 
     
-    font-size: 2rem;
+    */
+    position: static;
+    /* Como se asignó a la propiedad "width" el valor "auto", el ancho dependerá del número de enlaces que tenga el elemento */
+    width: auto;
+    flex-direction: row;
+    opacity: 1;
+
+    /* Se necesita que los vínculos vuelvan a ser funcionales, es decir, se necesita devolverla la interactivadad al elemento. 
+  Para lograrlo, se agrega la propiedad "pointer-events: auto". */
+    pointer-events: auto;
+  }
+
+  .menu a {
+    /* Se asigna un padding superio e inferior de "0" a los elementos "a" para que la altura del menú no sobrepase la altura de la barra
+    de navegación. */
+    padding: 0 1rem;
+  }
+
+  /* Como en en el selector anterior, se asignó un padding izquierdo y derecho de "3rem", se comprobará
+  que si no se agrega el selector que está a continuación, la última opción del menú llamada "contacto", tendrá a la derecha
+  un espacio mayor que el espacio que hay entre el márgen izquierdo y el texto "Walter Arriaza" (el logo). Este espacio que se
+  ve a la derecha de la opción "contacto" es debido al padding de "3rem" que fue asignado anteriormente. 
+  
+  Para corregirlo, se accede al último elemento de tipo "a" que sea hijo del elemento al que se le asignó la clase "menu", 
+  y se le asigna un padding derecho de "0". 
+  */
+  .menu a:last-child {
+    padding-right: 0;
+  }
+
+  .menu a:hover {
+    /* En la vista para móviles, se asignó un color de fondo que se mostrará en el estado "hover". 
+    Sin embargo, para Desktop no es estético mostrar dicho color de fondo, así que se le asignará el valor "transparent"
+    a la propiedad "background-color". */
+    background-color: transparent;
+  }
+}
+
+/* ********** Modal ********** */
+.modal {
+  position: fixed;
+  /* Se desea que la ventana modal quede sobrepuesta a todos los elementos del sitio Web, 
+  por ello se le asigna un valor de "999". */
+  z-index: 999;
+
+  /* Al asignársele los valores de posición que están a continuación, 
+  se conseguirá que la ventana modal abarque TODA la pantalla. */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  /* Se centra el contenido del elemento al que se le asignó la clase "modal", 
+  utilizando "Flexbox". */
+  display: flex;
+  justify-content: center; /* Centrado horizontal. */
+  align-items: center; /* Centrado vertical. */
+
+  background-color: var(--black-alpha-color);
+  opacity: 0;
+
+  /* Como el elemento al que se le asignó la clase "modal", contiene vínculos, 
+  se le asigna la propiedad "pointer-events: none". Esto es necesario porque aunque
+  el elemento sea invisible, los vínculos seguirían existiendo y se podría dar clic sobre ellos. 
+  Para correfir esto se agrega el valor "pointer-events: none", para quitar la funcionalidad 
+  de los vínculos de este elemento.   
+*/
+  pointer-events: none;
+
+  /* No se le colocó aceleración para que el efecto tenga una velocidad constante. */
+  transition: all 1s;
+}
+
+.modal-content {
+  /* Se le asigna  posición relativa a este elemento, 
+  porque al botón cerrar se le asignará una posición absoluta, y se desea
+  que el botón cerrar tome de referencia este elemento para su posicionamiento. */
+  position: relative;
+}
+
+.modal-close {
+  /* El elemento al que se le asignó la clase "modal-close", como tiene asignada una posición absoluta, 
+  se posicionará respecto al elemento padre al que se le asignó la clase "modal-content", debido a que este
+  tiene asignada una posición relativa. */
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.modal-close svg {
+  width: 3rem;
+  height: 3rem;
+
+  /* La propiedad  "fill" es un atributo de las imágenes SVG que define el color ( o cualquier servidor de pintura SVG como degradados o patrones ) utilizado para pintar el elemento. 
+  
+  Es decir, el atributo "fill" permite definir el color de fondo de los archivos SVG. 
+  */
+  fill: var(--first-color);
+}
+
+/* La pseudoclase "target", aplica un estilo cuando un elemento recibe el foco u objetivo (target)  en el sitio Web. Por ejemplo,
+  cuando se accede a un vínculo interno dentro del sitio Web, se puede utilizar para que cierto estilo se aplique únicamente
+  cuando se acceda a dicho vínculo en específico. 
+
+Ejemplo: 
+    http://127.0.0.1:5500/1_FundamentosCSS/index.html#trabajo-1
+
+    En la URL anterior, el foco u objetivo (target) es: "trabajo-1" y corresponde al "id" llamado "trabajo-1" dentro de 
+          la página. 
+*/
+
+/* El comodín "|" aplica el estilo únicamente si contiene el texto en cuestión al principio de una lista de clases (o id's) separadas por espacios, y si después del texto en cuestión hay un guión medio "-". 
+
+Este selector se aplicará a todo los elementos dentro de la clase "modal" que tengan un id
+el cual contenga al principio la palabra "trabajo" seguida por un guión medio. Ejemplo: trabajo-1, trabajo-2, etc.
+
+Se verifica si dentro de la clase "modal" algún id que contenga al principio el texto "trabajo-", recibe el foco u objetivo (target)
+en el sitio Web. Si lo recibe se aplican los estilos correspondientes. */
+.modal[id|="trabajo"]:target {
+  opacity: 1;
+
+  /* Se habilita nuevamente la funcionalidad de los vínculos mediante la propiead "pointer-events: auto"
+   para que el usuario pueda dar clic sobre ellos. */
+  pointer-events: auto;
+}
+
+/* ********** Progress Bar ********** */
+
+progress {
+  width: 100%;
+  height: 1rem;
+
+  /* El color de fonfo del elemento progress SÍ es reconocido por el navegador Mozilla, lo que
+  no sucede en el caso del navegador Chrome. 
+  */
+  background-color: var(--gray-color);
+}
+
+/* 
+ Modificar colores de Progress Bar:
+
+ Color de fondo del elemento Progress: 
+
+    Chrome: necesita el pseudoelemento "progress-bar" y el prefijo "webkit". 
+              Ejemplo:
+                progress::-webkit-progress-bar {
+                  background-color: var(--gray-color);
+                } 
+
+    Mozilla: solo necesita el selector progress. 
+              Ejemplo: 
+                progress{
+                  background-color: #ffff00;
+                }
+
+
+  Color de barras del elemento Progress: 
+
+    Chrome: necesita el pseudoelemento "progress-bar-value" y el prefijo "webkit". 
+              Ejemplo: 
+                progress::-webkit-progress-value {
+                   background-color: var(--gray-dark-color);
+                } 
+
+    Mozilla: necesita el pseudolemento "progress-bar" y el prefijo "-moz-".
+              Ejemplo: 
+                progress::-moz-progress-bar {
+                  background-color: var(--gray-dark-color);
+                }
+
+ */
+
+/* Pseudoclase que permite la modificación del color de fondo del elemento "progress", por medio de la pseudoclase "progress-bar". 
+   El prefijo "-webkit-" sirve para Chrome, Safari, Android y iOS */
+progress::-webkit-progress-bar {
+  background-color: var(--gray-color);
+}
+
+/* Como se dijo antes, el navegador Mozilla reconoce el color de fonodo aplicado al elemento "progress" desde
+el selector "progress" anterior. Sin embargo, sí se desea modificar el color de las barras del elemento "progress", 
+ahí sí se debe utilizar el prefijo "-moz-" y el psuedoelemento "progress-bar". */
+progress::-moz-progress-bar {
+  background-color: var(--gray-dark-color);
+}
+
+/* Pseudoclase que permite la modificación del color de la barra del elemento "progress", por medio de la pseudoclase "progress-bar".
+   El prefijo "-webkit-" sirve para Chrome, Safari, Android y iOS */
+progress::-webkit-progress-value {
+  background-color: var(--gray-dark-color);
+}
+
+.progress {
+  margin: 1rem auto;
+}
+
+/* Selector de hijos directos. */
+.progress > p {
+  /* Se aplica un márgen de "0" para que el texto que acompaña a cada progress bar quede justo arriba de ella. */
+  margin: 0;
+
+  /* Se ubican los textos dentro del elemento "p" a la izquierda y a la derecha de la progress bar, 
+  indicando por medio de "justify-content" que el espacio sobrante debe asignarse entre ellos. */
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 0.85rem;
+}
+
+/* ******************** Utilities ******************** */
+
+/* 
+Aquí van todas las "clases utitarias", es decir, aquellas que siguen la arquitectura "utility-first". 
+Estas clases modifican específicamente un aspecto del sitio Web. Por ejemplo, 
+una clase puede aplicar bordes cuadrados, otra clase aplicar bordes redondeados, otra para aplicar 
+color de fuente rojo, otra clase para alinear el texto al centro, etc. 
+
+La práctica "utility-first" es también utilizada por frameworks como BootStrap.
+*/
+
+.avatar {
+  /* Se asigna un "border-radius: 50%" para que elemento al que se le asigne la clase "avatar", 
+  quede completamente circular. */
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
+.bg-gray-light {
+  background-color: var(--gray-light-color);
+}
+
+.box-shadow-1 {
+  box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
+}
+
+.btn {
+  border-radius: 0.5rem;
+  padding: 1rem;
+
+  /* De forma predeterminada el elemento "a" al que se le asignó la clase "btn", 
+  es un elemento en línea; como tal, no puede asignársele un ancho y un alto. Para poder
+  controlar tanto el ancho como el alto del elemento "a" se convertirá en un elemento "inline-block". */
+  display: inline-block;
+  width: 200px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: var(--white-color);
+  background-color: var(--first-color);
+
+  /* IMPORTANTE: el elemento "a", tiene ya un pequeño efecto
+  "hover". Este efecto es una transformación que se asignó al principio de este archivo al elemento "a". */
+}
+
+.box-shadow-1 {
+  box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+
+  /* Se define que el ancho máximo del elemento al que se le asignó la clase "container", 
+  será de 1200px; */
+  max-width: var(--max-width);
+}
+
+.gray-scale {
+  filter: grayscale();
+}
+
+.none {
+  display: none;
+}
+
+.section {
+  padding: 2rem 1rem;
+}
+
+.section-title {
+  border-top: thin solid var(--first-color);
+  border-bottom: thin solid var(--first-color);
+  color: var(--title-color);
+  margin: 2rem auto;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  width: 250px;
+}
+
+/* 
+IMPORTANTE: si solo se agregará la clase "section-title", se comprobaría que el encabezado "h2" 
+con el texto "¿Qué te ofrezco?" se verá muy alto, quedando el borde inferior bastante 
+separado del texto del encabezado. Esto sucede porque dicho elemento forma parte del Grid, y está abarcando
+toda la altura del Grid Item dentro del que se encuentra. Se debe recordar que como en los demás Grid Item del Grid Track
+dentro del cual se encuentra el elemento, hay más contenido, la altura de los Grid aumenta para adecuarse al contenido de dichos
+Grid. 
+Para corregir esto, se debe aplicar un "span 2" a dicho elemento para que abarque 
+dos columnas de ancho. Haciendo esto se consigue que el encabezado "h2"
+quede de la altura correcta. Ahora no queda tan alto, porque dicho elemento abarque todo el Grid Track, 
+por lo que no hay ningún otro elemento, cuyo contenido, haga necesario aumentar la altura del Grid Track. 
+
+
+*/
+.services .section-title {
+  grid-column: span 2;
+}
+
+/* Clases utilitarias de alineación de texto. */
+.text-center {
+  text-align: center;
+}
+
+.text-first-color {
+  color: var(--first-color);
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* Media Query con clases utilitarias de alineación de texto. */
+@media screen and (min-width: 1024px) {
+  /* Este selector consigue que el elemento al que se le asigne, se ocupe todo el ancho y alto del viewport. */
+  .full-lg-screen {
     width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
+    min-height: 100vh;
+  }
+
+  .text-lg-center {
+    text-align: center;
+  }
+
+  .text-lg-left {
+    text-align: left;
+  }
+
+  .text-lg-right {
+    text-align: right;
+  }
 }
 
+/* ******************** Site Styles ******************** */
+
+/* 
+Aquí se agregan los estilos CSS que son muy particulares del sitio Web en el que se está trabajando. 
+Estos estilos no serán reutilizados porque cumplen las necesidades específicas del actual sitio Web. 
+*/
+
+/* IMPORTANTE: exceptuando la sección de "Site Styles", todas las secciones anteriores pueden reutilizarse
+con ligeras modificaciones en otros sitios Web. 
+
+La reutilización de código es fundamental para eficientar el proceso de desarrollo Web. 
 
 
+Se debe recordar el principio del desarrollo de software llamado DRY: 
+Quiere decir “Don’t repeat yourself”.
+
+Cada pieza de funcionalidad debe tener una única, no ambigua y representativa identidad dentro del sistema.
+
+Si se aplica este patrón de forma correcta un cambio en cualquier parte de la funcionalidad de un programa no incluye cambios en partes que no tengan una relación lógica con la funcionalidad cambiada.
+
+Básicamente lo que se intenta evitar con este principio es que no se duplique el código, porque lo que ocurre luego que el mantenimiento será mucho más difícil ya que no sabremos donde tenemos que cambiar cosas porque no están definidas claramente.
+*/
+
+.about > article {
+  margin-bottom: 2rem;
+}
+
+.contact-card {
+  margin: 1rem auto;
+  padding: 1rem;
+  /* El ancho será igual al 100% del ancho del contenedor padre. */
+  width: 100%;
+  height: 144px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.contact-card > svg {
+  width: 2rem;
+  height: 2rem;
+  fill: var(--first-color);
+}
+
+/* Selector de hijos directos */
+.contact-card > small {
+  /*  Se le asigna un márgen negativo a cada elemento "small" que sea hijo directo
+del elemento al que se le asignó la clase "contact-card",
+para que así quede menos separado del elemento "h5", bajo el cual se encuentra
+dicho elemento "small". */
+  margin-top: -1rem;
+}
+
+.footer {
+  margin-bottom: var(--header-height);
+  padding: 0.5rem;
+  text-align: center;
+  color: var(--white-color);
+  background-color: var(--third-color);
+}
+.header {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+
+  /* Se aplica un valor alto de "z-index", pera que el elemento al que se le asignó
+  la clase "header", quede siempre sobre los demás elemento del sitio Web. */
+  z-index: 999;
+
+  padding: 1rem;
+  /* Como se mencionó en el curso de CSS, cuando a un elemento se le asigna la posición "fixed", 
+  ese elemento pierde sus dimendionesa, por lo que es necesario asingarle un ancho (width) y un alto (height). 
+  */
+  width: 100%; /* Abacará el 100% del ancho del Viewport. */
+
+  /* Altura del elemento "header". Se asignó una altura de "4rem", porque el área del 
+  header tendrá "1rem" de padding (lo cual se indica más abajo). En lo que respecta a la altura, si sumamos el padding de arriba y abajo, 
+  nos dará un total de "2rem".
+  
+  Y el tamaño de fuente del vínculo que se encuentra dentro del elemento "header", es de 2rem. 
+
+  Si se suman los padding superior e inferior (1rem + 1rem) más el tamaño de fuente de 2rem, da un total de 4rem.
+  */
+  height: var(--header-height);
+
+  background-color: var(--second-color);
+}
+
+.header > .container {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  color: var(--first-color);
+  font-weight: bold;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+.portfolio-card {
+  /* Se le asignó la posición relativa al elemento que tendrá asignada
+  la clase "portfolio-card", porque al ubicar el puntero sobre él (hover) se mostrará
+  el elemento "aside" con la información correspondiente. 
+
+  Como al elemento "aside" se le asignará la posición "absolute", 
+  la posición de dicho elemento será tomada a partir de la posición relativa del primer elemento
+  padre que encuentre que tenga asignada dicha posición. Dicho elemento padre
+  será en este caso, el elemento al que se le asignó la clase "portfolio-card". 
+
+  Esto significa que la posición del elemento "aside" se medirá a partir del elemento 
+  al que se le asignó la clase "portfolio-card". 
+   */
+  position: relative;
+  /* Ancho del 100% del contenedor dentro del cual se encuentre. */
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+.portfolio-card img {
+  width: 100%;
+  /* Como se le asignó una altura del "100%", la imagen
+  corre el riesto de deformarse. Como en este caso las imágenes son cuadradas,
+  no será tan notorio, pero cuando las imágenes no lo sean, entonces sí podrían deformarse. 
+
+  Para evitar que las imágenes se deformen se agrega la propiedad "object-fit: cover".
+  */
+  /* IMPORTANTE: se le asigna a cada imagen una altura del "100%", para que tanto en ancho como en alto, 
+  cada imagen tenga las mismas medidas del elemento al que se le asignó la clase "portfolio-card-info", el cual
+  se mostrará cuando se ubique el puntero sobre la imagen. */
+  height: 100%;
+
+  object-fit: cover; /* La propiedad "object-fit" establece cómo se debe cambiar el tamaño del contenido de una etiqueta, como <img> o <video>, 
+    para que se ajuste a su contenedor.
     
+    Puede tener los siguientes valores: 
+        - fill (valor por defecto): la imagen se cambia de tamaño para rellenar la dimensión dada. Si es necesario, la imagen se estirará o aplastará para que se ajuste. 
+        - contain: la imagen mantiene su relación de aspecto, pero se cambia de tamaño para que se ajuste al elemento contenedor.
+        - cover:  la imagen mantiene su relación de aspecto y llena todo el elemento contenedor. Si la relación de aspecto de la imagen no coincide con la relación de aspecto de su caja, entonces la imagen se recortará para que se ajuste.
+        - none: la imagen no se redimensiona. 
+        - scale-down: es un valor dinámico. La imagen se reduce al valor más pequeño entre el valor de "none" y el valor de "contain", es decir, 
+                      se reduce al menor valor entre el valor de "none" y el valor de "contain". 
+    */
+}
+
+.portfolio-card-info {
+  /* Como a este elemento se le asignó el posicionamiento "absolute", para posicionarse tomará
+de referencia al primer elemento padre que tenga un posicionamiento relativo, el cual, en este caso, 
+es el elemento que tiene asignada la clase "portfolio-card". */
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  /* Se le asignó un ancho y un alto de "100%" para que este elemento tenga las mismas dimensiones que las imágenes
+  que se encuentran dentro de la clase "portfolio-card", las cuales también tienen un ancho y un alto del "100%". 
+  Se debe recordar que el elemento al que se le asignó la clase "portfolio-card-info", se desplegará cuando
+  se ubique el puntero sobre las imágenes dentro del elemento que tiene asignada la clase "porfolio-card". */
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  background-color: var(--first-alpha-color);
+  color: var(--white-color);
+
+  /* Se le asigna una opacidad "0", porque se desea que la información se muestre
+  hasta que el usuario ubique el puntero sobre la imagen correspondiente. */
+  opacity: 0;
+
+  /* Como el elemento al que se le asignó la clase "portfolio-card-info", contiene vínculos, 
+  se le asigna la propiedad "pointer-events: none". Esto es necesario porque aunque
+  el elemento sea invisible, los vínculos seguirían existiendo y se podría dar clic sobre ellos. 
+  Para correfir esto se agrega el valor "pointer-events: none", para quitar la funcionalidad 
+  de los vínculos de este elemento.   
+*/
+  pointer-events: none;
+  transition: all 0.5s ease-in-out;
+}
+
+/* Si se coloca el puntero sobre cualquiera de los vínculos a los que se les asignó la clase "portfolio-card", 
+se modificará el elemento que tiene asignada la clase "portfolio-card-info". */
+.portfolio-card:hover .portfolio-card-info {
+  opacity: 1;
+  /* Se habilita nuevamente la funcionalidad de los vínculos mediante la propiead "pointer-events: auto"
+   para que el usuario pueda dar clic sobre ellos. */
+  pointer-events: auto;
+}
+
+/* Este selector se aplica al elemento "div" que es hijo descendienteg del
+elemento al que se le asignó la clase "portfolio-card-infor". */
+.portfolio-card-info > div {
+  padding: 1rem;
+  border: thin solid var(--white-color);
+  width: 100%;
+  height: 100%;
+}
+
+.portfolio-modal {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  /* Al utilizar flexbox para distribuir el contenido en columnas, 
+  la imagen abarcará todo el ancho de la ventana modal. 
+  Esto sucede así porque de forma predeterminada la propiedad "align-items"
+  adopta el valor de "stretch". 
+  
+  Debido a lo anterior es necesario asignar un ancho máximo para el contenido del elemento
+  al que se le asignó la clase "portfolio-modal". 
+  */
+  max-width: 400px;
+  background-color: var(--white-color);
+}
+
+/* Este selector se aplicará al elemento "h3" que es hijo descendiente del elemento
+al que se le asignó la clase "portfolio-modal". */
+.portfolio-modal h3 {
+  border-bottom: medium solid var(--first-color);
+  padding: 0.5rem 0;
+  margin: 1rem;
+  color: var(--title-color);
+}
+
+.portfolio-details {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  /* No se definió la propiedad "grid-template-rows" porque se desea que las filas sean implícitas. */
+
+  /* La propiedad "grid-auto-rows" especifíca la altura de cada nueva fila que forme parte de la Grid Implícita. 
+   
+  Puede tener los siguientes valores: 
+    - auto (default): la fila tendrá asignado una altura automática, que dependerá del espacio libre disponible en la Grid. 
+    - (un valor): si se desea, se puede asignar un valor específico de altura para cada fila que forme parte de la Grid Implícita, ya se en px, em, etc. 
+  
+  */
+  grid-auto-rows: 2rem;
+}
+
+.portfolio-details b {
+  color: var(--first-color);
+}
+
+.service-card {
+  margin: 1rem auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.service-card h3 {
+  color: var(--title-color);
+}
+
+.service-card svg {
+  /* La propiedad  "fill" es un atributo de las imágenes SVG que define el color ( o cualquier servidor de pintura SVG como degradados o patrones ) utilizado para pintar el elemento. 
+  
+  Es decir, el atributo "fill" permite definir el color de fondo de los archivos SVG. 
+
+  En este caso, a las imágenes "SVG" se les aplicará el color "--first-color", que fue definido al principio de este archivo. 
+  
+  */
+  fill: var(--first-color);
+  margin-bottom: 1.25rem;
+}
+
+/* Selector de hijo descendiente */
+.social-media a {
+  padding: 0 0.4rem;
+  text-decoration: none;
+}
+
+/* Selector de hijo descendiente */
+.social-media svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+/* ******************** Media Query para Tablets ******************** */
+
+@media screen and (min-width: 768px) {
+  /* Este selector se asignará al elemento al que se le asignó la clase "container", el cual es hijo directo
+  del elemento al que se le asignó la clase "portfolio". */
+
+  /* Este selector permitirá que las "cards" que se encuentran dentro del elemento al que se le asignó la clase "contact-cards",
+  se muestren a 2 columnas. */
+  .contact-cards {
+    display: grid;
+    /* El contenido se distribuirá en 2 columnas, cada una de las cuales medirá el 48% del ancho del contenedor padre. 
+    
+     2 columnas * 48 % = 96%. 
+
+     Esto significa que el "4%" restante, se distribuirá entre las columnas, debido a que se asignó
+     la propiedad "justify-content: space-between".
+    */
+    grid-template-columns: repeat(2, 48%);
+    justify-content: space-between;
+  }
+
+  .portfolio > .container {
+    display: grid;
+    /* Esta vez no se dejó ninún espacio horizontal sobrante, porque 
+    no debe haber ningún espacio entre cada imagen. 
+    
+    Se definen por lo tanto dos columnas con un ancho de 50% del contenedor. 
+    */
+    grid-template-columns: repeat(2, 50%);
+  }
+
+  .portfolio .section-title {
+    /* 
+      IMPORTANTE: si solo se agregará la clase "section-title", se comprobaría que el encabezado "h2" 
+      se verá muy alto, quedando el borde inferior bastante 
+      separado del texto del encabezado. Esto sucede porque dicho elemento forma parte del Grid, y está abarcando
+      toda la altura del Grid Item dentro del que se encuentra. Se debe recordar que altura de los Grid Item
+      del Grid Track depende de su contenido. Como el contenido de los demás Grid Item es mayor, la altura del Grid Item
+      donde se encuentra el elemento "h2" será la misma que la altura del resto de Grid Item que forman parte del Grid Track, lo cual se verá
+      extraño. 
+      
+      Para corregir esto, se debe aplicar un "span 2" a dicho elemento para que abarque 
+      dos columnas de ancho. Haciendo esto se consigue que el encabezado "h2"
+      quede de la altura correcta. Ahora no queda tan alto, porque dicho elemento abarque todo el Grid Track, 
+      por lo que no hay ningún otro elemento, cuyo contenido, haga necesario aumentar la altura del Grid Track. 
+    */
+    grid-column: span 2;
+  }
+
+  .portfolio-modal {
+    /* Se desea que cuando la ventana modal sea visualizada en Tablets, los elementos
+    dentro del elemento que tiene asignada la clase "portfolio-modal" se muestren distribuidos horizonalmente.
+    Por ello se aplicó la propiedad "flex-directio: row". */
+    flex-direction: row;
+
+    /* Se modifica el ancho máximo para que el contenido quepa adecuadamente dentro de la ventana modal. */
+    max-width: 800px;
+  }
+
+  .portfolio-info {
+    margin-left: 1rem;
+
+    /* La propiedad "align-self" sobreescribe el valor de la propiedad "align-item" solamente para el elemento hijo especificado. 
+
+        Puede tener los siguientes valores: 
+            - flex-start: los items son ubicados al principio del contenedor (sobre el eje transversal). 
+            - flex- end: los items son ubicados al final del contenedor (sobre el eje transversal).
+            - center: los items son posicionados al centro del contenedor (sobre el eje transversal). 
+            - baseline: los elementos están alineados de tal manera que sus líneas base se alinean. Por ejemplo, si hubiese texto en cada uno de los elementos, 
+                        la posición de cada elemento se alinearía de tal modo que la línea base del texto coincida en todos los elementos. 
+                        Para ver la gráfica, consulte el sitio Web: https://css-tricks.com/snippets/css/a-guide-to-flexbox/ 
+            - stretch (default): los elementos se estiran para llenar el contenedor (aún respetando el ancho mínimo/ancho máximo).
+
+*/
+    align-self: center;
+  }
+
+  /* Este selector se asignará al elemento al que se le asignó la clase "container", el cual es hijo directo
+  del elemento al que se le asignó la clase "services". */
+  .services > .container {
+    display: grid;
+    /* Se crea un grid de 2 columnas, cada una de las cuales tendrá un ancho de "45%". 
+     Como son dos columnas, el ancho de ambas da un total de "90%". El restante "10%" se distribuirá
+     entre cada una de las columnas mediante la propiedad "justfy-content: space-between". 
+     */
+    grid-template-columns: repeat(2, 45%);
+    /* No se agregó la propiedad "grid-template-rows", porque se
+    desea que las filas se generen automáticamente de forma implícita. */
+    justify-content: space-between;
+    align-content: center;
+  }
+
+  .services .section-title {
+    /* 
+      IMPORTANTE: si solo se agregará la clase "section-title", se comprobaría que el encabezado "h2" 
+      se verá muy alto, quedando el borde inferior bastante 
+      separado del texto del encabezado. Esto sucede porque dicho elemento forma parte del Grid, y está abarcando
+      toda la altura del Grid Item dentro del que se encuentra. Se debe recordar que altura de los Grid Item
+      del Grid Track depende de su contenido. Como el contenido de los demás Grid Item es mayor, la altura del Grid Item
+      donde se encuentra el elemento "h2" será la misma que la altura del resto de Grid Item que forman parte del Grid Track, lo cual se verá
+      extraño. 
+      
+      Para corregir esto, se debe aplicar un "span 2" a dicho elemento para que abarque 
+      dos columnas de ancho. Haciendo esto se consigue que el encabezado "h2"
+      quede de la altura correcta. Ahora no queda tan alto, porque dicho elemento abarque todo el Grid Track, 
+      por lo que no hay ningún otro elemento, cuyo contenido, haga necesario aumentar la altura del Grid Track. 
+    */
+    grid-column: span 2;
+  }
+}
+
+/* ******************** Media Query para Desktop (computadoras de escritorio) ******************** */
+
+/* 
+IMPORTANTE: se crearon también Media Queries específicas para la sección de "Componentes" del sitio Web. 
+Se hizo de esta manera porque la técnica minimalista que se está implementando, busca poder
+reutilizar el código las veces que sea necesario en otros proyectos. 
+
+Se podrían haber definido las media queries de los componentes en UNA SOLA media query
+que modificara todas las propiedades, pero si se hubiera hecho así, costaría
+más trabajo buscar en esa única media query las propiedades que se desearan copiar
+para ser implementadas en otro proyecto. 
+
+*/
+@media screen and (min-width: 1024px) {
+  .about {
+    display: grid;
+
+    /* Como se formarán 3 columnas dentro del Grid de 30% de ancho cada una, 
+    al sumar las 3 sobrará un 10% del ancho total de la ventana. 
+    
+    Ese 10% será distribuido entre los elementos mediante el valor "space-between" 
+    de la propiedad "justify-content".
+    */
+    grid-template-columns: repeat(3, 30%);
+    /* No se agregó la propiedad "grid-template-rows", porque se
+    desea que las filas se generen automáticamente de forma implícita. */
+    justify-content: space-between;
+    /* Centra verticalmente los Grid Track del Grid. */
+    align-content: center;
+  }
+  /* Al elemento "header" que se mostrará en teléfono móvies que se configuró más arriba (mobile first), 
+  se le asignó la posición "fixed", sin embargo, cuando el sitio Web sea visualizado en computadoras, al elemento
+  "header" se le asignará la posición "sticky". 
+  
+  Esto se hace de esta manera, pues el posicionamiento "sticky" no oculta el resto del contenido html; 
+  es decir, que el texto que esté a continuación del "header" en ningún momento quedará abajo del elemento "header". 
+
+  Si se usará el posicionamiento "fixed", el "header" si quedaría encima del contenido html.
+  */
+
+  /* Este selector permitirá que las "cards" que se encuentran dentro del elemento al que se le asignó la clase "contact-cards",
+  se muestren a 2 columnas. */
+  .contact-cards {
+    display: grid;
+    /* El contenido se distribuirá en 2 columnas, cada una de las cuales medirá el 48% del ancho del contenedor padre. 
+    
+     4 columnas * 24 % = 96%. 
+
+     Esto significa que el "4%" restante, se distribuirá entre las columnas, debido a que se asignó
+     la propiedad "justify-content: space-between" anteriormente en este archivo.
+    */
+    grid-template-columns: repeat(4, 24%);
+  }
+
+  .footer {
+    margin-bottom: 0;
+  }
+
+  .header {
+    position: sticky;
+
+    /* Para conseguir que el elemento "header" al que se le asignó la posición "sticky" quede fijo en la parte
+  superior, es indispensable agregarle la propiedad "top: 0". Al hacerlo, se está indicando, 
+  que el elemento se comporte como "sticky" a partir de la posición superior igual "0". */
+    top: 0;
+
+    padding: 0.5rem;
+
+    /*
+    Cuando se le asignaron los estilos al elemento "header" que corresponde a la diseño para móviles del sitio Web, 
+    se asignó un padding igual a "1rem"; sin embargo, para el diseño para Desktop el padding ahora solamente vale "0.5rem". 
+    
+    Por ello, si solamente se definiera una altura igual a "height: var(--header-height)", el contenido
+    del "header" no se vería centrado verticalmente. Para corregir esto, 
+    se le debe restar al ancho original del "header" (--header-height), el tamaño que se redujo en el padding (0.5rem); 
+    es decir, que se debe realizar el siguiente cálculo: 
+        calc(var(--header-height) - 0.5rem)
 
 
 
 
+    */
+    height: calc(var(--header-height) - 0.5rem);
+  }
+
+  /* Este selector se asignará al elemento al que se le asignó la clase "container", el cual es hijo directo
+  del elemento al que se le asignó la clase "portfolio". */
+
+  .portfolio > .container {
+    /* Esta vez no se dejó ninún espacio horizontal sobrante, porque 
+    no debe haber ningún espacio entre cada imagen. 
+    
+    Se definen por lo tanto tres columnas. Si se hubiera usado un
+    valor en porcentaje, se habría que haber utilizado el valor "33.333333%", para evitar esto, 
+    se define que el espacio se debe asignar proporcionalmente mediante la unidad "1fr" (fracción). 
+    */
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .portfolio .section-title {
+    /* 
+      IMPORTANTE: si solo se agregará la clase "section-title", se comprobaría que el encabezado "h2" 
+      se verá muy alto, quedando el borde inferior bastante 
+      separado del texto del encabezado. Esto sucede porque dicho elemento forma parte del Grid, y está abarcando
+      toda la altura del Grid Item dentro del que se encuentra. Se debe recordar que altura de los Grid Item
+      del Grid Track depende de su contenido. Como el contenido de los demás Grid Item es mayor, la altura del Grid Item
+      donde se encuentra el elemento "h2" será la misma que la altura del resto de Grid Item que forman parte del Grid Track, lo cual se verá
+      extraño. 
+      
+      Para corregir esto, se debe aplicar un "span 3" a dicho elemento para que abarque 
+      tres columnas de ancho. Haciendo esto se consigue que el encabezado "h2"
+      quede de la altura correcta. Ahora no queda tan alto, porque dicho elemento abarque todo el Grid Track, 
+      por lo que no hay ningún otro elemento, cuyo contenido, haga necesario aumentar la altura del Grid Track. 
+    */
+    grid-column: span 3;
+  }
+
+  /* Este selector se asignará al elemento al que se le asignó la clase "container", el cual es hijo directo
+  del elemento al que se le asignó la clase "services". */
+  .services > .container {
+    /* Se crea un grid de 3 columnas, cada una de las cuales tendrá un ancho de "30%". 
+     Como son tres columnas, el ancho total es de "90%". El restante "10%" se distribuirá
+     entre cada una de las columnas mediante la propiedad "justfy-content: space-between" que ya se definió anteriormente en este archivo. 
+     */
+    grid-template-columns: repeat(3, 30%);
+  }
+
+  .services .section-title {
+    /* 
+IMPORTANTE: si solo se agregará la clase "section-title", se comprobaría que el encabezado "h2" 
+con el texto "¿Qué te ofrezco?" se verá muy alto, quedando el borde inferior bastante 
+separado del texto del encabezado. Esto sucede porque dicho elemento forma parte del Grid, y está abarcando
+toda la altura del Grid Item dentro del que se encuentra. Se debe recordar que como en los demás Grid Item del Grid Track
+dentro del cual se encuentra el elemento, hay más contenido, la altura de los Grid aumenta para adecuarse al contenido de dichos
+Grid. 
+Para corregir esto, se debe aplicar un "span 3" a dicho elemento para que abarque 
+tres columnas de ancho. Haciendo esto se consigue que el encabezado "h2"
+quede de la altura correcta. Ahora no queda tan alto, porque dicho elemento abarque todo el Grid Track, 
+por lo que no hay ningún otro elemento, cuyo contenido, haga necesario aumentar la altura del Grid Track. 
+
+
+*/
+    grid-column: span 3;
+  }
+}
