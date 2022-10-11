@@ -15,8 +15,8 @@ En esta sección van todas las variables (Custom Properties) de CSS utilizadas e
 */
 
 :root {
-  --first-color: #e7562e;
-  --first-alpha-color: rgb(231, 86, 46, 0.75);
+  --first-color: #d90062;
+  --first-alpha-color: rgba(217, 0, 98, 0.75);
   --second-color: #14192d;
   --second-alpha-color: rgba(20, 25, 45, 0.75);
   --third-color: #501464;
@@ -28,6 +28,7 @@ En esta sección van todas las variables (Custom Properties) de CSS utilizadas e
   --black-color: #000;
   --link-color: #509ee3;
   --title-color: #333;
+  --text-color: #222;
   --white-alpha-color: rgba(255, 255, 255, 0.5);
   --black-alpha-color: rgba(0, 0, 0, 0.5);
   --font: "Raleway", sans-serif; /* Si no encontrara la fuente "Raleway", asignará la fuente "sans-serif". 
@@ -534,11 +535,13 @@ el id llamado "gracias", como la clase llamada "modal". */
       es decir, dentro del elemento "article". */
   background-image: var(--hero-image);
   background-repeat: no-repeat;
+  background-size: cover;
 
   background-position: center;
   background-attachment: var(--hero-attachment);
 }
 
+/* Este selector permite que el contenido del carrusel sea responsive. */
 .hero-image-content {
   width: 100%;
   min-width: 320px;
@@ -947,10 +950,6 @@ La práctica "utility-first" es también utilizada por frameworks como BootStrap
   "hover". Este efecto es una transformación que se asignó al principio de este archivo al elemento "a". */
 }
 
-.box-shadow-1 {
-  box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
-}
-
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -961,7 +960,7 @@ La práctica "utility-first" es también utilizada por frameworks como BootStrap
 }
 
 .gray-scale {
-  filter: grayscale();
+  filter: grayscale(1);
 }
 
 .none {
@@ -980,24 +979,6 @@ La práctica "utility-first" es también utilizada por frameworks como BootStrap
   padding: 0.5rem 1rem;
   text-align: center;
   width: 250px;
-}
-
-/* 
-IMPORTANTE: si solo se agregará la clase "section-title", se comprobaría que el encabezado "h2" 
-con el texto "¿Qué te ofrezco?" se verá muy alto, quedando el borde inferior bastante 
-separado del texto del encabezado. Esto sucede porque dicho elemento forma parte del Grid, y está abarcando
-toda la altura del Grid Item dentro del que se encuentra. Se debe recordar que como en los demás Grid Item del Grid Track
-dentro del cual se encuentra el elemento, hay más contenido, la altura de los Grid aumenta para adecuarse al contenido de dichos
-Grid. 
-Para corregir esto, se debe aplicar un "span 2" a dicho elemento para que abarque 
-dos columnas de ancho. Haciendo esto se consigue que el encabezado "h2"
-quede de la altura correcta. Ahora no queda tan alto, porque dicho elemento abarque todo el Grid Track, 
-por lo que no hay ningún otro elemento, cuyo contenido, haga necesario aumentar la altura del Grid Track. 
-
-
-*/
-.services .section-title {
-  grid-column: span 2;
 }
 
 /* Clases utilitarias de alineación de texto. */
@@ -1259,7 +1240,7 @@ al que se le asignó la clase "portfolio-modal". */
 .portfolio-modal h3 {
   border-bottom: medium solid var(--first-color);
   padding: 0.5rem 0;
-  margin: 1rem;
+  margin: 1rem auto;
   color: var(--title-color);
 }
 
