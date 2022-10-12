@@ -15,9 +15,9 @@ En esta sección van todas las variables (Custom Properties) de CSS utilizadas e
 */
 
 :root {
-  --first-color: #d90062;
-  --first-alpha-color: rgba(217, 0, 98, 0.75);
-  --second-color: #14192d;
+  /* --first-color: #e6552d; */
+  /* --first-alpha-color: rgba(230, 85, 45, 0.75)  ; */
+  /* --second-color: #14192d; */
   --second-alpha-color: rgba(20, 25, 45, 0.75);
   --third-color: #501464;
   --third-alpha-color: rgba(50, 20, 100, 0.75);
@@ -47,8 +47,44 @@ En esta sección van todas las variables (Custom Properties) de CSS utilizadas e
   */
   --header-height: 4rem; /* Como el tamaño de fuente definido dentro del elemento "body" es igual a 16px, 
   entonces 4rem = 4 * 16 = 64px. */
+
+  /* Dark Color */
+  --dark-color: rgb(20, 25, 45); /* second-color*/
+  --dark-alpha-color: rgb(230, 85, 45, 0.75);
+  --text-dark-color: rgb(230, 85, 45); /* first-color  */
+  --link-dark-color: #73cffa;
+  --border-dark-color: #586474;
+  --body-dark-color: #000000;
+
+  /* Light Color*/
+  --light-color: #0a0a0a;
+  --light-alpha-color: rgb(228, 62, 73, 0.75);
+  --text-light-color: rgb(228, 62, 73);
+  --link-light-color: #08c;
+  --border-light-color: #f2f2f2;
+  --body-light-color: #fff;
 }
 
+/* Clase "dark" asociada a la pseudoclase "root". 
+Debido a que esta clase "dark" está asociada al elemento "root", tendrá preeminencia sobre todas
+las demás, lo que permite utilizarla para definir las Computed Properties (variables) del modo "dark". 
+*/
+:root.dark {
+  --first-color: var(--text-dark-color);
+  --first-alpha-color: var(--dark-alpha-color);
+  --second-color: var(--dark-color);
+  --body-color: var(--body-dark-color);
+}
+
+/* Clase "light" asociada a la pseudoclase "root". 
+Debido a que esta clase "light" está asociada al elemento "root", tendrá preeminencia sobre todas
+las demás, lo que permite utilizarla para definir las Computed Properties (variables) del modo "light".  */
+:root.light {
+  --first-color: var(--text-light-color);
+  --first-alpha-color: var(--light-alpha-color);
+  --second-color: var(--light-color);
+  --body-color: var(--body-light-color);
+}
 /* ******************** Reset ******************** */
 
 /* 
@@ -77,6 +113,7 @@ body {
   overflow-x: hidden;
 
   color: var(--text-color);
+  background-color: var(--body-color);
 }
 
 a {
@@ -625,7 +662,7 @@ NO TIENE DISPONIBLES propiedades como: "outline-top", "outline-bottom", etc.  */
 
   background-color: var(--second-color);
 
-  opacity: 0; /* El menú tendrá al principio una opacidad "0", es deci, será invisible. */
+  opacity: 0; /* El menú tendrá al principio una opacidad "0", es decir, será invisible. */
   /* Aunque el menú está oculto, si se ubica el puntero sobre alguna de las opciones del menú, el puntero seguirá
   cambiando de forma (tomará la forma de la manita). Esto debido a que aunque el menú es invisible, los vínculos 
   siguen estando allí. 
@@ -959,6 +996,49 @@ La práctica "utility-first" es también utilizada por frameworks como BootStrap
   max-width: var(--max-width);
 }
 
+.dark-mode {
+  background-color: #000;
+  color: #501464;
+}
+
+.dark-theme-btn {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%; /* Convierte el botón en "circular". */
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: var(--first-alpha-color);
+  color: var(--white-color);
+  cursor: pointer; /* Permitirá que al ubicar el puntero sobre el botón, el puntero tenga la forma de una "mano". */
+  outline: 0; /* Permite asignar el contorno de un elemento. El valor "0" equivale a que no tendrá contorno.
+    Border vs outline
+    Los bordes y los contornos son muy similares. Sin embargo, los contornos difieren de los bordes de la siguiente manera:
+        - Los contornos no ocupan espacio, son dibujados por encima del elemento. Por lo tanto, su aparición u ocultamiento no causa un redibujado de las cajas. 
+          No suma en el tamaño de la caja y no hay movimiento o desplazamiento de los elementos como con border.
+        - Los contornos pueden no ser rectangulares. A diferencia de los bordes, si el elemento se distribuye en varias líneas, el contorno no está abierto 
+          en algunos lados. mientras que si se aplica un "borde", este sí quedará abierto si se aplica a varias líneas. */
+  border: none; /* Quita el borde del botón. También se puedo haber agregado el valor "0", el cual habría hecho lo mismo. */
+  transition: all 0.3s ease-out; /* Se aplica una transición para que el cambio de color, cuando se ubique el puntero sobre el botón, sea gradual. */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* IMPORTANTE: El siguiente selector afecta a la imagen SVG que se encuentra dentro del botón que tiene asignada la clase "dark-theme-btn", 
+el cual permite realizar el cambio entre modo oscuro y modo claro. 
+
+Con las imágenes SVG se da un problema, el cual consiste en que el navegador distingue entre el clic que se le
+da al botón y el clic que se le da a la imagen SVG. Debido a ello, el modo oscuro solo cambiará cuando se dé clic en un área que esté dentro
+del botón pero FUERA de la imagen SVG, es decir, cuando se dé clic sobre la imagen SVG, el botón no realizará el cambio a modo oscuro. 
+
+Para corregirlo, es indispensable quitarle la funcionalidad de clic a la imagen SVG, y esto se logra
+particular:
+      .dark-theme-btn svg {
+        pointer-events: none;    (Esta propiedad le quita la funcionalidad de clic a la imagen SVG)
+      }
+*/
+.dark-theme-btn svg {
+  pointer-events: none;
+}
 .gray-scale {
   filter: grayscale(1);
 }
@@ -1113,6 +1193,17 @@ dicho elemento "small". */
 
   justify-content: space-between;
   align-items: center;
+}
+
+.logo {
+  order: 0;
+}
+.icons {
+  order: 1;
+}
+
+.menu-btn {
+  order: 2;
 }
 
 .logo a {
