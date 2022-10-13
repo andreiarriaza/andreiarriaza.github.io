@@ -19,17 +19,21 @@ En esta sección van todas las variables (Custom Properties) de CSS utilizadas e
   /* --first-alpha-color: rgba(230, 85, 45, 0.75)  ; */
   /* --second-color: #14192d; */
   --second-alpha-color: rgba(20, 25, 45, 0.75);
-  --third-color: #501464;
+
   --third-alpha-color: rgba(50, 20, 100, 0.75);
   --white-color: #fff;
   /* --gray-light-color: #f3f3f3; */
   --gray-color: #ccc;
   --gray-dark-color: #666;
   --black-color: #000;
-  --link-color: #509ee3;
+
   /* --title-color: #333; */
   /* --text-color: #222; */
+
+  --linkedin-color: #0a66c2;
+  --twitter-color: #1da1f2;
   --white-alpha-color: rgba(255, 255, 255, 0.5);
+  --youtube-color: #ff0000;
   --black-alpha-color: rgba(0, 0, 0, 0.5);
   --font: "Raleway", sans-serif; /* Si no encontrara la fuente "Raleway", asignará la fuente "sans-serif". 
   La tipografía "Raleway" será consumida desde Google Fonts. */
@@ -50,10 +54,11 @@ En esta sección van todas las variables (Custom Properties) de CSS utilizadas e
 
   /* Dark Color */
 
-  --first-dark-color: rgb(230, 85, 45); /* first-color  */
+  --first-dark-color: #e6552d; /* first-color  */
   --first-dark-alpha-color: rgb(230, 85, 45, 0.75);
   --second-dark-color: rgb(20, 25, 45); /* second-color*/
-  --link-dark-color: #73cffa;
+  --third-dark-color: #333;
+  --link-dark-color: #a1e538;
   --border-dark-color: #586474;
   --body-dark-color: #1f2937;
 
@@ -62,12 +67,16 @@ En esta sección van todas las variables (Custom Properties) de CSS utilizadas e
 
   --bg-gray-dark: #2c3a4e;
 
+  --github-dark-color: #ffffff;
+  --instagram-dark-color: #fcaf45;
+
   /* Light Color*/
 
-  --first-light-color: rgb(228, 62, 73);
+  --first-light-color: #e43e49;
   --first-light-alpha-color: rgb(228, 62, 73, 0.75);
   --second-light-color: #0a0a0a;
-  --link-light-color: #08c;
+  --third-light-color: #021949;
+  --link-light-color: #fc6402;
   --border-light-color: #f2f2f2;
   --body-light-color: #fff;
 
@@ -75,33 +84,149 @@ En esta sección van todas las variables (Custom Properties) de CSS utilizadas e
   --title-light-color: #333;
 
   --bg-gray-light: #f3f3f3;
+
+  --github-light-color: #211f1f;
+  --instagram-light-color: #833ab4;
 }
 
+/* ***** Media Query que verifica el estado del atributo "prefers-reduced-motion" ***** */
+
+/* 
+La función de medios llamada prefers-reduced-motion se utiliza para detectar si el usuario ha solicitado que el navegador minimice la cantidad de movimiento 
+no esencial que utiliza.
+
+Dicha función tiene dos valores: 
+  - no-preference (default): indica que el usuario no ha dado a conocer ninuna preferencia al navegador, acerca de cómo desea que se 
+                             muestre las animaciones del sitio Web.
+  - reduce: indica que el usuario ha notificado al sistema que prefiere una itnerfaz que elimine o reemplace los tipos de animación
+            basados en movimiento que pueden provocar molestias en las personas con trastornos del movimiento vestibular. Es decir, 
+            reduce las animaciones del sitio Web en el navegador, para aquellos usuarios que sienten molestas ciertas animaciones. 
+
+
+
+
+El usuario podría configurar su navegador para modificar el valor de la función "prefers-reduced-motion", para indicar
+que no desea visualizar las animaciones.
+
+En Google Chrome, la manera de activar esa opción es la siguiente: 
+  1. Acceder a las Herramientas para desarrolladores
+  2. Dentro del área de las Herramientas para desarrolladores, buscar el botón con "3 puntos" verticales, y dar clic en dicho botón. 
+  3. En el menú contextual, seleccionar "More tools". 
+  4.En el submenú mostrado, seleccionar la opción "Rendering". 
+  5. En la parte inferior del panel de Herramientas para desarrolladores, se abrió una pestaña llamada "rendering". Buscar
+     dentro de la pestaña "Rendering", la sección llamada "Emulate CSS media feature preferes.reduced-motion" y dar
+     clic en el ComboBox. Dentro de dicho ComboBox aparecen dos opciones: 
+        - No emulation (Valor por defecto. Equivale a dejar el valor de la función "refres-reduced-motion" con sus valores predecterminados, es decir, 
+          mostrará las animaciones con normalidad. 
+        - reduce (reducirá las animaciones del sitio Web)
+
+     La primera opción "No emulation" del ComboBox anterior, equivale al valor "no-prefrence" de la función "prefers-reduced-motion". 
+     La segunda opción "reduce" del ComboBox, equivale al valor "reduced" de la función "prefers-reduced-motion". 
+
+*/
+/* 
+Por medio de la Media Query que está a continuación, se pueden indicar que estilos se aplicarán según 
+el valor de la propiedad "prefers-reduced-motion" detectados. 
+
+En este caso, se está validando por medio de la Media Query si el valor de la función "prefers-reduced-motion" es igual a "reduce", 
+Si el usuario hubiese seleccionado esa opción, significa que no quiere ver animaciones en el sitio Web. 
+
+En este caso, como se crearon animaciones,transiciones y se definió la propiedad "scrol-behavior: smooth",
+mediante la Media Query se indica qué valores deben tener específicamente las siguientes propiedades
+para que la duración de las animaciones y transiciones sea imperceptible, y se modifica también la propiedad "scroll-behavior" 
+y se le asigna el valor automático, para que ya no ejecute el efecto "smooth": 
+    - animation-duration: 0.01ms;
+    - animation-iteration-count: 1;
+    - transition-duration: 0.01ms;
+    - scroll-behavior: auto;
+  }
+
+como la única animación que existe es la de "scroll-behavior: smooth", se debe evitar que dicha animación se ejecute. 
+
+Entonces, si el usuario eligió el valor "reduce" en el navegador para reducir las animaciones, la Media Query lo detectará y lo que sucederá es que se asignará
+a la propiedad "scroll-behavior" el valor "auto", el cual es su valor predeterminado; es decir, que ya no se ejecutará una animación cuando se dé clic en  alguno
+de lo vinculos internos del sitio Web. 
+*/
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+    scroll-behavior: auto;
+  }
+}
+
+/* Esta media query detecta si el tema de color preferido por el usuario
+en el sistema operativo de su dispositivo es el "dark". 
+
+Si se confirma que dicho tema fue el elegido, agregará las variables correspondeintes al elemento "root". */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --first-color: var(--first-dark-color);
+    --first-alpha-color: var(--first-dark-alpha-color);
+    --second-color: var(--second-dark-color);
+    --third-color: var(--third-dark-color);
+    --body-color: var(--body-dark-color);
+    --text-color: var(--text-dark-color);
+    --dark-light-color: var(--bg-gray-dark);
+    --title-color: var(--title-dark-color);
+    --github-color: var(--github-dark-color);
+    --link-color: var(--link-dark-color);
+  }
+}
 /* Clase "dark" asociada a la pseudoclase "root". 
 Debido a que esta clase "dark" está asociada al elemento "root", tendrá preeminencia sobre todas
-las demás, lo que permite utilizarla para definir las Computed Properties (variables) del modo "dark". 
+las demás, lo que permite utilizarla para definir las Computed Properties (variables) del modo "dark",
+que serán aplicadas a todo el sitio Web por medio de JavaScript. 
 */
 :root.dark {
   --first-color: var(--first-dark-color);
   --first-alpha-color: var(--first-dark-alpha-color);
   --second-color: var(--second-dark-color);
+  --third-color: var(--third-dark-color);
   --body-color: var(--body-dark-color);
   --text-color: var(--text-dark-color);
   --dark-light-color: var(--bg-gray-dark);
   --title-color: var(--title-dark-color);
+  --github-color: var(--github-dark-color);
+  --link-color: var(--link-dark-color);
+}
+
+/* Esta media query detecta si el tema de color preferido por el usuario
+en el sistema operativo de su dispositivo es el "light". 
+
+Si se confirma que dicho tema fue el elegido, agregará las variables correspondeintes al elemento "root". */
+@media (prefers-color-schem: light) {
+  :root {
+    --first-color: var(--first-light-color);
+    --first-alpha-color: var(--first-light-alpha-color);
+    --second-color: var(--second-light-color);
+    --third-color: var(--third-light-color);
+    --body-color: var(--body-light-color);
+    --text-color: var(--text-light-color);
+    --dark-light-color: var(--bg-gray-light);
+    --title-color: var(--title-light-color);
+    --github-color: var(--github-light-color);
+    --link-color: var(--link-light-color);
+  }
 }
 
 /* Clase "light" asociada a la pseudoclase "root". 
 Debido a que esta clase "light" está asociada al elemento "root", tendrá preeminencia sobre todas
-las demás, lo que permite utilizarla para definir las Computed Properties (variables) del modo "light".  */
+las demás, lo que permite utilizarla para definir las Computed Properties (variables) del modo "light", 
+
+que serán aplicadas a todo el sitio Web por medio de JavaScript.  */
 :root.light {
   --first-color: var(--first-light-color);
   --first-alpha-color: var(--first-light-alpha-color);
   --second-color: var(--second-light-color);
+  --third-color: var(--third-light-color);
   --body-color: var(--body-light-color);
   --text-color: var(--text-light-color);
   --dark-light-color: var(--bg-gray-light);
   --title-color: var(--title-light-color);
+  --github-color: var(--github-light-color);
+  --link-color: var(--link-light-color);
 }
 /* ******************** Reset ******************** */
 
@@ -1399,6 +1524,36 @@ al que se le asignó la clase "portfolio-modal". */
 .social-media svg {
   width: 1.5rem;
   height: 1.5rem;
+}
+
+/* Este selector se asignará a los elementos "svg" que tengan asociada la clase "youtube-logo", y que a su vez sean hijos descendientes del elemento al que se le asignó
+la clase "social-media" */
+.social-media svg.youtube-logo {
+  fill: var(--youtube-color);
+}
+
+/* Este selector se asignará a los elementos "svg" que tengan asociada la clase "twitter-logo", y que a su vez sean hijos descendientes del elemento al que se le asignó
+la clase "social-media" */
+.social-media svg.twitter-logo {
+  fill: var(--twitter-color);
+}
+
+/* Este selector se asignará a los elementos "svg" que tengan asociada la clase "github-logo", y que a su vez sean hijos descendientes del elemento al que se le asignó
+la clase "social-media" */
+.social-media svg.github-logo {
+  fill: var(--github-color);
+}
+
+/* Este selector se asignará a los elementos "svg" que tengan asociada la clase "linkedin-logo", y que a su vez sean hijos descendientes del elemento al que se le asignó
+la clase "social-media" */
+.social-media svg.linkedin-logo {
+  fill: var(--linkedin-color);
+}
+
+/* Este selector se asignará a los elementos "svg" que tengan asociada la clase "instagram-logo", y que a su vez sean hijos descendientes del elemento al que se le asignó
+la clase "social-media" */
+.social-media svg.instagram-logo {
+  fill: var(--instagram-color);
 }
 /* ******************** Media Query para Tablets ******************** */
 
