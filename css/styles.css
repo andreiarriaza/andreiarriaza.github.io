@@ -26,6 +26,8 @@ En esta sección van todas las variables (Custom Properties) de CSS utilizadas e
   --gray-color: #ccc;
   --gray-dark-color: #666;
   --black-color: #000;
+  --modal-text-color: #e7e9ea;
+  --modal-title-color: #dee1e3;
 
   /* --title-color: #333; */
   /* --text-color: #222; */
@@ -34,7 +36,7 @@ En esta sección van todas las variables (Custom Properties) de CSS utilizadas e
   --twitter-color: #1da1f2;
   --white-alpha-color: rgba(255, 255, 255, 0.5);
   --youtube-color: #ff0000;
-  --black-alpha-color: rgba(0, 0, 0, 0.5);
+  /* --black-alpha-color: rgba(0, 0, 0, 0.8); */
   --font: "Raleway", sans-serif; /* Si no encontrara la fuente "Raleway", asignará la fuente "sans-serif". 
   La tipografía "Raleway" será consumida desde Google Fonts. */
 
@@ -55,9 +57,11 @@ En esta sección van todas las variables (Custom Properties) de CSS utilizadas e
   /* Dark Color */
 
   --first-dark-color: #e6552d; /* first-color  */
-  --first-dark-alpha-color: rgb(230, 85, 45, 0.75);
+  --first-dark-alpha-color: rgb(230, 85, 45, 0.85);
   --second-dark-color: rgb(20, 25, 45); /* second-color*/
   --third-dark-color: #333;
+  --modal-alpha-dark-color: rgba(255, 255, 255, 0.8);
+
   --link-dark-color: #a1e538;
   --border-dark-color: #586474;
   --body-dark-color: #1f2937;
@@ -73,9 +77,11 @@ En esta sección van todas las variables (Custom Properties) de CSS utilizadas e
   /* Light Color*/
 
   --first-light-color: #e43e49;
-  --first-light-alpha-color: rgb(228, 62, 73, 0.75);
+  --first-light-alpha-color: rgb(228, 62, 73, 0.85);
   --second-light-color: #0a0a0a;
   --third-light-color: #021949;
+
+  --modal-alpha-light-color: rgba(0, 0, 0, 0.8);
   --link-light-color: #fc6402;
   --border-light-color: #f2f2f2;
   --body-light-color: #fff;
@@ -172,6 +178,7 @@ Si se confirma que dicho tema fue el elegido, agregará las variables correspond
     --title-color: var(--title-dark-color);
     --github-color: var(--github-dark-color);
     --link-color: var(--link-dark-color);
+    --modal-alpha-color: var(--modal-alpha-dark-color);
   }
 }
 /* Clase "dark" asociada a la pseudoclase "root". 
@@ -190,6 +197,7 @@ que serán aplicadas a todo el sitio Web por medio de JavaScript.
   --title-color: var(--title-dark-color);
   --github-color: var(--github-dark-color);
   --link-color: var(--link-dark-color);
+  --modal-alpha-color: var(--modal-alpha-dark-color);
 }
 
 /* Esta media query detecta si el tema de color preferido por el usuario
@@ -208,6 +216,7 @@ Si se confirma que dicho tema fue el elegido, agregará las variables correspond
     --title-color: var(--title-light-color);
     --github-color: var(--github-light-color);
     --link-color: var(--link-light-color);
+    --modal-alpha-color: var(--modal-alpha-light-color);
   }
 }
 
@@ -227,6 +236,7 @@ que serán aplicadas a todo el sitio Web por medio de JavaScript.  */
   --title-color: var(--title-light-color);
   --github-color: var(--github-light-color);
   --link-color: var(--link-light-color);
+  --modal-alpha-color: var(--modal-alpha-light-color);
 }
 /* ******************** Reset ******************** */
 
@@ -934,7 +944,7 @@ para ser implementadas en otro proyecto.  */
   justify-content: center; /* Centrado horizontal. */
   align-items: center; /* Centrado vertical. */
 
-  background-color: var(--black-alpha-color);
+  background-color: var(--modal-alpha-color);
   opacity: 0;
 
   /* Como el elemento al que se le asignó la clase "modal", contiene vínculos, 
@@ -1395,6 +1405,7 @@ dicho elemento "small". */
         - scale-down: es un valor dinámico. La imagen se reduce al valor más pequeño entre el valor de "none" y el valor de "contain", es decir, 
                       se reduce al menor valor entre el valor de "none" y el valor de "contain". 
     */
+  transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 .portfolio-card-info {
@@ -1426,7 +1437,7 @@ es el elemento que tiene asignada la clase "portfolio-card". */
   de los vínculos de este elemento.   
 */
   pointer-events: none;
-  transition: all 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out, pointer-events, 0.5s ease-in-out;
 }
 
 /* Si se coloca el puntero sobre cualquiera de los vínculos a los que se les asignó la clase "portfolio-card", 
@@ -1436,6 +1447,11 @@ se modificará el elemento que tiene asignada la clase "portfolio-card-info". */
   /* Se habilita nuevamente la funcionalidad de los vínculos mediante la propiead "pointer-events: auto"
    para que el usuario pueda dar clic sobre ellos. */
   pointer-events: auto;
+}
+
+.portfolio-card:hover img {
+  filter: grayscale(1);
+  opacity: 0.7;
 }
 
 /* Este selector se aplica al elemento "div" que es hijo descendiente del
@@ -1461,7 +1477,8 @@ elemento al que se le asignó la clase "portfolio-card-infor". */
   al que se le asignó la clase "portfolio-modal". 
   */
   max-width: 400px;
-  background-color: var(--white-color);
+  background-color: var(--second-color);
+  color: var(--modal-text-color);
 }
 
 /* Este selector se aplicará al elemento "h3" que es hijo descendiente del elemento
@@ -1470,7 +1487,7 @@ al que se le asignó la clase "portfolio-modal". */
   border-bottom: medium solid var(--first-color);
   padding: 0.5rem 0;
   margin: 1rem auto;
-  color: var(--title-color);
+  color: var(--modal-title-color);
 }
 
 .portfolio-details {
@@ -1592,6 +1609,7 @@ la clase "social-media" */
     Se definen por lo tanto dos columnas con un ancho de 50% del contenedor. 
     */
     grid-template-columns: repeat(2, 50%);
+    gap: 1vh 1vw;
   }
 
   .portfolio .section-title {
