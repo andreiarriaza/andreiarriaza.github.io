@@ -1438,7 +1438,7 @@ se modificará el elemento que tiene asignada la clase "portfolio-card-info". */
   pointer-events: auto;
 }
 
-/* Este selector se aplica al elemento "div" que es hijo descendienteg del
+/* Este selector se aplica al elemento "div" que es hijo descendiente del
 elemento al que se le asignó la clase "portfolio-card-infor". */
 .portfolio-card-info > div {
   padding: 1rem;
