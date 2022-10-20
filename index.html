@@ -125,12 +125,12 @@
         </button>
 
         <nav class="menu">
-          <a href="#inicio">Inicio</a>
-          <a href="#acerca">Acerca</a>
-          <a href="#servicios">Servicios</a>
-          <a href="#portafolio">Portafolio</a>
-          <a href="#testimonios">Testimonios</a>
-          <a href="#contacto">Contacto</a>
+          <a href="index.html#inicio">Inicio</a>
+          <a href="index.html#acerca">Acerca</a>
+          <a href="index.html#servicios">Servicios</a>
+          <a href="index.html#portafolio">Portafolio</a>
+          <a href="mentoria.html">Mentoría</a>
+          <a href="index.html#contacto">Contacto</a>
         </nav>
 
         <button class="dark-theme-btn">
@@ -238,7 +238,7 @@
           los 1024px, la clase "text-lg-right" comienza realmente a existir, consiguiendo así que 
           el texto se alinee a la derecha. 
         -->
-        <aside class="slogan text-center text-lg-right">
+        <aside class="text-center text-lg-right">
           <h1>Andrei Arriaza</h1>
           <h5>Profesor & Desarrollador Web</h5>
         </aside>
@@ -463,11 +463,13 @@
               d="M16.018,3.815L15.232,8h-4.966l0.716-3.815L9.018,3.815L8.232,8H4v2h3.857l-0.751,4H3v2h3.731l-0.714,3.805l1.965,0.369 L8.766,16h4.966l-0.714,3.805l1.965,0.369L15.766,16H20v-2h-3.859l0.751-4H21V8h-3.733l0.716-3.815L16.018,3.815z M14.106,14H9.141 l0.751-4h4.966L14.106,14z"
             />
           </svg>
-          <h3><i>BackUp</i></h3>
+          <h3>Mentoría</h3>
           <p>
-            Me encargo de realizar el <i>backup</i> de las bases de datos
-            existentes en tu sitio <i>web</i> hacia el nuevo servicio de
-            alojamiento al que deseas mudarlo.
+            Tengo amplia experiencia en el ámbito educativo, a nivel medio,
+            universitario y gerencial. Si deseas asesoría o ampliar tus
+            conocimientos actuales, puedes obtener más información de las áreas
+            en que puedo capacitarte, a través de la sección "Mentoría" de este
+            sitio <i>web</i>.
           </p>
         </article>
 
@@ -540,9 +542,8 @@
               </p>
 
               <p>
-                Este sitio proporciona un informe de resultados de la prueba
-                psicométrica <i>Cleaver</i> en PDF y despliega un gráfico para
-                analizar los resultados obtenidos.
+                Proporciona un informe de resultados de la prueba en PDF y
+                despliega un gráfico para análisis de resultados.
               </p>
             </div>
           </aside>
@@ -584,10 +585,13 @@
         </a>
 
         <a href="#trabajo-5" class="portfolio-card">
-          <img src="assets/portfolio-5.jpg" alt="Trabajo 5" />
+          <img
+            src="assets/portfolio-5-andreiarriaza-github.png"
+            alt="Trabajo 5"
+          />
           <aside class="portfolio-card-info">
             <div>
-              <h3>Proyecto 5</h3>
+              <h3>Proyecto 5: sitio <i>web</i> personal</h3>
               <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Cupiditate illo et laudantium repellendus vitae in doloremque
@@ -598,7 +602,8 @@
           </aside>
         </a>
 
-        <a href="#trabajo-6" class="portfolio-card">
+        <!--
+  <a href="#trabajo-6" class="portfolio-card">
           <img src="assets/portfolio-6.jpg" alt="Trabajo 6" />
           <aside class="portfolio-card-info">
             <div>
@@ -612,6 +617,8 @@
             </div>
           </aside>
         </a>
+
+         -->
       </div>
     </section>
 
@@ -1201,14 +1208,12 @@
       </div>
     </article>
 
+    <!-- ------------------ Área de testimonios de clientes ------------------ -->
+
+    <!-- 
+
     <section id="testimonios" class="testimonials">
-      <!-- Utilizar el atributo "style" es una mala práctica, excepto cuando se utiliza
-        para declarar Custom Properties o variables. 
-      
-        Estas variables no se declararon en CSS dentro
-        el elemento "root", porque se desea que el ámbito o alcance de estas variables
-        solo sea dentro del elemento al que se le asignó la clase "hero-image", 
-        es decir, dentro del elemento "article". -->
+ 
       <article
         class="hero-image"
         style="
@@ -1216,18 +1221,7 @@
           --hero-attachment: scroll;
         "
       >
-        <!-- Utilizar el atributo "style" es una mala práctica, excepto cuando se utiliza
-        para declarar Custom Properties o variables. 
-      
-        Estas variables no se declararon en CSS dentro
-        el elemento "root", porque se desea que el ámbito o alcance de estas variables
-        solo sea dentro del elemento al que se le asignó la clase "hero-image-opacity", 
-        es decir, dentro del elemento "article". 
-        
-        IMPORTANTE: la variable "--black-alpha-color" fue definida dentro del elemento "root", 
-        por ello es posible utilizarla. 
-      
-        -->
+       
         <aside
           class="hero-image-opacity"
           style="--hero-opacity-color: var(--white-alpha-color)"
@@ -1239,11 +1233,7 @@
                 class="carousel"
                 style="--carousel-bg-color: var(--white-alpha-color)"
               >
-                <!-- El atributo "checked" indica que este elemento será el que estará seleccionado por defecto. -->
-
-                <!-- IMPORTANTE: los input de tipo "radio" se ocultarán en CSS, y lo que será visible
-                para el usuario, y donde él podrá dar clic, serán realmente los label que acompañan a cada input de tipo
-                radio, los cuales se encuentran dentro de la etiqueta "aside", unas líneas abajo. -->
+                
                 <input type="radio" name="slides" id="slide-1" checked />
                 <input type="radio" name="slides" id="slide-2" />
                 <input type="radio" name="slides" id="slide-3" />
@@ -1317,8 +1307,7 @@
                 </ul>
 
                 <aside class="slides-nav">
-                  <!-- Como se dijo antes, los input de tipo "radio" se ocultarán. Serán las etiquetas label
-                  las que fungirán como los controles del carrusel. -->
+                  
                   <label for="slide-1" id="dot-1"></label>
                   <label for="slide-2" id="dot-2"></label>
                   <label for="slide-3" id="dot-3"></label>
@@ -1330,6 +1319,8 @@
         </aside>
       </article>
     </section>
+
+    -->
 
     <section id="contacto" class="contact section">
       <div class="container">
@@ -1659,7 +1650,7 @@
 
     <footer class="footer">
       <small
-        >Sitio Web diseñado por:
+        ><b>Jardín digital</b> diseñado por:
         <!--
              Atributo "rel="noopener noreferrer": estas dos características fueron introducidas en WordPress para eliminar una vulnerabilidad de seguridad que es 
                 utilizada por sitios web con malas intenciones y ganas de hacer daño con contenidos maliciosos.

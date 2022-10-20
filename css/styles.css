@@ -9,6 +9,22 @@ significa que primero se diseña el sitio Web para móviles, y luego
 se irá configurando como se irá adaptando a los diferentes dispositivos.
 */
 
+/* ******************** Fluid Design ******************** */
+
+/* @link https://utopia.fyi/type/calculator?c=320,17,1.2,1500,20,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+
+:root {
+  --step--3: clamp(0.53rem, calc(0.64rem + -0.12vw), 0.62rem);
+  --step--2: clamp(0.7rem, calc(0.75rem + -0.05vw), 0.74rem);
+  --step--1: clamp(0.89rem, calc(0.87rem + 0.07vw), 0.94rem);
+  --step-0: clamp(1.06rem, calc(1.01rem + 0.25vw), 1.25rem);
+  --step-1: clamp(1.28rem, calc(1.17rem + 0.53vw), 1.67rem);
+  --step-2: clamp(1.53rem, calc(1.34rem + 0.94vw), 2.22rem);
+  --step-3: clamp(1.84rem, calc(1.53rem + 1.52vw), 2.96rem);
+  --step-4: clamp(2.2rem, calc(1.73rem + 2.36vw), 3.95rem);
+  --step-5: clamp(2.64rem, calc(1.93rem + 3.55vw), 5.26rem);
+}
+
 /* ******************** Custom Properties ******************** */
 /* 
 En esta sección van todas las variables (Custom Properties) de CSS utilizadas en el proyecto.
@@ -42,6 +58,7 @@ En esta sección van todas las variables (Custom Properties) de CSS utilizadas e
 
   /* Ancho máximo. */
   --max-width: 1200px;
+  --max-width-learning: 800px;
 
   /* Altura del elemento "header". Se asignó una altura de "4rem", porque el área del 
   header tendrá "1rem" de padding (lo cual se indica más abajo). En lo que respecta a la altura, si sumamos el padding de arriba y abajo, 
@@ -286,32 +303,38 @@ h1 {
   /* En FIGMA se definieron los tamaños de encabezados en pixeles, sin embargo,
   debido a que los pixeles son unidades absolutas, se hizo la conversión correspondiente
   a rem's (root em). */
-  font-size: 2rem;
+  /* font-size: 2rem; */
+  font-size: var(--step-2);
 }
 
 h2 {
   margin: 0;
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
+  font-size: var(--step-1);
 }
 
 h3 {
   margin: 0;
-  font-size: 1.25rem;
+  /* font-size: 1.25rem; */
+  font-size: var(--step-0);
 }
 
 h4 {
   margin: 0;
-  font-size: 1rem;
+  /* font-size: 1rem; */
+  font-size: var(--step--1);
 }
 
 h5 {
   margin: 0;
-  font-size: 0.85rem;
+  /* font-size: 0.85rem; */
+  font-size: var(--step--2);
 }
 
 h6 {
   margin: 0;
-  font-size: 0.7rem;
+  /* font-size: 0.7rem; */
+  font-size: var(--step--3);
 }
 
 img {
@@ -1135,6 +1158,7 @@ La práctica "utility-first" es también utilizada por frameworks como BootStrap
   text-decoration: none;
   color: var(--white-color);
   background-color: var(--first-color);
+  margin-top: 1rem;
 
   /* IMPORTANTE: el elemento "a", tiene ya un pequeño efecto
   "hover". Este efecto es una transformación que se asignó al principio de este archivo al elemento "a". */
@@ -1147,6 +1171,16 @@ La práctica "utility-first" es también utilizada por frameworks como BootStrap
   /* Se define que el ancho máximo del elemento al que se le asignó la clase "container", 
   será de 1200px; */
   max-width: var(--max-width);
+}
+
+/* Se utiliza en la sección de "Mentoría" */
+.container2 {
+  margin-left: auto;
+  margin-right: auto;
+
+  /* Se define que el ancho máximo del elemento al que se le asignó la clase "container", 
+  será de 1200px; */
+  max-width: var(--max-width-learning);
 }
 
 .dark-theme-btn {
@@ -1301,6 +1335,10 @@ dicho elemento "small". */
   margin-top: -1rem;
 }
 
+.container2 p {
+  font-size: var(--step-0);
+}
+
 .footer {
   margin-bottom: var(--header-height);
   padding: 0.5rem;
@@ -1394,7 +1432,7 @@ dicho elemento "small". */
   se mostrará cuando se ubique el puntero sobre la imagen. */
   height: 100%;
 
-  object-fit: cover; /* La propiedad "object-fit" establece cómo se debe cambiar el tamaño del contenido de una etiqueta, como <img> o <video>, 
+  object-fit: contain; /* La propiedad "object-fit" establece cómo se debe cambiar el tamaño del contenido de una etiqueta, como <img> o <video>, 
     para que se ajuste a su contenedor.
     
     Puede tener los siguientes valores: 
@@ -1571,6 +1609,12 @@ la clase "social-media" */
 la clase "social-media" */
 .social-media svg.instagram-logo {
   fill: var(--instagram-color);
+}
+
+.title-learning {
+  margin-bottom: 2rem;
+  font-weight: bold;
+  font-size: var(--step-4);
 }
 /* ******************** Media Query para Tablets ******************** */
 

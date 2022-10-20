@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es" data-dark>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Andrei Arriaza - Profesor y Desarrollador Web</title>
+
+    <!-- Importación de fuente de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Hoja de estilos CSS-->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- **************** Etiquetas SEO básicas **************** -->
+
+    <meta
+      name="description"
+      content="Bienvenidos a mi sitio web profesional."
+    />
+
+    <link
+      rel="canonical"
+      href="https://andreiarriaza.github.io/mentoria.html"
+    />
+
+    <link
+      rel="icon"
+      href="https://andreiarriaza.github.io/assets/favicon.png"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      href="https://andreiarriaza.github.io/assets/apple-touch-icon.png"
+    />
+
+    <meta name="theme-color" content="#d9006" />
+
+    <!-- **************** Twitter Cards **************** -->
+
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Andrei Arriaza - Programador y Desarrollador Web"
+    />
+    <meta
+      name="twitter:description"
+      content="Bienvenidos a mi sitio web profesional."
+    />
+    <meta
+      name="twitter:image"
+      content="https://github.com/andreiarriaza/andreiarriaza.github.io/blob/main/assets/hero-image-home.jpg"
+    />
+    <meta name="twitter:url" content="https://andreiarriaza.github.io/" />
+
+    <!-- **************** Etiquetas Open Graph (Facebook, LinkedIn, etc.) **************** -->
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Andrei Arriaza - Programador y Desarrollador Web"
+    />
+    <meta
+      property="og:description"
+      content="Bienvenidos a mi sitio web profesional."
+    />
+    <meta
+      property="og:image"
+      content="https://github.com/andreiarriaza/andreiarriaza.github.io/blob/main/assets/hero-image-home.jpg"
+    />
+    <meta property="og:url" content="https://andreiarriaza.github.io/" />
+  </head>
+  <body>
+    <header class="header">
+      <section class="container">
+        <div class="logo">
+          <a href="index.html">andreiarriaza</a>
+        </div>
+
+        <button class="menu-btn">
+          <!-- Como las siguientes son imágenes vectoriales, sus respecitivos códigos
+               se copiaron desde los archivos "menu-bars.svg" y "menu-close.svg", los cuales
+               se encuentran dentro de la carpeta "assets".
+            -->
+
+          <!--
+            Dentro de JavaScript se utilizará el método "firstElementChild.classList.toggle("none")" para agregar y quitar
+          automáticamente con cada clic la clase "none". Pero como desde el principio la clase "none" NO ESTÁ ASIGNADA 
+          a la imagen SVG del botón "hamburguesa", esto conseguirá que cuando se dé el primer clic sobre el botón del menú
+          hamburguesa, se agregue la clase "none" a la imagen del botón "hamburguesa", logrando con esto que dicha imagen se oculte.
+          -->
+
+          <!-- El código "svg" agregado a continuación, fue copiado de la imagen "assets/menu-bar.svg" -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path d="M4 6H20V8H4zM4 11H20V13H4zM4 16H20V18H4z" />
+          </svg>
+
+          <!-- A esta etiqueta se le agregó la clase "none" para controlar por medio de ella, 
+               cuando mostrar u ocultar la imagen "menu-close.svg". Esto se conseguirá por medio de JavaScript.
+          
+          Dentro de JavaScript se utilizará el método "lastElementChild.classList.toggle("none")" para agregar y quitar
+          automáticamente con cada clic la clase "none". Pero como desde el principio la clase "none" ya está asignada 
+          a la imagen SVG del botón "cerrar", esto conseguirá que cuando se dé el primer clic sobre el botón hamburguesa,
+          se quite la clase "none" de la imagen del botón "cerrar", logrando con esto que dicha imagen se haga visible.
+          -->
+
+          <!-- El código "svg" agregado a continuación, fue copiado de la imagen "assets/menu-close.svg" -->
+          <svg
+            class="none"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.192 6.344L11.949 10.586 7.707 6.344 6.293 7.758 10.535 12 6.293 16.242 7.707 17.656 11.949 13.414 16.192 17.656 17.606 16.242 13.364 12 17.606 7.758z"
+            />
+          </svg>
+        </button>
+
+        <nav class="menu">
+          <a href="index.html#inicio">Inicio</a>
+          <a href="index.html#acerca">Acerca</a>
+          <a href="index.html#servicios">Servicios</a>
+          <a href="index.html#portafolio">Portafolio</a>
+          <a href="mentoria.html">Mentoría</a>
+          <a href="index.html#contacto">Contacto</a>
+        </nav>
+
+        <button class="dark-theme-btn">
+          <svg
+            width="15px"
+            height="15px"
+            viewBox="0 0 15 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M7 0V2H8V0H7Z" fill="black" />
+            <path
+              d="M3.35355 3.64645L1.85355 2.14645L1.14645 2.85355L2.64645 4.35355L3.35355 3.64645Z"
+              fill="black"
+            />
+            <path
+              d="M12.3536 4.35355L13.8536 2.85355L13.1464 2.14645L11.6464 3.64645L12.3536 4.35355Z"
+              fill="black"
+            />
+            <path
+              d="M7.49998 3C5.52977 3 3.85938 4.44872 3.58075 6.39913L3.5707 6.46949C3.41148 7.58398 3.73042 8.64543 4.36009 9.45895C4.74345 9.95426 5 10.427 5 10.9013V12.5C5 12.7761 5.22386 13 5.5 13H9.5C9.77614 13 10 12.7761 10 12.5V10.9013C10 10.427 10.2565 9.95423 10.6399 9.45893C11.2696 8.64541 11.5885 7.58397 11.4293 6.4695L11.4192 6.39914C11.1406 4.44873 9.4702 3 7.49998 3Z"
+              fill="black"
+            />
+            <path d="M0 8H2V7H0V8Z" fill="black" />
+            <path d="M13 8H15V7H13V8Z" fill="black" />
+            <path d="M6 15H9V14H6V15Z" fill="black" />
+          </svg>
+        </button>
+
+        <!-- <nav class="icons"></nav> -->
+      </section>
+    </header>
+
+    <!-- A las clases se les asignó el nombre en inglés, porque es el idioma que generalmente se utiliza
+    para asignar los estilos dentro del sitio Web. 
+    
+    Ahora bien, a los id's se les asignó el nombre en español, porque los id's permitirán redirigir 
+    al usuario a cada sección de la página mediante vínculos internos. Cuando el usuario dé clic en alguno de los
+    vínculos correspondientes, el nombre del id de destino se mostrará en la URL. Y como
+    la página en español, es necesario que dichos id's estén también en español, pues también serán visibles para el usuario. 
+-->
+
+    <section id="acerca" class="section container2 full-lg-screen">
+      <!-- La clase "text-lg-right" solo comenzará a existtir, gracias a una Media Query, 
+           cuando se alcance como mínimo un ancho de pantalla de 1024px, por
+           lo que, cuando eso suceda, todo el contenido del siguiente artículo quedará alineado a la derecha. 
+      -->
+      <article>
+        <!--
+          IMPORTANTE: en este proyecto, la alineación de algunos elementos cambiará
+          dependiendo del tamaño de pantalla del dispositivo en el que se esté visualizando. 
+
+          Al elemento "aside" que está a continuación, se le asignó
+          la clase "text-center", la cual permitirá que en teléfono móviles, el texto quede centrado. 
+
+          Sin embargo, también se asignó la clase "text-lg-right", dicha clase se encuentra agregada
+          en CSS dentro de una media query, la cual comienza a ejecutarse cuando el tamaño de pantalla
+          es mayor o igual a 1024px. Esto significa que cuando el tamaño de pantalla alcanza por lo menos
+          los 1024px, la clase "text-lg-right" comienza realmente a existir, consiguiendo así que 
+          el texto se alinee a la derecha. 
+        -->
+        <aside class="slogan text-center">
+          <div class="title-learning">Mentoría</div>
+        </aside>
+        <p>
+          <!-- Según las buenas prácticas del UX (User Experience), se recomienda
+          colocar todas las palabras que sean términos anglosajones (anglicismos, es decir, palabras en inglés) en letras itálicas. 
+        
+          Como por ejemplo:  <i>web</i>
+        -->
+
+          Pongo a tu disposición mi experiencia profesional en el ámbito del
+          desarrollo <i>web</i>, pero también mis conocimientos tanto en el área
+          teológica como musical.
+        </p>
+        <p>
+          Si estás interesado en aprender más sobre alguno de estos temas, o
+          bien, si requires asesoría en el proceso de desarrollo, publicación,
+          migración e indexación de tu sitio <i>web</i>, estoy para servirte.
+        </p>
+
+        <p>
+          Mi experiencia incluye, además, la administración del <i>hosting</i> y
+          el dominio de sitios <i>web</i>, la realización de <i>backup</i> de
+          bases de datos, la migración de <i>hosting</i>, así como la
+          administración de cuentas de correo electrónico corporativas de
+          <i>Google Workspace</i>.
+        </p>
+        <p>
+          También cuento con experiencia en el área de <i>Social Media</i> y
+          <i>SEO</i>.
+        </p>
+
+        <div class="text-center text-lg-left">
+          <!--
+             Atributo "rel="noopener noreferrer": estas dos características fueron introducidas en WordPress para eliminar una vulnerabilidad de seguridad que es 
+                utilizada por sitios web con malas intenciones y ganas de hacer daño con contenidos maliciosos.
+
+            Existen algunas características de JavaScript que permiten que una nueva pestaña obtenga el control de una ventana de referencia.
+            Si se vincula a un sitio web externo afectado por el código malicioso, ese sitio web puede usar la propiedad de JavaScript "window.opener" para 
+            cambiar la página original (tu sitio web) para robar información y difundir códigos maliciosos.
+          
+            - Atributo rel = «noopener» sirve para ser agregado a enlaces e impide que la página que se abrirá obtenga algún tipo de acceso a la página original.
+            - Atributo rel = «noreferrer» Este atributo evita pasar la información de referencia al sitio web de destino eliminando la 
+              información de referencia del encabezado HTTP de la página de origen(en la que se encuentra el enlace).
+            
+            -- Diferencias entre noopener – noreferrer
+             - Rel=»noopener» se usa para que cuando se cree una nueva ventana al hacer clic en un enlace, el código malicioso que se ejecuta en la nueva 
+               ventana no acceda a la ventana anterior a través del atributo window.opener. 
+             - Por otro lado «rel=noreferrer» se utiliza para que cuando un usuario haga clic en un hipervínculo y se transfiera a una nueva ubicación, 
+               no se filtre información de referencia al enlace de destino. Es decir, no será posible que el destino sepa de dónde vino ese usuario.
+               Con el manejo de los atributos noopener noreferrer vas a mejorar el desarrollo de tus sitios, así como el posicionamiento SEO de ellos.
+        -->
+          <a
+            class="btn"
+            href="https://github.com/andreiarriaza/andreiarriaza.github.io/raw/main/assets/cv-walterarriaza.pdf"
+            target="_blank"
+            rel="noopener"
+            >DESCARGA MI CV</a
+          >
+        </div>
+      </article>
+      <article>
+        <img
+          class="gray-scale"
+          src="assets/jonmircha.jpg"
+          alt="andreiarriaza"
+        />
+      </article>
+    </section>
+
+    <footer class="footer">
+      <small
+        >Sitio Web diseñado por:
+        <!--
+             Atributo "rel="noopener noreferrer": estas dos características fueron introducidas en WordPress para eliminar una vulnerabilidad de seguridad que es 
+                utilizada por sitios web con malas intenciones y ganas de hacer daño con contenidos maliciosos.
+
+            Existen algunas características de JavaScript que permiten que una nueva pestaña obtenga el control de una ventana de referencia.
+            Si se vincula a un sitio web externo afectado por el código malicioso, ese sitio web puede usar la propiedad de JavaScript "window.opener" para 
+            cambiar la página original (tu sitio web) para robar información y difundir códigos maliciosos.
+          
+            - Atributo rel = «noopener» sirve para ser agregado a enlaces e impide que la página que se abrirá obtenga algún tipo de acceso a la página original.
+            - Atributo rel = «noreferrer» Este atributo evita pasar la información de referencia al sitio web de destino eliminando la 
+              información de referencia del encabezado HTTP de la página de origen(en la que se encuentra el enlace).
+            
+            -- Diferencias entre noopener – noreferrer
+             - Rel=»noopener» se usa para que cuando se cree una nueva ventana al hacer clic en un enlace, el código malicioso que se ejecuta en la nueva 
+               ventana no acceda a la ventana anterior a través del atributo window.opener. 
+             - Por otro lado «rel=noreferrer» se utiliza para que cuando un usuario haga clic en un hipervínculo y se transfiera a una nueva ubicación, 
+               no se filtre información de referencia al enlace de destino. Es decir, no será posible que el destino sepa de dónde vino ese usuario.
+               Con el manejo de los atributos noopener noreferrer vas a mejorar el desarrollo de tus sitios, así como el posicionamiento SEO de ellos.
+        -->
+        <a href="mailto:andreiarriaza@gmail.com"> Andrei Arriaza</a></small
+      >
+    </footer>
+
+    <!-- Hoja externa de JavaScript -->
+    <script src="js/index.js" type="module"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
