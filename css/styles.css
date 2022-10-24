@@ -1230,7 +1230,7 @@ particular:
 }
 
 .section {
-  padding: 2rem 1rem;
+  padding: 3rem 1rem;
 }
 
 .section-title {
@@ -1305,7 +1305,7 @@ Básicamente lo que se intenta evitar con este principio es que no se duplique e
 */
 
 .about > article {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .contact-card {
@@ -1810,7 +1810,7 @@ para ser implementadas en otro proyecto.
     
     Por ello, si solamente se definiera una altura igual a "height: var(--header-height)", el contenido
     del "header" no se vería centrado verticalmente. Para corregir esto, 
-    se le debe restar al ancho original del "header" (--header-height), el tamaño que se redujo en el padding (0.5rem); 
+    se le debe restar la altura original del "header" (--header-height), el tamaño que se redujo en el padding (0.5rem); 
     es decir, que se debe realizar el siguiente cálculo: 
         calc(var(--header-height) - 0.5rem)
 
