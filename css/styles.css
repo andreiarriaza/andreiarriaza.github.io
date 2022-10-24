@@ -288,7 +288,7 @@ body {
 
 a {
   color: var(--link-color);
-  transition: all 0.5s ease-out;
+  transition: opacity 0.5s ease-out;
 }
 
 a:hover {
@@ -647,7 +647,7 @@ hijos descendientes del elemento al que se le asignó la clase "contact-form". *
   */
   margin-top: 0;
   cursor: pointer;
-  transition: all 0.5s ease-out;
+  transition: opacity 0.5s ease-out;
 }
 
 .contact-form input[type="submit"]:hover {
@@ -979,7 +979,7 @@ para ser implementadas en otro proyecto.  */
   pointer-events: none;
 
   /* No se le colocó aceleración para que el efecto tenga una velocidad constante. */
-  transition: all 1s;
+  transition: opacity 1s;
 }
 
 .modal-content {
@@ -1787,7 +1787,8 @@ para ser implementadas en otro proyecto.
      Esto significa que el "4%" restante, se distribuirá entre las columnas, debido a que se asignó
      la propiedad "justify-content: space-between" anteriormente en este archivo.
     */
-    grid-template-columns: repeat(4, 24%);
+    /* grid-template-columns: repeat(4, 24%); */
+    grid-template-columns: repeat(3, 32%);
   }
 
   .footer {
