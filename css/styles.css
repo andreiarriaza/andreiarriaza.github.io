@@ -58,7 +58,7 @@ En esta sección van todas las variables (Custom Properties) de CSS utilizadas e
 
   /* Ancho máximo. */
   --max-width: 1200px;
-  --max-width-learning: 800px;
+  --max-width-learning: 1000px;
 
   /* Altura del elemento "header". Se asignó una altura de "4rem", porque el área del 
   header tendrá "1rem" de padding (lo cual se indica más abajo). En lo que respecta a la altura, si sumamos el padding de arriba y abajo, 
@@ -348,7 +348,9 @@ p {
   line-height: 1.6; /* Altura de la línea, es decir, el interlineado. Puede agregarse un número SIN UNIDADES DE MEDIDA, pero
                        también se pueden agregar las unidades de medida "px" o "em".  */
 }
-
+ol {
+  line-height: 1.6;
+}
 /* ******************** Components ******************** */
 /* 
 En esta sección se incluirán todas aquellas modificaciones de estilos que involucren a los componentes del sitio Web. 
@@ -1339,6 +1341,10 @@ dicho elemento "small". */
   font-size: var(--step-0);
 }
 
+.container2 ol {
+  font-size: var(--step-0);
+}
+
 .footer {
   margin-bottom: var(--header-height);
   padding: 0.5rem;
@@ -1379,6 +1385,12 @@ dicho elemento "small". */
 
   justify-content: space-between;
   align-items: center;
+}
+
+.header-learning {
+  margin-bottom: 2rem;
+  font-weight: bold;
+  font-size: var(--step-2);
 }
 
 .logo {
@@ -1611,11 +1623,18 @@ la clase "social-media" */
   fill: var(--instagram-color);
 }
 
+.subtitle-learning {
+  margin-bottom: 2rem;
+  font-weight: bold;
+  font-size: var(--step-3);
+}
+
 .title-learning {
   margin-bottom: 2rem;
   font-weight: bold;
   font-size: var(--step-4);
 }
+
 /* ******************** Media Query para Tablets ******************** */
 
 @media screen and (min-width: 768px) {
