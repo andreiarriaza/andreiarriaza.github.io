@@ -881,7 +881,7 @@ La clase "is-active" será dinámica, y se agregará desde JavaScript.  */
 
 /* Al situar el puntero sobre cada opción del menú, se comprobará que se muestra cierta transición 
 al cambiar el color de fuente y color de fondo del elemento. Esto sucede porque más arriba en este documento, 
-cuando se asignaron los estilos al elemento "a" directamente, se agregó la propiedad "transition: all 0.5s ease-out;", 
+cuando se asignaron los estilos al elemento "a" directamente, se agregó la propiedad "transition: opacity 0.5s ease-out;", 
 lo cual provoca que al colocar el puntero sobre cada vínculo el cambio de colores sea gradual. */
 .menu a:hover {
   color: var(--white-color);
@@ -1202,10 +1202,14 @@ La práctica "utility-first" es también utilizada por frameworks como BootStrap
         - Los contornos pueden no ser rectangulares. A diferencia de los bordes, si el elemento se distribuye en varias líneas, el contorno no está abierto 
           en algunos lados. mientras que si se aplica un "borde", este sí quedará abierto si se aplica a varias líneas. */
   border: none; /* Quita el borde del botón. También se puedo haber agregado el valor "0", el cual habría hecho lo mismo. */
-  transition: all 0.3s ease-out; /* Se aplica una transición para que el cambio de color, cuando se ubique el puntero sobre el botón, sea gradual. */
+  transition: opacity 0.3s ease-out; /* Se aplica una transición para que el cambio de color, cuando se ubique el puntero sobre el botón, sea gradual. */
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.dark-theme-btn:hover {
+  opacity: 0.75;
 }
 /* IMPORTANTE: El siguiente selector afecta a la imagen SVG que se encuentra dentro del botón que tiene asignada la clase "dark-theme-btn", 
 el cual permite realizar el cambio entre modo oscuro y modo claro. 
