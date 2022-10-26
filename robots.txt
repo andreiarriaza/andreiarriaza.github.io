@@ -1,3 +1,4 @@
+# Permite que todos los bots reconozcan el sitio web completo.
 User-agent: *
 Allow: /
 
@@ -5,7 +6,8 @@ Allow: /
 Sitemap: https://www.plastikito.com/sitemap.xml
 
 
-
+# Esto permitirá que el Bot de Twitter tenga acceso a las imágenes y archivos del sitio web.
+# Esto servirá para que sea posible visualizar la "Twitter Card" al compartir la URL del sitio en Twitter.
 User-agent: Twitterbot
 Disallow: *
 
