@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 
-Sitemap: https://www.plastikito.com/sitemap.xml
+Sitemap: https://andreiarriaza.github.io/sitemap.xml
 
 
 # Esto permitirá que el Bot de Twitter tenga acceso a las imágenes y archivos del sitio web.
