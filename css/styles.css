@@ -1229,6 +1229,11 @@ particular:
 }
 .gray-scale {
   filter: grayscale(1);
+  transition: filter 0.5s ease-out;
+}
+
+.gray-scale:hover {
+  filter: grayscale(0);
 }
 
 .none {
