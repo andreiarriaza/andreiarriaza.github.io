@@ -1,3 +1,5 @@
+# Este archivo fue creado para que con este sitio web funcionen las Github Actions. 
+
 # .github/workflows/deploy.yml
 
 name: Deploy to GitHub Pages
