@@ -29,9 +29,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- ****************** ETIQUETAS PARA CONTROLAR EL AGREGADO A PANTALLA DE INICIO ****************** -->
+    <!-- ****************** ETIQUETAS PARA CONTROLAR CÓMO SE VERÁ EL SITIO CUANDO SE AGREGUE A LA PANTALLA DE INICIO DEL SMARTPHONE Y LUEGO SE ABRA ****************** -->
 
-    <!-- ¿Qué hacen estas etiquetas sin ser una PWA (Progressive Web App)?
+    <!-- Las siguiente etiqeutas, NO CONVIERTEN EL SITIO en una Progressive Web App: 
+          Las etiquetas que se muestran a continuación, solamente sirven para que, cuando se agregue un acceso directo del sitio web
+          a la pantalla de inicio del Smartphone, y luego se abra dicho sitio, este se muestre en pantalla completa, sin la barra de herramientas del navegador.
+          Aunque esto pareciera que es una Progressive Web App, aún no lo es, solamente da la apariencia de una Progressive Web App que simplemente
+          cambia la apariencia del sitio cuando se agrega a la pantalla de inicio y se abre. 
+
+
             <meta name="apple-mobile-web-app-capable" content="yes"> (iOS) y <meta name="mobile-web-app-capable" content="yes"> (Android) 
             le indican al navegador que tu sitio web puede mostrarse en modo pantalla completa cuando los usuarios lo agregan a la pantalla de inicio.
 
@@ -102,6 +108,9 @@
       name="apple-mobile-web-app-status-bar-style"
       content="black-translucent"
     />
+
+    <!-- ****************** FIN ETIQUETAS PARA CONTROLAR CÓMO SE VERÁ EL SITIO CUANDO SE AGREGUE A LA PANTALLA DE INICIO DEL SMARTPHONE Y LUEGO SE ABRA ****************** -->
+
     <title>Andrei Arriaza - Profesor, Programador y Desarrollador Web</title>
 
     <!-- Importación de fuente de Google Fonts -->
