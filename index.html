@@ -28,6 +28,80 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ****************** ETIQUETAS PARA CONTROLAR EL AGREGADO A PANTALLA DE INICIO ****************** -->
+
+    <!-- ¿Qué hacen estas etiquetas sin ser una PWA (Progressive Web App)?
+            <meta name="apple-mobile-web-app-capable" content="yes"> (iOS) y <meta name="mobile-web-app-capable" content="yes"> (Android) 
+            le indican al navegador que tu sitio web puede mostrarse en modo pantalla completa cuando los usuarios lo agregan a la pantalla de inicio.
+
+            Modo pantalla completa: Cuando un usuario guarda tu página web en la pantalla de inicio de su dispositivo y luego la abre desde allí, 
+                                    el navegador ocultará la barra de direcciones, controles de navegación y otros elementos de la interfaz, 
+                                    brindando una experiencia similar a la de una aplicación.
+
+            Sin ser una PWA, NO tendrás:
+                Instalación directa: Los usuarios no podrán instalar la página directamente como una aplicación mediante 
+                                     un botón "Instalar" en el navegador (una característica propia de las PWAs).
+            Funcionalidades offline: Las PWAs permiten que las páginas funcionen sin conexión a través de un "service worker", 
+                                      lo cual no es posible si tu página no es una PWA.
+            Actualización automática de contenido: Las PWAs pueden almacenar en caché el contenido localmente y actualizarlo en segundo plano.
+            
+            Beneficios que aún obtendrás:
+              - Pantalla completa: Tus usuarios podrán experimentar tu sitio web en modo de pantalla completa cuando lo abran desde el acceso directo en la pantalla de inicio.
+              - Experiencia tipo app: La interfaz web se verá más inmersiva y parecida a una app, aunque no sea una PWA completa.
+              - Personalización visual: Puedes configurar un ícono, el título de la página cuando se guarda en la pantalla de inicio, y el color de la barra de estado en dispositivos móviles. 
+              
+  -->
+
+    <!-- 
+    <meta name="mobile-web-app-capable" content="yes" />
+    
+      Definición:
+        Esta etiqueta está diseñada para navegadores en dispositivos Android, como Google Chrome, y permite que el sitio web se comporte como 
+        una "aplicación web" cuando se agrega a la pantalla de inicio del dispositivo.
+
+      Funcionalidad:
+        Modo de pantalla completa: Similar a la etiqueta para iOS, esta permite que el sitio web se muestre sin la barra de direcciones ni controles 
+        del navegador cuando se accede desde un acceso directo creado en la pantalla de inicio.
+        Experiencia de aplicación: Hace que el sitio web funcione como una Progressive Web App (PWA), 
+        dándole una apariencia más nativa.. -->
+
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- <meta name="apple-mobile-web-app-capable" content="yes" />
+            Definición:
+              Esta etiqueta es específica para dispositivos iOS (iPhone, iPad, iPod touch) y le indica a Safari que el sitio web es "capaz" de comportarse como una aplicación web cuando el usuario lo agrega a su pantalla de inicio.
+
+            Funcionalidad:
+              Modo de pantalla completa: Permite que el sitio web se abra en un modo de "pantalla completa", es decir, sin la barra de direcciones ni otros controles de Safari, ofreciendo una experiencia más cercana a una aplicación nativa.
+              Agregado a la pantalla de inicio: Cuando los usuarios añaden tu sitio web a la pantalla de inicio, el sitio se comporta como una aplicación independiente, sin elementos del navegador. 
+              
+    -->
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- 
+    
+     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+          Propósito: Controla el estilo de la barra de estado (la barra en la parte superior que muestra la hora, batería, etc.) cuando tu sitio 
+          se ejecuta como una "web app" en iOS.
+
+          Función: Al usar content="black-translucent", haces que la barra de estado sea negra y translúcida, permitiendo que parte del 
+          contenido de la página web sea visible debajo de la barra de estado. Esto puede dar una apariencia más integrada y fluida a tu aplicación web.
+    
+          Otros valores posibles para esta etiqueta incluyen:
+
+            - default: Usa la barra de estado normal (que es gris o   blanca).
+            - black: La barra de estado será completamente negra, sin 
+                     transparencia.
+
+            - black-translucent: La barra de estado será negra y translúcida, permitiendo que parte del contenido de la página web sea visible debajo de la barra de estado.
+    
+     -->
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
     <title>Andrei Arriaza - Profesor, Programador y Desarrollador Web</title>
 
     <!-- Importación de fuente de Google Fonts -->
