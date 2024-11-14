@@ -1,0 +1,116 @@
+{
+  "id": "index.html?utm_source=web_app_manifest",
+  "name": "Andrei Arriaza - Desarrollador",
+  "short_name": "Andrei Arriaza",
+  "description": "Bienvenidos a mi sitio web. Soy profesor, programador y desarrollador web, y me pongo a sus órdenes para el diseño, desarrollo y administración de sitios web.",
+  "background_color": "#1F2937",
+  "theme_color": "#f59622",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "./index.html?utm_source=web_app_manifest",
+  "scope": "./",
+  "lang": "es-GT",
+  "icons": [
+    {
+      "src": "assets/img/icon-1024x1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/favicon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/favicon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/favicon-144x144.png",
+      "sizes": "144X144",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/favicon-120x120.png",
+      "sizes": "120x120",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/favicon-64x64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "assets/img/screenshot-wide-1905X1034",
+      "sizes": "1905x1034",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "assets/img/screenshot-wide-1920X1080",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "assets/img/screenshot-wide-1905X1034",
+      "sizes": "1905x1034",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "assets/img/screenshot-wide-1899X1026",
+      "sizes": "1899x1026",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "assets/img/screenshot-portrait-483X997.png",
+      "sizes": "483x997",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "assets/img/screenshot-portrait-797X992.png",
+      "sizes": "797x992",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "assets/img/screenshots-portrait-800X1280.png",
+      "sizes": "800x1280",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "protocol_handlers": [
+    {
+      "protocol": "web+micontacto",
+
+      "url": "./contacto/contacto.html?id=%s"
+    }
+  ]
+}
