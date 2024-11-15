@@ -156,7 +156,11 @@ self.addEventListener("install", (e) => {
             .addAll(urlsToCache)
 
             /* Una vez que se han añadido todos los archivos al caché, se llama a self.skipWaiting(). Este método obliga al Service Worker a activarse inmediatamente después de la instalación, sin esperar a que los usuarios cierren las pestañas actuales donde la aplicación esté en uso. Es decir, el nuevo Service Worker reemplaza al anterior más rápidamente.   */
-            .then(() => self.skipWaiting())
+            .then(() => {
+              // Mensaje de confirmación en consola
+              console.log("Archivos agregados al caché:", urlsToCache);
+              self.skipWaiting();
+            })
         );
       })
 
