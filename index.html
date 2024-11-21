@@ -208,8 +208,74 @@
     <meta name="twitter:url" content="https://andreiarriaza.github.io/" />
 
     <!-- **************** Etiquetas Open Graph (Facebook, LinkedIn, etc.) **************** -->
+    <!-- 
 
-    <meta property="og:type" content="website" />
+    ¿Qué es fb:app_id?
+    La propiedad fb:app_id vincula tu página con una aplicación específica de Facebook. Esto permite:
+
+      - Recopilar métricas: Analizar cómo se comparte y utiliza tu contenido en Facebook a través de la aplicación asociada.
+      - Configurar permisos avanzados: Usar características avanzadas de integración, como comentarios o autenticación mediante Facebook.
+      - Identificar la app responsable: Esto es útil si estás gestionando varias aplicaciones o dominios.
+
+    Cómo obtener un fb:app_id
+      1. Crea una aplicación en Facebook:
+          - Ve a Facebook for Developers: https://developers.facebook.com/.
+          - Inicia sesión y selecciona "Crear Aplicación".
+          - Elige un caso de uso para aplicación, es decir, cómo se utilizará; por ejemplo: "Anuncios" y completa el formulario.
+      2. Una vez creada la aplicació, acceder a la sección "Mis apps". 
+      3. La abrir la aplicación que se creó, se mostrará un cuadro de diálogo dando algunas indicaciones y con un botón para "ir al panel". 
+      4. Dentro del panel se mostrarán tres vínculos en los cuales se debe dar clic y seguir las instrucciones para completarlos.
+         Al completar cada uno irá apareciendo un "check" indicando que se completó.  
+      5. Una vez completados los tres pasos anteriores, confirmará si, en efecto, se desea crea la "app". Confirmarlo y
+         ahora sí se mostrará la app creada. 
+      6. Volver nuevamente al Panel y se mostrará el nombre de la aplicación que se creó. y abajo de él se mostrará la siguiente 
+         información: 
+                Identificador de la app: 2319229675094255
+
+
+    ¿Es obligatorio?
+      Para funciones avanzadas de Facebook: Como el análisis detallado de interacciones o el uso de plugins sociales, sí es necesario.
+      Para una simple previsualización en redes sociales: No es estrictamente obligatorio, pero Facebook puede marcarlo 
+      como una "recomendación fuerte" en su depurador.
+      
+      ¿Qué pasa si no lo configuro?
+        Si no defines fb:app_id:
+          - Facebook puede seguir mostrando una previsualización de tu contenido, pero no tendrás acceso a métricas avanzadas ni a configuraciones específicas  
+            vinculadas a una app.
+          - Podrías recibir advertencias en el depurador, aunque esto no siempre afecta la funcionalidad 
+           básica.
+           
+           
+      Es seguro agregar el ID de la aplicación de Facebook (fb:app_id) en tu sitio web, pero es importante entender cómo funciona y qué implica para que puedas tomar decisiones informadas.
+
+      ¿Por qué es seguro?
+        El fb:app_id es simplemente un identificador que vincula tu página web con una aplicación de Facebook específica. 
+        Este ID no es un dato sensible que pueda ser utilizado para acceder a tus datos privados o comprometer la seguridad de tu 
+        sitio web. Básicamente, se usa para:
+
+        Rastrear interacciones y recopilar métricas relacionadas con cómo se comparte y consume tu contenido en Facebook.
+        Identificar tu aplicación dentro de Facebook para funciones como comentarios o compartir contenido, si tienes estas 
+        integraciones configuradas.
+      
+      Consideraciones sobre la seguridad
+        Aunque es seguro, hay algunas consideraciones que debes tener en cuenta:
+
+          El ID no otorga acceso directo a tus datos:
+
+            - El App ID no es un dato confidencial. Cualquiera puede verlo si inspecciona el código 
+              fuente de tu página web. No proporciona acceso a tu cuenta de Facebook o a la configuración de tu aplicación.
+            - La seguridad de la aplicación y sus datos está más vinculada a la configuración de permisos y controles 
+              de acceso que determines en el panel de desarrolladores de Facebook.
+
+
+        IMPORTANTE: al dar clic en la opción "Publicar anuncions para promocionar tu app"se pueden modificar otras configuraciones. 
+        La primera de ellas llamada "Conecta tu portafoliio comercial y cuentas publicitarias" permite crear una cuenta de Facebook Business
+        para mi empresa y controlar así los roles y permisos para distintos usuarios. Lo cual también proporcionará la opción de tener métricas 
+        referentes a mi aplicación y perfil de Facebook Business. 
+
+
+    -->
+    <meta property="fb:app_id" content="2319229675094255" />
     <meta
       property="og:title"
       content="Andrei Arriaza - Profesor, Programador y Desarrollador Web"
@@ -219,6 +285,7 @@
       content="Bienvenidos a mi sitio web. Soy profesor, programador y desarrollador web, y me pongo a sus órdenes para el diseño, desarrollo y
       administración de sitios web."
     />
+    <meta property="og:type" content="website" />
     <meta
       property="og:image"
       content="https://andreiarriaza.github.io/assets/img/hero-image-home.jpg"
