@@ -48,23 +48,27 @@ En una aplicación progresiva (PWA), el caché se utiliza para almacenar recurso
 const CACHE_NAME = "v1_andrei_arriaza",
   urlsToCache = [
     /* Se encarga de cargar el archivo "index.html". */
-    "../../index.html",
+    "./index.html",
     /* Carga las fuentes de Google Fonts. */
     "https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap",
     /* Kit de Font Awesome Icons */
     "https://kit.fontawesome.com/f1bff8ec54.js",
 
     /* Hojas Externas de CSS*/
-    "../css/main.css",
-    "../../aperturas/assets/css/aperturas.css",
-    "../../libros/assets/css/libros.css",
-    "../../mates/assets/css/mates.css",
+    "./assets/css/main.css",
+    "./mentoria.css",
 
     /* Hoja Externa de JavaScript. */
     "sw-register",
 
     /* Imágenes del sitio web */
-    "../../assets/img/ProgramadorFitness.png",
+    "./assets/img/hero-image-home.jpg",
+    "./assets/img/profile-website.jpg",
+    "./assets/img/portfolio-1-costeo-plastikito.png",
+    "./assets/img/portfolio-2-testcleaver-plastikito.png",
+    "./assets/img/portfolio-3-plastikito-com.png",
+    "./assets/img/portfolio-4-huevito-sorpresa.png",
+    "./assets/img/portfolio-5-andreiarriaza-github.png",
 
     /* Favicon */
     "../../assets/img/favicon-16x16.png",

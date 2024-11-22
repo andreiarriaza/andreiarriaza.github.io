@@ -19,7 +19,7 @@ if ("serviceWorker" in navigator) {
               /assets/js/sw.js"
 
     */
-    .register("https://andreiarriaza.github.io/assets/js/sw.js")
+    .register("./sw.js")
     .then((reg) => console.log("Registro de SW (Service Worker) exitoso", reg))
     .catch((err) =>
       console.error("Error al tratar de registrar el SW (ServiceWorker)", err)
