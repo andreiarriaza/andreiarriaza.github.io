@@ -268,6 +268,188 @@
 
     <link rel="canonical" href="https://andreiarriaza.github.io/" />
 
+    <!-- ****************************************** FAVICON ******************************************  -->
+
+    <!-- Sitio Web para descargar Favicon y Apple Touch Icons: https://favicon.io/ 
+    Para descargar las  imágenes deseadas, se debe aceder a la opción "emojis". Al elegir la imagen deseada, dar clic en el botón "descargar", 
+    y se descargará todo el paquete de imágenes, entre ellas se incluy el "favicon" y la imagen "apple-touch-icon".
+
+    El tamaño ideal para un favicon es 16*16 pixeles o 32*32 pixeles. Sin embargo, si le da un tamaño mayor, como en este caso, 
+    se agregará sin problemas a menos que sea un tamaño muy grande.  
+
+    IMPORTANTE: en algunos sitios Web de consulta, e inclusive, cuando se genera automáticamente en Visual Studio Code la etiqueta
+    de "favicon", se mostrará la siguiente etiqueta: 
+        <link rel="shortcut icon" href="favicon.ico"">
+
+    Sin embargo, el estándar es utilizar la etiqueta "icon", pues el valor "shortcut" 
+    se agregaba anteriormente solo para la compatibilidad del favicon con Internet Explorer:
+        <link rel="icon" href="favicon.ico">      (sin el valor "shortcut")
+
+    Aunque la etiqueta "favicon" acepta tanto archivos ".png" como ".ico", el tipo de archivo "ico" siempre
+    tendrá preeminencia sobre el tipo de archivo ".png" si es que existen ambos en el mismo sitio Web.
+    -->
+
+    <!-- Etiqueta para agregar Favicon al sitio Web. -->
+
+    <!-- No es estrictamente necesario incluir type="image/x-icon" para agregar un favicon en la mayoría de los navegadores modernos si se una 
+         imagen "png", sin embargo, si se utiliza una imagen ".ico" sí es recomendable agregarlo. 
+         Los navegadores suelen detectar automáticamente el tipo de archivo basado en la extensión, p
+         or lo que generalmente no es necesario especificarlo explícitamente (excepto cuando se usa una imagen .ico).
+
+        Sin embargo, se usa principalmente para compatibilidad con navegadores más antiguos y con iconos en formato .ico. 
+        A continuación te explico más sobre cuándo se podría usar y si es recomendable:
+
+        Cuándo es útil type="image/x-icon":
+            Archivos .ico: Si usas un favicon en formato .ico (que es el formato de iconos más antiguo y común para favicons), 
+            es posible que encuentres el atributo type="image/x-icon" en algunas configuraciones para asegurar compatibilidad 
+            con navegadores más antiguos o específicos.
+
+        Compatibilidad: Aunque los navegadores modernos ya no requieren este atributo, algunos navegadores más antiguos podrían esperar que lo declares   
+            para los archivos .ico. -->
+
+    <!-- IMPORTANTE: el atributo sizes indica al navegador qué dimensiones tiene cada imagen de favicon. 
+         Esto ayuda al navegador a seleccionar el tamaño adecuado según el contexto. -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/img/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="48x48"
+      href="assets/img/favicon-48x48.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="64x64"
+      href="assets/img/favicon-64x64.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="76x76"
+      href="assets/img/favicon-76x76.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="assets/img/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="120x120"
+      href="assets/img/favicon-120x120.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="144x144"
+      href="assets/img/favicon-144x144.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="152x152"
+      href="assets/img/favicon-152x152.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="167x167"
+      href="assets/img/favicon-167x167.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="180x180"
+      href="assets/img/favicon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="assets/img/favicon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="256x256"
+      href="assets/img/favicon-256x256.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="384x384"
+      href="assets/img/favicon-384x384.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="assets/img/favicon-512x512.png"
+    />
+
+    <!-- ****************** Tamaños de favicons que se recomienda agregar ******************--->
+    <!--
+
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/img/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/img/favicon-64x64.png">
+  <link rel="icon" type="image/png" sizes="76x76" href="assets/img/favicon-76x76.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="120x120" href="assets/img/favicon-120x120.png">
+  <link rel="icon" type="image/png" sizes="144x144" href="assets/img/favicon-144x144.png">
+  <link rel="icon" type="image/png" sizes="152x152" href="assets/img/favicon-152x152.png">
+  <link rel="icon" type="image/png" sizes="167x167" href="assets/img/favicon-167x167.png">
+  <link rel="icon" type="image/png" sizes="180x180" href="assets/img/favicon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="256x256" href="assets/img/favicon-256x256.png">
+  <link rel="icon" type="image/png" sizes="384x384" href="assets/img/favicon-384x384.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/img/favicon-512x512.png">
+
+
+
+  Tamaño (píxeles)	  Uso específico
+  16x16	              Tamaño estándar de favicon para la mayoría de los navegadores. Se utiliza comúnmente en 
+                      pestañas de navegador y en la barra de favoritos.
+  32x32	              Mejor tamaño para iconos de acceso directo en la barra de tareas. Se utiliza en 
+                      sistemas operativos como Windows. También es la dimensión de favicon para macOS. 
+                      Ideal para pantallas de dispositivos inteligentes con resolución Retina.
+  48x48	              Tamaño de favicon utilizado en el navegador Chrome para mostrar iconos en la barra 
+                      de direcciones y en accesos directos.
+  76x76	              Favicon para la pantalla de inicio en dispositivos iPad. Asegura que el ícono 
+                      se vea bien en la pantalla de inicio del dispositivo.
+  96x96	              Tamaño de imagen de favicon utilizado para accesos directos en el 
+                      escritorio (Windows) y para ciertos contextos en Chrome.
+  120x120	            Tamaño típico de ICO para iPhone, utilizado en la pantalla de inicio y para accesos directos.
+  144x144	            Tamaño de icono de favicon utilizado en el navegador Chrome, especialmente en dispositivos móviles y tabletas.
+  152x152	            Dimensiones comunes de favicon para iPad, utilizado en la pantalla de inicio.
+  167x167	            Tamaño de favicon específico para el iPad Retina, proporcionando un ícono nítido en dispositivos de alta resolución.
+  180x180	            Tamaño más utilizado para iconos de Apple touch y iPhone Retina. Ideal para la pantalla de inicio y para una presentación clara.
+  192x192	            Tamaño recomendado para un manifiesto web, según Google Developers, y utilizado en aplicaciones web progresivas (PWA).
+  196x196	            Icono de pantalla de inicio en Android para Chrome. Utilizado para crear accesos directos en dispositivos Android.
+  256x256	            Dimensiones posibles de favicon para Chrome, asegurando una buena presentación en diversas situaciones.
+  384x384	            Tamaño de favicons utilizado en el navegador Chrome para pantallas grandes y de alta resolución.
+  512x512	            Tamaños de favicon requeridos por WordPress. Este tamaño es utilizado en la administración y para 
+                      asegurar una presentación clara en dispositivos de alta resolución. El tamaño 512x512 píxeles 
+                      se sugiere no solo para sitios web de WordPress, sino que también es beneficioso para cualquier tipo de página web. 
+                      El tamaño de 512x512 píxeles es uno de los requisitos para las aplicaciones web progresivas (PWA). 
+                      Si tu sitio web se convierte en una PWA, este tamaño garantiza que el ícono se muestre correctamente 
+                      en las pantallas de inicio de los dispositivos móviles.
+  -->
+
     <!-- ****************************************** APPLE TOUCH ICON ******************************************  -->
 
     <!-- 
