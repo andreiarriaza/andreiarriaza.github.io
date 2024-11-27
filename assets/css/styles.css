@@ -616,7 +616,6 @@ hijos descendientes del elemento al que se le asignó la clase "contact-form". *
   el borde inferior, se le asigna a cada elemento "input" un valor de "padding-left: 0". 
   
   */
-  padding-left: 0;
 }
 
 .contact-form textarea {
