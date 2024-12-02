@@ -29,214 +29,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- ****************** ETIQUETAS PARA CONTROLAR CÓMO SE VERÁ EL SITIO CUANDO SE AGREGUE A LA PANTALLA DE INICIO DEL SMARTPHONE Y LUEGO SE ABRA ****************** -->
-
-    <!-- Las siguiente etiqeutas, NO CONVIERTEN EL SITIO en una Progressive Web App: 
-          Las etiquetas que se muestran a continuación, solamente sirven para que, cuando se agregue un acceso directo del sitio web
-          a la pantalla de inicio del Smartphone, y luego se abra dicho sitio, este se muestre en pantalla completa, sin la barra de herramientas del navegador.
-          Aunque esto pareciera que es una Progressive Web App, aún no lo es, solamente da la apariencia de una Progressive Web App que simplemente
-          cambia la apariencia del sitio cuando se agrega a la pantalla de inicio y se abre. 
-
-         Estas etiquetas siguen siendo útiles incluso si tienes una Progressive Web App (PWA). Aunque una PWA ya ofrece varias funcionalidades avanzadas por sí misma, 
-         estas etiquetas mejoran aún más la experiencia de usuario en dispositivos móviles, especialmente en términos de integración visual y comportamiento en iOS y Android.
-
-        ¿Por qué son útiles en una PWA?
-          Modo de pantalla completa: Aunque las PWAs pueden ejecutarse en modo de pantalla completa automáticamente en muchos navegadores, 
-                                     estas etiquetas garantizan que tanto en iOS (Safari) como en Android (Chrome y otros navegadores móviles) 
-                                     el sitio web se comportará como una aplicación nativa cuando se abra desde la pantalla de inicio.
-
-
-            <meta name="apple-mobile-web-app-capable" content="yes"> (iOS) y <meta name="mobile-web-app-capable" content="yes"> (Android) 
-            le indican al navegador que tu sitio web puede mostrarse en modo pantalla completa cuando los usuarios lo agregan a la pantalla de inicio.
-
-            Modo pantalla completa: Cuando un usuario guarda tu página web en la pantalla de inicio de su dispositivo y luego la abre desde allí, 
-                                    el navegador ocultará la barra de direcciones, controles de navegación y otros elementos de la interfaz, 
-                                    brindando una experiencia similar a la de una aplicación.
-
-            Sin ser una PWA, NO tendrás:
-                Instalación directa: Los usuarios no podrán instalar la página directamente como una aplicación mediante 
-                                     un botón "Instalar" en el navegador (una característica propia de las PWAs).
-            Funcionalidades offline: Las PWAs permiten que las páginas funcionen sin conexión a través de un "service worker", 
-                                      lo cual no es posible si tu página no es una PWA.
-            Actualización automática de contenido: Las PWAs pueden almacenar en caché el contenido localmente y actualizarlo en segundo plano.
-            
-            Beneficios que aún obtendrás:
-              - Pantalla completa: Tus usuarios podrán experimentar tu sitio web en modo de pantalla completa cuando lo abran desde el acceso directo en la pantalla de inicio.
-              - Experiencia tipo app: La interfaz web se verá más inmersiva y parecida a una app, aunque no sea una PWA completa.
-              - Personalización visual: Puedes configurar un ícono, el título de la página cuando se guarda en la pantalla de inicio, y el color de la barra de estado en dispositivos móviles. 
-              
-  -->
-
-    <!-- 
-    <meta name="mobile-web-app-capable" content="yes" />
-    
-      Definición:
-        Esta etiqueta está diseñada para navegadores en dispositivos Android, como Google Chrome, y permite que el sitio web se comporte como 
-        una "aplicación web" cuando se agrega a la pantalla de inicio del dispositivo.
-
-      Funcionalidad:
-        Modo de pantalla completa: Similar a la etiqueta para iOS, esta permite que el sitio web se muestre sin la barra de direcciones ni controles 
-        del navegador cuando se accede desde un acceso directo creado en la pantalla de inicio.
-        Experiencia de aplicación: Hace que el sitio web funcione como una Progressive Web App (PWA), 
-        dándole una apariencia más nativa.. -->
-
     <meta name="mobile-web-app-capable" content="yes" />
 
-    <!-- <meta name="apple-mobile-web-app-title" content="Chess Mate Club" />: esta etiqueta es necesaria, aún si nuestra página es una Progressive Web App, si se quiere 
-                                                                               personalizar el nombre de tu aplicación web en iOS cuando los usuarios agreguen 
-                                                                               el sitio a la pantalla de inicio.
-
-                                                                                Sin esta etiqueta, iOS tomará el valor del título de la página web (<title>) 
-                                                                                como el nombre que se muestra en la pantalla de inicio, lo cual podría no ser 
-                                                                                ideal si tu título es muy largo o si quieres que sea algo más específico o estilizado.
-                                                                                
-          ¿Qué hace esta etiqueta?
-              Define el título de la "aplicación web" en iOS:
-                  Cuando el usuario agrega tu sitio web a la pantalla de inicio en un dispositivo iOS (iPhone o iPad), este 
-                  título aparecerá debajo del ícono en lugar de tomar el título de la página o el dominio del sitio.
-                  Te permite personalizar el nombre que se muestra en la pantalla de inicio, lo cual puede ser más corto o diferente al título de la página.
-              Específica para iOS:
-                  Solo tiene efecto en dispositivos iOS (Safari). Android no utiliza esta etiqueta, ya que en Android el nombre de la PWA se define 
-                  en el archivo manifest.json.-->
     <meta name="apple-mobile-web-app-title" content="Andrei Arriaza" />
-
-    <!-- <meta name="apple-mobile-web-app-capable" content="yes" />
-            Definición:
-              Esta etiqueta es específica para dispositivos iOS (iPhone, iPad, iPod touch) y le indica a Safari que el sitio web es "capaz" de comportarse como una aplicación web cuando el usuario lo agrega a su pantalla de inicio.
-
-            Funcionalidad:
-              Modo de pantalla completa: Permite que el sitio web se abra en un modo de "pantalla completa", es decir, sin la barra de direcciones ni otros controles de Safari, ofreciendo una experiencia más cercana a una aplicación nativa.
-              Agregado a la pantalla de inicio: Cuando los usuarios añaden tu sitio web a la pantalla de inicio, el sitio se comporta como una aplicación independiente, sin elementos del navegador. 
-              
-    -->
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
 
-    <!-- 
-    
-     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
-          Propósito: Controla el estilo de la barra de estado (la barra en la parte superior que muestra la hora, batería, etc.) cuando tu sitio 
-          se ejecuta como una "web app" en iOS.
-
-          Función: Al usar content="black-translucent", haces que la barra de estado sea negra y translúcida, permitiendo que parte del 
-          contenido de la página web sea visible debajo de la barra de estado. Esto puede dar una apariencia más integrada y fluida a tu aplicación web.
-    
-          Otros valores posibles para esta etiqueta incluyen:
-
-            - default: Usa la barra de estado normal (que es gris o   blanca).
-            - black: La barra de estado será completamente negra, sin 
-                     transparencia.
-
-            - black-translucent: La barra de estado será negra y translúcida, permitiendo que parte del contenido de la página web sea visible debajo de la barra de estado.
-    
-     -->
     <meta
       name="apple-mobile-web-app-status-bar-style"
       content="black-translucent"
     />
 
-    <!-- 
-   
-    La etiqueta <link rel="apple-touch-startup-image" /> se utiliza en páginas web y aplicaciones web progresivas (PWAs) 
-    para definir una imagen de inicio que se muestra mientras una aplicación web se está cargando en dispositivos Apple iOS, como iPhones y iPads.
-
-    Propósito de la etiqueta
-      Cuando un usuario agrega tu aplicación o página web a la pantalla de inicio de un dispositivo iOS y la abre 
-      como una "aplicación", esta etiqueta define la imagen que se muestra en lugar de una pantalla en blanco mientras el navegador carga el contenido.
-
-    Atributos clave
-      - rel="apple-touch-startup-image": Especifica que esta imagen se usará como pantalla de inicio para dispositivos iOS.
-      - href: La URL de la imagen que se usará como la pantalla de inicio. 
-              Puede ser un archivo local (como en tu ejemplo: ./assets/img/ProgramadorFitness.png) o una URL remota.
-
-    Función: Sirve como una pantalla de carga que aparece brevemente cuando se abre la web app, antes de que el contenido esté listo para ser visualizado. Le da una apariencia más parecida a una aplicación nativa, con una transición más fluida al abrir la web app.   
-    -->
-
-    <!-- 
-    rel="apple-touch-startup-image"
-        - Este atributo indica que el enlace especificado es una imagen de inicio para dispositivos Apple, como iPhones o iPads, 
-          cuando se agrega una aplicación web a la pantalla de inicio.
-        - La imagen de inicio es la que aparece en pantalla durante la carga de la aplicación, antes de que la página web se renderice completamente. 
-
-    href="startup-image-750x1334@2x.png"
-        - El atributo href especifica la ubicación de la imagen que se mostrará como la pantalla de inicio de la aplicación 
-          en los dispositivos Apple.
-        - En este caso, la imagen se llama startup-image-750x1334@2x.png, lo que indica que es una imagen de alta 
-          resolución (2x) para dispositivos con pantallas Retina. El sufijo @2x hace referencia a dispositivos que tienen 
-          una densidad de píxeles 2 veces mayor que una pantalla estándar.
-    
-    media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)"
-        - El atributo media es una consulta de medios (media query) que se usa para aplicar la imagen de inicio solo a ciertos 
-          dispositivos que coincidan con las condiciones especificadas. Es similar a cómo se usan las consultas de medios en CSS.
-
-        - (device-width: 375px): Esto asegura que la imagen se aplique solo a dispositivos cuyo ancho de pantalla sea 375 píxeles. 
-                                 Esto coincide con el tamaño de pantalla de dispositivos como el iPhone 6, 7 y 8.
-
-        - (device-height: 667px): Esta condición asegura que la imagen de inicio se aplique solo a dispositivos con una 
-                                  altura de pantalla de 667 píxeles, lo que también corresponde a los modelos mencionados de 
-                                  iPhone (como el 6, 7 y 8).
-
-        - (-webkit-device-pixel-ratio: 2): Este atributo es específico para dispositivos Apple con pantallas Retina o de alta resolución, 
-                                           donde el ratio de píxeles es 2. Esto significa que el dispositivo tiene una densidad de píxeles 
-                                           2 veces mayor que la de una pantalla estándar.
-
-    En resumen, esta consulta de medios hace que la imagen de inicio se aplique solo a dispositivos con las siguientes características:
-
-      - Ancho de pantalla: 375 píxeles
-      - Altura de pantalla: 667 píxeles
-      - Pantalla Retina con una densidad de píxeles de 2 (es decir, una pantalla de alta resolución como la de los iPhone 6, 7 y 8).
-                                                                                  
-    -->
-
-    <!-- iPhone 6, 7, 8, SE (2ª generación) - Retina @2x -->
     <link
       rel="apple-touch-startup-image"
       href="./assets/img/startup-image-750x1334@2x.png"
       media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)"
     />
 
-    <!-- iPhone X, XS, 11 Pro, 12, 12 Pro, 13, 13 Pro - Retina @3x -->
-
-    <!-- 
-    media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)"
-      - El atributo media es una consulta de medios que define las condiciones bajo las cuales esta imagen 
-        será utilizada. Específicamente, esta consulta está dirigida a dispositivos con:
-    
-    (device-width: 375px):
-      - El ancho del dispositivo en puntos de diseño es de 375 píxeles.
-      - En dispositivos Retina, esto se traduce en un ancho físico de 1125 píxeles (375x3).
-    
-    (device-height: 812px):
-      - La altura del dispositivo en puntos de diseño es de 812 píxeles.
-      - En dispositivos Retina, esto equivale a 2436 píxeles (812x3).
-    
-    (-webkit-device-pixel-ratio: 3):
-      - El dispositivo tiene una densidad de píxeles de 3, es decir, cada punto de diseño contiene 3 píxeles físicos.
-      - Este valor es característico de las pantallas Retina de alta densidad, como las de los iPhones modernos. -->
     <link
       rel="apple-touch-startup-image"
       href="./assets/img/startup-image-1125x2436@3x.png"
       media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)"
     />
 
-    <!-- iPad 9.7", Air - Retina @2x -->
-
-    <!-- 
-    media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)"
-      El atributo media es una consulta de medios que define las características del dispositivo donde se aplicará esta imagen de inicio.
-    
-    Los criterios son los siguientes:
-      - (device-width: 768px): El ancho del dispositivo en puntos de diseño es de 768 píxeles.
-      - (device-height: 1024px): La altura del dispositivo en puntos de diseño es de 1024 píxeles.
-      - (-webkit-device-pixel-ratio: 2): El dispositivo tiene una densidad de píxeles de 2x, característica de las pantallas Retina de alta calidad. 
-      
-    
-    Dispositivos Apple que cumplen con estas características:
-      -iPad Retina.
-      - iPad Air (1.ª generación y posteriores).
-      - iPad Mini (con pantalla Retina).
-      - Otros dispositivos Apple con una resolución lógica de 768x1024 puntos y pantallas Retina (2x).
-      -->
     <link
       rel="apple-touch-startup-image"
       href="./assets/img/startup-image-768x1024@2x.png"
@@ -268,47 +83,6 @@
 
     <link rel="canonical" href="https://andreiarriaza.github.io/" />
 
-    <!-- ****************************************** FAVICON ******************************************  -->
-
-    <!-- Sitio Web para descargar Favicon y Apple Touch Icons: https://favicon.io/ 
-    Para descargar las  imágenes deseadas, se debe aceder a la opción "emojis". Al elegir la imagen deseada, dar clic en el botón "descargar", 
-    y se descargará todo el paquete de imágenes, entre ellas se incluy el "favicon" y la imagen "apple-touch-icon".
-
-    El tamaño ideal para un favicon es 16*16 pixeles o 32*32 pixeles. Sin embargo, si le da un tamaño mayor, como en este caso, 
-    se agregará sin problemas a menos que sea un tamaño muy grande.  
-
-    IMPORTANTE: en algunos sitios Web de consulta, e inclusive, cuando se genera automáticamente en Visual Studio Code la etiqueta
-    de "favicon", se mostrará la siguiente etiqueta: 
-        <link rel="shortcut icon" href="favicon.ico"">
-
-    Sin embargo, el estándar es utilizar la etiqueta "icon", pues el valor "shortcut" 
-    se agregaba anteriormente solo para la compatibilidad del favicon con Internet Explorer:
-        <link rel="icon" href="favicon.ico">      (sin el valor "shortcut")
-
-    Aunque la etiqueta "favicon" acepta tanto archivos ".png" como ".ico", el tipo de archivo "ico" siempre
-    tendrá preeminencia sobre el tipo de archivo ".png" si es que existen ambos en el mismo sitio Web.
-    -->
-
-    <!-- Etiqueta para agregar Favicon al sitio Web. -->
-
-    <!-- No es estrictamente necesario incluir type="image/x-icon" para agregar un favicon en la mayoría de los navegadores modernos si se una 
-         imagen "png", sin embargo, si se utiliza una imagen ".ico" sí es recomendable agregarlo. 
-         Los navegadores suelen detectar automáticamente el tipo de archivo basado en la extensión, p
-         or lo que generalmente no es necesario especificarlo explícitamente (excepto cuando se usa una imagen .ico).
-
-        Sin embargo, se usa principalmente para compatibilidad con navegadores más antiguos y con iconos en formato .ico. 
-        A continuación te explico más sobre cuándo se podría usar y si es recomendable:
-
-        Cuándo es útil type="image/x-icon":
-            Archivos .ico: Si usas un favicon en formato .ico (que es el formato de iconos más antiguo y común para favicons), 
-            es posible que encuentres el atributo type="image/x-icon" en algunas configuraciones para asegurar compatibilidad 
-            con navegadores más antiguos o específicos.
-
-        Compatibilidad: Aunque los navegadores modernos ya no requieren este atributo, algunos navegadores más antiguos podrían esperar que lo declares   
-            para los archivos .ico. -->
-
-    <!-- IMPORTANTE: el atributo sizes indica al navegador qué dimensiones tiene cada imagen de favicon. 
-         Esto ayuda al navegador a seleccionar el tamaño adecuado según el contexto. -->
     <link
       rel="icon"
       type="image/png"
@@ -609,74 +383,6 @@
     />
     <meta name="twitter:url" content="https://andreiarriaza.github.io/" />
 
-    <!-- **************** Etiquetas Open Graph (Facebook, LinkedIn, etc.) **************** -->
-    <!-- 
-
-    ¿Qué es fb:app_id?
-    La propiedad fb:app_id vincula tu página con una aplicación específica de Facebook. Esto permite:
-
-      - Recopilar métricas: Analizar cómo se comparte y utiliza tu contenido en Facebook a través de la aplicación asociada.
-      - Configurar permisos avanzados: Usar características avanzadas de integración, como comentarios o autenticación mediante Facebook.
-      - Identificar la app responsable: Esto es útil si estás gestionando varias aplicaciones o dominios.
-
-    Cómo obtener un fb:app_id
-      1. Crea una aplicación en Facebook:
-          - Ve a Facebook for Developers: https://developers.facebook.com/.
-          - Inicia sesión y selecciona "Crear Aplicación".
-          - Elige un caso de uso para aplicación, es decir, cómo se utilizará; por ejemplo: "Anuncios" y completa el formulario.
-      2. Una vez creada la aplicació, acceder a la sección "Mis apps". 
-      3. La abrir la aplicación que se creó, se mostrará un cuadro de diálogo dando algunas indicaciones y con un botón para "ir al panel". 
-      4. Dentro del panel se mostrarán tres vínculos en los cuales se debe dar clic y seguir las instrucciones para completarlos.
-         Al completar cada uno irá apareciendo un "check" indicando que se completó.  
-      5. Una vez completados los tres pasos anteriores, confirmará si, en efecto, se desea crea la "app". Confirmarlo y
-         ahora sí se mostrará la app creada. 
-      6. Volver nuevamente al Panel y se mostrará el nombre de la aplicación que se creó. y abajo de él se mostrará la siguiente 
-         información: 
-                Identificador de la app: 2319229675094255
-
-
-    ¿Es obligatorio?
-      Para funciones avanzadas de Facebook: Como el análisis detallado de interacciones o el uso de plugins sociales, sí es necesario.
-      Para una simple previsualización en redes sociales: No es estrictamente obligatorio, pero Facebook puede marcarlo 
-      como una "recomendación fuerte" en su depurador.
-      
-      ¿Qué pasa si no lo configuro?
-        Si no defines fb:app_id:
-          - Facebook puede seguir mostrando una previsualización de tu contenido, pero no tendrás acceso a métricas avanzadas ni a configuraciones específicas  
-            vinculadas a una app.
-          - Podrías recibir advertencias en el depurador, aunque esto no siempre afecta la funcionalidad 
-           básica.
-           
-           
-      Es seguro agregar el ID de la aplicación de Facebook (fb:app_id) en tu sitio web, pero es importante entender cómo funciona y qué implica para que puedas tomar decisiones informadas.
-
-      ¿Por qué es seguro?
-        El fb:app_id es simplemente un identificador que vincula tu página web con una aplicación de Facebook específica. 
-        Este ID no es un dato sensible que pueda ser utilizado para acceder a tus datos privados o comprometer la seguridad de tu 
-        sitio web. Básicamente, se usa para:
-
-        Rastrear interacciones y recopilar métricas relacionadas con cómo se comparte y consume tu contenido en Facebook.
-        Identificar tu aplicación dentro de Facebook para funciones como comentarios o compartir contenido, si tienes estas 
-        integraciones configuradas.
-      
-      Consideraciones sobre la seguridad
-        Aunque es seguro, hay algunas consideraciones que debes tener en cuenta:
-
-          El ID no otorga acceso directo a tus datos:
-
-            - El App ID no es un dato confidencial. Cualquiera puede verlo si inspecciona el código 
-              fuente de tu página web. No proporciona acceso a tu cuenta de Facebook o a la configuración de tu aplicación.
-            - La seguridad de la aplicación y sus datos está más vinculada a la configuración de permisos y controles 
-              de acceso que determines en el panel de desarrolladores de Facebook.
-
-
-        IMPORTANTE: al dar clic en la opción "Publicar anuncions para promocionar tu app"se pueden modificar otras configuraciones. 
-        La primera de ellas llamada "Conecta tu portafoliio comercial y cuentas publicitarias" permite crear una cuenta de Facebook Business
-        para mi empresa y controlar así los roles y permisos para distintos usuarios. Lo cual también proporcionará la opción de tener métricas 
-        referentes a mi aplicación y perfil de Facebook Business. 
-
-
-    -->
     <meta property="fb:app_id" content="2319229675094255" />
     <meta
       property="og:title"
@@ -2293,6 +1999,7 @@
             title="Este campo solo acepta letras y espacios en blanco."
             pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
             required
+            autocomplete="off"
           />
 
           <!-- El asterisco (*) dentro de los "placeholder" se utiliza para indicar que es un campo
@@ -2304,6 +2011,7 @@
             title="E-mail incorrecto"
             patter="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
             required
+            autocomplete="off"
           />
 
           <!-- El asterisco (*) dentro de los "placeholder" se utiliza para indicar que es un campo
@@ -2313,6 +2021,7 @@
             cols="30"
             rows="10"
             placeholder="Déjame tus comentarios *"
+            required
           ></textarea>
 
           <div class="contact-form-loader text-center none">

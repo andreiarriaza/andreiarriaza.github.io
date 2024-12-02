@@ -31,9 +31,9 @@ En esta sección van todas las variables (Custom Properties) de CSS utilizadas e
 */
 
 :root {
-  /* --first-color: #e6552d; */
-  /* --first-alpha-color: rgba(230, 85, 45, 0.75)  ; */
-  /* --second-color: #14192d; */
+  --first-color: #e6552d;
+  --first-alpha-color: rgba(230, 85, 45, 0.75);
+  --second-color: #14192d;
   --second-alpha-color: rgba(20, 25, 45, 0.75);
 
   --third-alpha-color: rgba(50, 20, 100, 0.75);
@@ -600,6 +600,14 @@ Para evitar ese problema, se define un tipo de fuente específico para aplicarse
   font-family: var(--font);
 }
 
+.contact-form input:not(.btn),
+/* Se uso la pseudoclase ":not(.btn)" para que este estilo se aplique a todos los input, excepto al que tiene asignada la clase ".btn", el cual
+es el input que permite el envío del formulario. */
+.contact-form textarea {
+  color: var(--text-color);
+  background-color: var(--body-color);
+}
+
 /* Este selector se aplicará a los elementos "input" que sean
 hijos descendientes del elemento al que se le asignó la clase "contact-form". */
 .contact-form input {
@@ -668,7 +676,8 @@ del elemento al que se le asignó la clase "contact-form".  */
   padding: 1rem;
   width: 400px;
   text-align: center;
-  background-color: var(--white-color);
+  background-color: var(--body-color);
+  border-radius: 30px;
 }
 
 .contact-form-response svg {
