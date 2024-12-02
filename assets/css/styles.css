@@ -31,14 +31,21 @@ En esta sección van todas las variables (Custom Properties) de CSS utilizadas e
 */
 
 :root {
-  --first-color: #e6552d;
-  --first-alpha-color: rgba(230, 85, 45, 0.75);
-  --second-color: #14192d;
+  /* IMPORTANTE: algunos variables de colores se dejaron comentadas porque se cambian dinámicamente según el modo sea "Oscuro" o "Claro",
+  más adelante en esta misma hoja. Si se dejaran sin comentario estos colores, se sobreescribirían por los que se encuentran más adelante; por
+  ello no es necesario agregarlos. Se dejan comentados solo como referencia de que estas variables se modificarán dinámicamente más adelante. */
+
+  /*   --first-color: #e6552d; */
+  /*--first-alpha-color: rgba(230, 85, 45, 0.75); */
+  /* --second-color: #14192d; */
+
   --second-alpha-color: rgba(20, 25, 45, 0.75);
 
   --third-alpha-color: rgba(50, 20, 100, 0.75);
   --white-color: #fff;
+
   /* --gray-light-color: #f3f3f3; */
+
   --gray-color: #ccc;
   --gray-dark-color: #666;
   --black-color: #000;
@@ -52,7 +59,9 @@ En esta sección van todas las variables (Custom Properties) de CSS utilizadas e
   --twitter-color: #1da1f2;
   --white-alpha-color: rgba(255, 255, 255, 0.5);
   --youtube-color: #ff0000;
+
   /* --black-alpha-color: rgba(0, 0, 0, 0.8); */
+
   --font: "Raleway", sans-serif; /* Si no encontrara la fuente "Raleway", asignará la fuente "sans-serif". 
   La tipografía "Raleway" será consumida desde Google Fonts. */
 
