@@ -1,8 +1,8 @@
 {
-  "id": "index.html?utm_source=web_app_manifest",
+  "id": "https://andreiarriaza.github.io/",
   "name": "Andrei Arriaza - Desarrollador",
   "short_name": "Andrei Arriaza",
-  "description": "Bienvenidos a mi sitio web. Soy profesor, programador y desarrollador web, y me pongo a sus órdenes para el diseño, desarrollo y administración de sitios web.",
+  "description": "Soy profesor, programador y desarrollador web, y me pongo a sus órdenes para el diseño, desarrollo y administración de sitios web.",
   "background_color": "#1F2937",
   "theme_color": "#f59622",
   "orientation": "portrait",
@@ -11,11 +11,6 @@
   "scope": "./",
   "lang": "es-GT",
   "icons": [
-    {
-      "src": "assets/img/icon-1024x1024.png",
-      "sizes": "1024x1024",
-      "type": "image/png"
-    },
     {
       "src": "assets/img/favicon-512x512.png",
       "sizes": "512x512",
@@ -104,13 +99,6 @@
       "sizes": "800x1280",
       "type": "image/png",
       "form_factor": "narrow"
-    }
-  ],
-  "protocol_handlers": [
-    {
-      "protocol": "web+micontacto",
-
-      "url": "./contacto/contacto.html?id=%s"
     }
   ]
 }
