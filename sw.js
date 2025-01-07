@@ -10,6 +10,15 @@
         5. Por otro lado, al acceder a la consola, se debería mostrar el mensaje: "Registro de SW (Service Worker) exitoso"
 
 
+  Comprobar que el ServiceWorker se haya activado correctamente: 
+        1. Abrir las herramientas para desarrolladores de Chrome. 
+        2. Acceder a "Application".
+        3. Seleccionar en el menú de la izquierda la opción "Service workers".
+        4. En el lado drecho se mostrará el estado del Service Worker detectado, el cual debería mostrar el Status: "... activated and is running" y mostrar
+           un ícono de color verde al lado izquierdo para indicar que está funcionando correctamente. 
+        
+
+
   Corroborar que se haya creado el Caché en el dispositivo: 
         1. Acceder a las Herramientas para Desarrolladores de Chrome. 
         2. Acceder a la sección "Application" (Aplicación).
@@ -17,23 +26,21 @@
         4. Ya debería mostrarse el chaché llamado "v1_chess_mate_club", que se creón dentro de este archivo y el listado de URL que se agregarón dentro
            de la constante "urlsToCache".
 
-        5. Si las variables no se muestran correctamente al acceder en las Herramientas para Desarrolladores de Chrome a "Application/Cache Storage",
+        5. Si las variables no se muestran correctamente al acceder en las Herramientas para 
+           Desarrolladores de Chrome a "Application/Cache Storage" (regularmente ocurre, después de una modificación del Service Worker),
            es necesario reinicar el Service Worker. Para reinicarlo, se deben seguir los siguientes pasos: 
                - Acceder a las Herramientas para Desarrolladores de Chrome. 
                - Seleccionar la opción "Application".
                - En la barra de navegación de lado izquierdo, seleccionar "Service workers".
                - En el lado derecho, se muestra el botón "Update". Dar clic en él. 
-               - Listo.
-
-      
-
-        
+               - Listo.  
         */
 
 /* Las AppProgresivas permiten almacenar todos los recursos estáticos en el disco duro del dispositivo en el que se
 esté visualizando la aplicación. 
 
-En una aplicación progresiva (PWA), el caché se utiliza para almacenar recursos estáticos que serán necesarios para que la aplicación funcione sin conexión o se cargue más rápido. Los elementos que generalmente se incluyen en el caché son los siguientes:
+En una aplicación progresiva (PWA), el caché se utiliza para almacenar recursos estáticos que serán necesarios para que la aplicación 
+funcione sin conexión o se cargue más rápido. Los elementos que generalmente se incluyen en el caché son los siguientes:
 
     - Páginas HTML principales: como index.html o cualquier otra página clave.
     - Archivos CSS: como hojas de estilo personalizadas.
@@ -45,87 +52,92 @@ En una aplicación progresiva (PWA), el caché se utiliza para almacenar recurso
 */
 
 //Asignar un nombre y versión al cache
-const CACHE_NAME = "v1_andrei_arriaza",
+const CACHE_NAME = "v1_andreiarriaza",
   urlsToCache = [
     /* Se encarga de cargar el archivo "index.html". */
     "./index.html",
+
+    /* Se agrega la página web "mates"*/
+    "./mates/mentoria.html",
+
     /* Carga las fuentes de Google Fonts. */
     "https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap",
-    /* Kit de Font Awesome Icons */
-    "https://kit.fontawesome.com/f1bff8ec54.js",
 
     /* Hojas Externas de CSS*/
-    "./assets/css/main.css",
-    "./mentoria.css",
+    "./assets/css/styles.css",
 
-    /* Hoja Externa de JavaScript. */
-    "sw-register",
+    /* Hoja Externa de JavaScript.
+    
+
+
+    */
 
     /* Imágenes del sitio web */
-    "./assets/img/hero-image-home.jpg",
-    "./assets/img/profile-website.jpg",
-    "./assets/img/portfolio-1-costeo-plastikito.png",
-    "./assets/img/portfolio-2-testcleaver-plastikito.png",
-    "./assets/img/portfolio-3-plastikito-com.png",
-    "./assets/img/portfolio-4-huevito-sorpresa.png",
-    "./assets/img/portfolio-5-andreiarriaza-github.png",
+    "./assets/img/ProgramadorFitness.png",
+
+    /* Startup Image */
+    "./assets/img/startup-image-750x1334@2x.png",
+    "./assets/img/startup-image-1125x2436@3x.png",
+    "./assets/img/startup-image-768x1024@2x.png",
 
     /* Favicon */
-    "../../assets/img/favicon-16x16.png",
-    "../../assets/img/favicon-32x32.png",
-    "../../assets/img/favicon-48x48.png",
-    "../../assets/img/favicon-76x76.png",
-    "../../assets/img/favicon-96x96.png",
-    "../../assets/img/favicon-120x120.png",
-    "../../assets/img/favicon-144x144.png",
-    "../../assets/img/favicon-152x152.png",
-    "../../assets/img/favicon-167x167.png",
-    "../../assets/img/favicon-180x180.png",
-    "../../assets/img/favicon-192x192.png",
-    "../../assets/img/favicon-256x256.png",
-    "../../assets/img/favicon-384x384.png",
-    "../../assets/img/favicon-512x512.png",
+    "./assets/img/favicon-16x16.png",
+    "./assets/img/favicon-32x32.png",
+    "./assets/img/favicon-48x48.png",
+    "./assets/img/favicon-76x76.png",
+    "./assets/img/favicon-96x96.png",
+    "./assets/img/favicon-120x120.png",
+    "./assets/img/favicon-144x144.png",
+    "./assets/img/favicon-152x152.png",
+    "./assets/img/favicon-167x167.png",
+    "./assets/img/favicon-180x180.png",
+    "./assets/img/favicon-192x192.png",
+    "./assets/img/favicon-256x256.png",
+    "./assets/img/favicon-384x384.png",
+    "./assets/img/favicon-512x512.png",
 
     /* Apple Touch Icon */
-    "../../assets/img/apple-touch-icon-57x57.png",
-    "../../assets/img/apple-touch-icon-60x60.png",
-    "../../assets/img/apple-touch-icon-72x72.png",
-    "../../assets/img/apple-touch-icon-76x76.png",
-    "../../assets/img/apple-touch-icon-114x114.png",
-    "../../assets/img/apple-touch-icon-120x120.png",
-    "../../assets/img/apple-touch-icon-144x144.png",
-    "../../assets/img/apple-touch-icon-152x152.png",
-    "../../assets/img/apple-touch-icon-167x167.png",
-    "../../assets/img/apple-touch-icon-180x180.png",
+    "./assets/img/apple-touch-icon-57x57.png",
+    "./assets/img/apple-touch-icon-60x60.png",
+    "./assets/img/apple-touch-icon-72x72.png",
+    "./assets/img/apple-touch-icon-76x76.png",
+    "./assets/img/apple-touch-icon-114x114.png",
+    "./assets/img/apple-touch-icon-120x120.png",
+    "./assets/img/apple-touch-icon-144x144.png",
+    "./assets/img/apple-touch-icon-152x152.png",
+    "./assets/img/apple-touch-icon-167x167.png",
+    "./assets/img/apple-touch-icon-180x180.png",
 
     /* Aperturas */
-    "../../assets/img/Apertura-Ruy-López.png",
-    "../../assets/img/Apertura-Italiana.png",
-    "../../assets/img/Defensa-Alekhine.png",
-    "../../assets/img/Defensa-Caro-Kann.png",
-    "../../assets/img/Defensa-Escandinava.png",
-    "../../assets/img/Defensa-Escocesa.png",
-    "../../assets/img/Defensa-Francesa.png",
-    "../../assets/img/Defensa-Siciliana.png",
-    "../../assets/img/Defensa-Vienesa.png",
-    "../../assets/img/Gambito-de-Rey.png",
+    "./aperturas/assets/img/Apertura-Ruy-Lopez.png",
+    "./aperturas/assets/img/Apertura-Italiana.png",
+    "./aperturas/assets/img/Defensa-Alekhine.png",
+    "./aperturas/assets/img/Defensa-Caro-Kann.png",
+    "./aperturas/assets/img/Defensa-Escandinava.png",
+    "./aperturas/assets/img/Defensa-Escocesa.png",
+    "./aperturas/assets/img/Defensa-Francesa.png",
+    "./aperturas/assets/img/Defensa-Siciliana.png",
+    "./aperturas/assets/img/Defensa-Vienesa.png",
+    "./aperturas/assets/img/Gambito-de-Rey.png",
 
     /* Mates */
-    "../../assets/img/mate-arabe.gif",
-    "../../assets/img/mate-cola-de-golondrina.gif",
-    "../../assets/img/mate-de-anastasia.gif",
-    "../../assets/img/mate-de-blackburne.gif",
-    "../../assets/img/mate-de-boen.gif",
-    "../../assets/img/mate-de-cozio.gif",
-    "../../assets/img/mate-de-damiano.gif",
-    "../../assets/img/mate-de-la-coz.gif",
-    "../../assets/img/mate-de-la-opera.gif",
-    "../../assets/img/mate-de-las-hombreras.gif",
-    "../../assets/img/mate-de-morphy.gif",
+    "./mates/assets/img/mate-arabe.gif",
+    "./mates/assets/img/mate-cola-de-golondrina.gif",
+    "./mates/assets/img/mate-de-anastasia.gif",
+    "./mates/assets/img/mate-de-blackburne.gif",
+    "./mates/assets/img/mate-de-boen.gif",
+    "./mates/assets/img/mate-de-cozio.gif",
+    "./mates/assets/img/mate-de-damiano.gif",
+    "./mates/assets/img/mate-de-la-coz.gif",
+    "./mates/assets/img/mate-de-la-opera.gif",
+    "./mates/assets/img/mate-de-las-hombreras.gif",
+    "./mates/assets/img/mate-de-legal.gif",
+    "./mates/assets/img/mate-de-morphy.gif",
+    "./mates/assets/img/mate-del-loco.gif",
 
     /* Libros */
-    "../../assets/img/mis-60-partidas-memorables.jpg",
-    "../../assets/img/curso-completo-de-ajedrez.jpg",
+    "./libros/assets/img/mis-60-partidas-memorables.jpg",
+    "./libros/assets/img/curso-completo-de-ajedrez.jpg",
   ];
 
 /* Durante la fase de instalación, generalmente se almacenan en caché los activos estáticos. 
@@ -136,8 +148,8 @@ El código dentro del bloque self.addEventListener("install", ...) se ejecuta en
 */
 self.addEventListener("install", (e) => {
   console.log("Service Worker installing...");
-  /* El método e.waitUntil() se asegura que el Service Worker no se considere instalado hasta que todas las tareas dentro de él hayan finalizado correctamente. En este caso, 
-  hasta que se hayan agregado todos los archivos al caché.
+  /* El método e.waitUntil() se asegura que el Service Worker no se considere instalado hasta que todas las tareas dentro de él hayan 
+  finalizado correctamente. En este caso, hasta que se hayan agregado todos los archivos al caché.
   */
   e.waitUntil(
     caches
@@ -160,7 +172,11 @@ self.addEventListener("install", (e) => {
             .addAll(urlsToCache)
 
             /* Una vez que se han añadido todos los archivos al caché, se llama a self.skipWaiting(). Este método obliga al Service Worker a activarse inmediatamente después de la instalación, sin esperar a que los usuarios cierren las pestañas actuales donde la aplicación esté en uso. Es decir, el nuevo Service Worker reemplaza al anterior más rápidamente.   */
-            .then(() => self.skipWaiting())
+            .then(() => {
+              // Mensaje de confirmación en consola
+              console.log("Archivos agregados al caché:", urlsToCache);
+              return self.skipWaiting();
+            })
         );
       })
 
@@ -181,11 +197,21 @@ self.addEventListener("install", (e) => {
   );
 });
 
-/* Una vez que se instale el Service Worker, se activa y buscar los recursos para hacer que funcione sin conexión.Si se pierde la conexión en algún momento, este evento se encarga de buscar en caché los recursos necesarios para el funcionamiento de la Progressive Web App 
+/* 
+1. ¿Qué hace self.addEventListener?
+    self: es una referencia al contexto global del Service Worker. Es equivalente a window en el navegador, pero en este caso, funciona dentro del entorno aislado   
+          del Service Worker.
+    addEventListener: se usa para escuchar eventos que ocurren en el ciclo de vida del Service Worker. 
+    
+    
 
+2. ¿Qué es el evento activate?
+    El evento activate se dispara cuando:
 
-Se está utilizando el evento "activate" para ejecutar código cuando el Service Worker se activa. La activación ocurre después de que el Service Worker ha sido instalado (cuando ya se ha cargado y almacenado el caché en el dispositivo del usuario).
-*/
+      - El Service Worker ha sido instalado exitosamente.
+      - Está listo para reemplazar cualquier Service Worker anterior
+    
+    */
 self.addEventListener("activate", (e) => {
   console.log("Service Worker activating...");
   /* Aquí se crea una lista blanca de caché llamada "cacheWhiteList", 
@@ -195,6 +221,7 @@ self.addEventListener("activate", (e) => {
   contiene los archivos más recientes de la aplicación. 
   Solo este caché debe mantenerse activo.
   */
+
   const cacheWhiteList = [CACHE_NAME];
 
   /* 
@@ -222,10 +249,11 @@ estos nombres con la lista blanca cacheWhiteList y decidir cuáles cachés deben
             /* Esta condición verifica si el cacheName actual no está en la lista blanca 
             (cacheWhiteList). Si el nombre del caché no se encuentra en la lista blanca 
             (lo que significa que es un caché antiguo o no deseado), se procede a eliminarlo. */
+
+            /* Si cacheName NO está en la lista blanca (cacheWhiteList), "indexOf" devolverá "-1"`. */
             if (cacheWhiteList.indexOf(cacheName) === -1) {
               /* caches.delete(cacheName):
-                Si la condición anterior es verdadera (es decir, el caché no está en la lista blanca), se llama a caches.delete(cacheName) para eliminar ese caché del 
-                navegador. Esta operación devuelve una promesa que indica que el caché se ha 
+                Si la condición anterior es verdadera (es decir, el caché no está en la lista blanca), se llama a caches.delete(cacheName) para eliminar ese caché del navegador. Esta operación devuelve una promesa que indica que el caché se ha 
                 eliminado correctamente. */
               return caches.delete(cacheName);
             }
@@ -239,7 +267,10 @@ estos nombres con la lista blanca cacheWhiteList y decidir cuáles cachés deben
             se llama a self.clients.claim(). */
 
       /* self.clients.claim() hace que el nuevo Service Worker tome el control de todas las páginas de la aplicación sin necesidad de que los usuarios cierren y vuelvan a abrir las pestañas. Es decir, asegura que el nuevo Service Worker y los cachés actualizados se utilicen inmediatamente, sin esperar a que se recarguen las páginas. */
-      .then(() => self.clients.claim())
+      .then(() => {
+        console.log("Service Worker activo y listo para controlar clientes.");
+        return self.clients.claim();
+      })
   );
 
   /*  Resumen del flujo:
@@ -253,7 +284,10 @@ estos nombres con la lista blanca cacheWhiteList y decidir cuáles cachés deben
         */
 });
 
-/* Este fragmento de código gestiona el evento fetch en un Service Worker dentro de una Progressive Web App (PWA). El objetivo del código es interceptar las solicitudes de red de la aplicación y responder con los archivos que ya están en el caché o, si no están en el caché, realizar la solicitud a la red (internet). 
+/* 
+
+Evento "fetch":
+Este fragmento de código gestiona el evento fetch en un Service Worker dentro de una Progressive Web App (PWA). El objetivo del código es interceptar las solicitudes de red de la aplicación y responder con los archivos que ya están en el caché o, si no están en el caché, realizar la solicitud a la red (internet). 
 
 
 */
@@ -263,60 +297,104 @@ estos nombres con la lista blanca cacheWhiteList y decidir cuáles cachés deben
         una solicitud de red. Cada vez que el navegador pide algún recurso (como una página
         HTML, una imagen o un archivo CSS), el Service Worker intercepta la solicitud con 
         este evento. */
+
+// ... (resto del código)
+
+/* 
+self.addEventListener("fetch", (e) => {...}):
+  - Registra un event listener para el evento "fetch" en el Service Worker. 
+    Este evento se activa cada vez que el navegador realiza una solicitud de red (ya sea para obtener una página, imagen, archivo, etc.).
+  - El parámetro "e" es el evento de la solicitud, que contiene detalles sobre la solicitud, como la URL que se está solicitando.
+
+*/
 self.addEventListener("fetch", (e) => {
-  //Responder ya sea con el objeto en caché o continuar y buscar la url real
-  /*  e.respondWith():
-        El método e.respondWith() se utiliza para interceptar la solicitud y proporcionar 
-        una respuesta personalizada. Dentro de este método, se decide si la respuesta debe
-        provenir del caché o de una petición a la red (url real). */
+  /* e.respondWith(...):
+      - Este método es utilizado para proporcionar una respuesta personalizada al evento fetch. 
+        Aquí es donde decidimos qué respuesta se debe devolver: puede ser desde la caché o la red.
+      - Todo el código dentro de "respondWith" es una promesa que eventualmente devuelve una respuesta. 
+  */
   e.respondWith(
     /* caches.match(e.request):
-          caches.match() es una función que busca en el caché del navegador el recurso
-          solicitado (e.request). Si el recurso ya fue almacenado en caché anteriormente,
-          devolverá una promesa que se resuelve con la respuesta almacenada en caché (por
-          ejemplo, un archivo CSS, una imagen, etc.).
-          
-          En resumen, está intentando encontrar una versión almacenada del recurso 
-          solicitado en la caché. */
+        - caches.match() busca en el caché disponible para ver si ya existe una entrada que coincida con la solicitud que se 
+          está realizando (e.request es la solicitud original que se hace).
+        - Retorna una promesa que resuelve la respuesta almacenada en caché si existe, o undefined si no se encuentra una coincidencia. 
+    */
+    caches
+      .match(e.request)
 
-    /*  .then((res) => { ... }):
-              Este bloque de código se ejecuta cuando la promesa de caches.match() se 
-              resuelve. El argumento "res" contiene la respuesta encontrada en el 
-              caché (si es que existe). */
-    caches.match(e.request).then((res) => {
-      /* if (res):
-            Aquí se verifica si "res" tiene un valor (es decir, si la solicitud al caché 
-            fue exitosa y encontró el recurso solicitado).  */
-      if (res) {
-        //recuperar del cache
-        /* return res;:
-              Si el recurso fue encontrado en el caché, se devuelve esa respuesta. Esto 
-              significa que el recurso se obtiene del caché y se evita realizar una nueva 
-              solicitud a la red. Este es el principal beneficio de las PWA: pueden 
-              trabajar offline o con recursos guardados, mejorando el rendimiento 
-              y reduciendo el uso de datos. */
-        return res;
-      }
-      //recuperar de la petición a la url
-      /* return fetch(e.request);:
-            Si res es null o undefined (es decir, el recurso no está en el caché), 
-            se ejecuta la siguiente línea.
-            Se llama a fetch(e.request), que realiza una solicitud normal a la red 
-            para obtener el recurso solicitado desde el servidor.
-            Este código asegura que si el recurso no se encuentra en el caché, la 
-            aplicación lo descargue de la red de manera habitual. */
-      return fetch(e.request);
+      /* .then((res) => {...}):
+            - Si caches.match(e.request) devuelve una respuesta (res), es decir, si la solicitud está en la caché:
+                - Se imprime en la consola que la respuesta está siendo servida desde la caché con console.log.
+                - Se devuelve esa respuesta inmediatamente con return res. 
+      */
+      .then((res) => {
+        if (res) {
+          console.log(`Sirviendo desde caché: ${e.request.url}`);
+          return res;
+        }
+        console.log(`Realizando fetch: ${e.request.url}`);
+        /*  return fetch(e.request):
+              Si el recurso no está en la caché, realizar una solicitud a la red. Si el recurso no está en la caché, se 
+              realiza una solicitud "fetch" a la red para obtenerlo. */
+        return (
+          fetch(e.request)
+            /* .then((networkResponse) => {...}):
+                  Si la solicitud de red es exitosa, networkResponse es la respuesta de la red. 
+            */
+            .then((networkResponse) => {
+              /* networkResponse.clone():
+                  Las respuestas de la red solo pueden ser leídas una vez, por lo que se necesita clonarlas si se quiere tanto usar 
+                  la respuesta en el código como almacenarla en la caché.
+                
+                  clonedRespons:
+                    Es una copia de la respuesta original que se puede almacenar en la caché sin afectar la respuesta original.
+                  
+                  */
+              // Clonar la respuesta para poder almacenarla en la caché y devolverla
+              let clonedResponse = networkResponse.clone();
 
-      /* Resumen del flujo:
-            - El Service Worker intercepta cada solicitud de la aplicación (evento fetch).
-            - Se busca en el caché si el recurso solicitado ya está guardado.
-            - Si el recurso está en el caché, se devuelve directamente del caché, lo que 
-              permite que la aplicación funcione sin conexión o cargue más rápido.
-            - Si el recurso no está en el caché, se realiza una solicitud a la red utilizando 
-              fetch() para obtenerlo desde el servidor.
-            - Este enfoque combina lo mejor de los dos mundos:
-                - Velocidad y eficiencia cuando los recursos ya están en el caché.
-                - Flexibilidad al permitir que los recursos faltantes se obtengan de la red cuando sea necesario. */
-    })
+              // Verificar que el Service Worker solo intente cachear recursos que provienen de una URL segura: https.
+
+              if (e.request.url.startsWith("https://")) {
+                /* caches.open(CACHE_NAME):
+                  Abre (o crea, si no existe) un caché con el nombre definido por la constante CACHE_NAME.
+              */
+                caches.open(CACHE_NAME).then((cache) => {
+                  /* cache.put(e.request, clonedResponse):
+                    Almacenamos la respuesta clonada (clonedResponse) en la caché con la solicitud original (e.request) como clave.
+                    Esto permite que futuras solicitudes a la misma URL se sirvan desde la caché.
+                */
+                  cache.put(e.request, clonedResponse);
+                });
+              }
+
+              /* Se devuelve la respuesta de la red (networkResponse) después de que se haya almacenado en la caché. */
+              return networkResponse;
+            })
+
+            /* .catch((err) => {...}):
+                  - Si ocurre un error durante el fetch (por ejemplo, si no hay conexión a la red), se captura el error (err).
+                  - Se imprime el error en la consola.
+                  - Como medida de contingencia, se intenta devolver una página offline (/offline.html) desde la caché, si está disponible. */
+            .catch((err) => {
+              console.error("Error fetching resource:", err);
+            })
+        );
+      })
+
+      /* .catch((err) => {...}):
+            - Si ocurre un error al intentar buscar en la caché (caches.match()), se captura el error (err).
+            - Se imprime el error en la consola.
+            - De nuevo, como medida de contingencia, se intenta devolver la página offline (/offline.html) desde la caché. */
+      .catch((err) => {
+        console.error("Error matching en caché", err);
+
+        /* Resumen del flujo:
+            - Si la solicitud se encuentra en la caché, se sirve desde allí.
+            - Si no se encuentra en la caché, se hace una solicitud a la red.
+            - Si la solicitud a la red es exitosa, se guarda la respuesta en la caché para la próxima vez y se devuelve la respuesta de la red.
+            - Si ocurre un error (por ejemplo, falta de conexión a internet), se sirve una página offline desde la caché. 
+        */
+      })
   );
 });
