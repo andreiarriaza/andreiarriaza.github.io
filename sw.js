@@ -66,14 +66,18 @@ const CACHE_NAME = "v1_andreiarriaza",
     /* Hojas Externas de CSS*/
     "./assets/css/styles.css",
 
-    /* Hoja Externa de JavaScript.
-    
+    /* Archivos para descarga */
+    "./assets/docs/Curriculum-Vitae-Website.pdf",
+    "./assets/docs/Test-Cleaver-John-Doe.pdf",
 
-
-    */
+    /* Hoja Externa de JavaScript.*/
+    "./assets/js/dom/index.js",
+    "./assets/js/dom/script.js",
 
     /* Imágenes del sitio web */
-    "./assets/img/ProgramadorFitness.png",
+    "./assets/img/bulb-on-svgrepo-off.svg",
+    "./assets/img/bulb-on-svgrepo-on.svg",
+    "./assets/img/loader.svg",
 
     /* Startup Image */
     "./assets/img/startup-image-750x1334@2x.png",
