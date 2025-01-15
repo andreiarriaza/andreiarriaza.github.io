@@ -11,7 +11,7 @@ se irá configurando como se irá adaptando a los diferentes dispositivos.
 
 /* ******************** Fluid Design ******************** */
 
-/* @link https://utopia.fyi/type/calculator?c=320,17,1.2,1500,20,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+/* link:  https://utopia.fyi/type/calculator?c=320,17,1.2,1500,20,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
 
 :root {
   --step--3: clamp(0.53rem, calc(0.64rem + -0.12vw), 0.62rem);
