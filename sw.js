@@ -327,7 +327,7 @@ self.addEventListener("fetch", (e) => {
         }
         console.log(`Realizando fetch: ${e.request.url}`);
         /*  return fetch(e.request):
-              Si el recurso no está en la caché, realizar una solicitud a la red. Si el recurso no está en la caché, se 
+              Si el recurso no está en la caché, realizar una solicitud a la red. Es decir, que si el recurso no está en la caché, se 
               realiza una solicitud "fetch" a la red para obtenerlo. */
         return (
           fetch(e.request)

@@ -97,7 +97,7 @@
     },
     {
       "src": "./assets/img/screenshot-portrait-720X1280.png",
-      "sizes": "720X1280",
+      "sizes": "720x1280",
       "type": "image/png",
       "form_factor": "narrow"
     }
