@@ -55,10 +55,10 @@ funcione sin conexión o se cargue más rápido. Los elementos que generalmente 
 const CACHE_NAME = "v1_andreiarriaza",
   urlsToCache = [
     /* Se encarga de cargar el archivo "index.html". */
-    "./index.html",
+    "./ex.html",
 
     /* Se agrega la página web "mates"*/
-    "./mates/mentoria.html",
+    "./mentoria/",
 
     /* Carga las fuentes de Google Fonts. */
     "https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap",
@@ -75,8 +75,15 @@ const CACHE_NAME = "v1_andreiarriaza",
     "./assets/js/dom/script.js",
 
     /* Imágenes del sitio web */
-    "./assets/img/bulb-on-svgrepo-off.svg",
-    "./assets/img/bulb-on-svgrepo-on.svg",
+    /* IMPORTANTE: las imágenes de los bombillos ("bulb-on-svgrepo-off.svg" y "bulb-on-svgrepo-on") que 
+    sirven para activar o desactivar el modo oscuro, no se agregaron acá debido a que el código de cada una de
+    esas imágenes SVG fue incluido directamente dentro del código HTML.
+    
+    Lo mismo sucede con otras imágenes SVG, por la misma razón antes mencionada. 
+    Tómese en cuenta que las imágenes SVG antes mencionadas existen dentro de la carpeta "assets/img", pero, salvo
+    se indique lo contrario, fueron agregadas inline dentro del código HTML. 
+    */
+
     "./assets/img/loader.svg",
 
     /* Startup Image */
@@ -112,36 +119,18 @@ const CACHE_NAME = "v1_andreiarriaza",
     "./assets/img/apple-touch-icon-167x167.png",
     "./assets/img/apple-touch-icon-180x180.png",
 
-    /* Aperturas */
-    "./aperturas/assets/img/Apertura-Ruy-Lopez.png",
-    "./aperturas/assets/img/Apertura-Italiana.png",
-    "./aperturas/assets/img/Defensa-Alekhine.png",
-    "./aperturas/assets/img/Defensa-Caro-Kann.png",
-    "./aperturas/assets/img/Defensa-Escandinava.png",
-    "./aperturas/assets/img/Defensa-Escocesa.png",
-    "./aperturas/assets/img/Defensa-Francesa.png",
-    "./aperturas/assets/img/Defensa-Siciliana.png",
-    "./aperturas/assets/img/Defensa-Vienesa.png",
-    "./aperturas/assets/img/Gambito-de-Rey.png",
+    /* Heroe Image*/
+    "./assets/img/hero-image-home.jpg",
 
-    /* Mates */
-    "./mates/assets/img/mate-arabe.gif",
-    "./mates/assets/img/mate-cola-de-golondrina.gif",
-    "./mates/assets/img/mate-de-anastasia.gif",
-    "./mates/assets/img/mate-de-blackburne.gif",
-    "./mates/assets/img/mate-de-boen.gif",
-    "./mates/assets/img/mate-de-cozio.gif",
-    "./mates/assets/img/mate-de-damiano.gif",
-    "./mates/assets/img/mate-de-la-coz.gif",
-    "./mates/assets/img/mate-de-la-opera.gif",
-    "./mates/assets/img/mate-de-las-hombreras.gif",
-    "./mates/assets/img/mate-de-legal.gif",
-    "./mates/assets/img/mate-de-morphy.gif",
-    "./mates/assets/img/mate-del-loco.gif",
+    /* Foto de perfil */
+    "./assets/img/profile-website.jpg",
 
-    /* Libros */
-    "./libros/assets/img/mis-60-partidas-memorables.jpg",
-    "./libros/assets/img/curso-completo-de-ajedrez.jpg",
+    /* Portafolio */
+    "./assets/img/portfolio-1-costeo-plastikito.png",
+    "./assets/img/portfolio-2-testcleaver-plastikito.png",
+    "./assets/img/portfolio-3-plastikito-com.png",
+    "./assets/img/portfolio-4-huevito-sorpresa.png",
+    "./assets/img/portfolio-5-andreiarriaza-github.png",
   ];
 
 /* Durante la fase de instalación, generalmente se almacenan en caché los activos estáticos. 
