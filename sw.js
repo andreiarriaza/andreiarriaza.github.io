@@ -348,6 +348,16 @@ self.addEventListener("fetch", (e) => {
 
               // Verificar que el Service Worker solo intente cachear recursos que provienen de una URL segura: https.
 
+              /* Acá se está verificando lo siguiente: 
+                  - e.request.method === "GET"
+                      Esta verificación es fundamental; esto debido a que la memoria caché solamente acepta métodos GET, por lo que
+                      si en alguna de las páginas del sitio web se hace uso del método POST, por ejemplo, en un formulario de contacto, 
+                      se generará un error en consola indicando que no es permitido almacenar métodos POST en caché. Para evitarlo, 
+                      se verifica que el método sea de tipo GET antes de almacenarlo en caché. 
+                  - e.request.url.startsWith("https://")
+                      Se valida que la URL sea segura (https://).
+              
+              */
               if (
                 e.request.method === "GET" &&
                 e.request.url.startsWith("https://")
