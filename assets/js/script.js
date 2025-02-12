@@ -78,8 +78,16 @@ están encapsuladas.
 
 /* *********** ContactForm *********** */
 ((d) => {
-  const $form = d.querySelector(".contact-form"),
-    $loader = d.querySelector(".contact-form-loader"),
+  const $form = d.querySelector(".contact-form");
+  /* Si no existe el formulario ($form), no ejecutamos el resto del código (eso evitará errores en la página mentoría).
+  Si no se agregará, y se añadieran más páginas al sitio web (como mentoría), debido a que comparten el mismo script, 
+  provocaría un error pues ejecutaría el evento "submit" vacío, sin datos para enviar. 
+  
+  Si en dado caso una página no tiene formulario de contacto (contact-form), simplemente no se ejecutará el código.
+  */
+  if (!$form) return;
+
+  const $loader = d.querySelector(".contact-form-loader"),
     $response = d.querySelector(".contact-form-response");
 
   /* Se utiliza la delegación de eventos para agregar el evento "submit" al elemento al que hace
