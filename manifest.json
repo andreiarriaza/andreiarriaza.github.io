@@ -7,8 +7,8 @@
   "theme_color": "#f59622",
   "orientation": "portrait",
   "display": "standalone",
-  "start_url": "/",
-  "scope": "/",
+  "start_url": "./?utm_source=web_app_manifest",
+  "scope": "./",
   "lang": "es-GT",
   "icons": [
     {
