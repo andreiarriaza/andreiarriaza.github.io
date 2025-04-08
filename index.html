@@ -222,7 +222,11 @@
     1. EducationalOrganization: para describir la organización educativa.
     2. LocalBusiness: para describir el negocio local.
     3. Course: para describir el curso ofrecido.
-    4. Person: para describir a la persona que ofrece el curso.
+    4. BreadcrumbList: para describir la estructura de navegación del sitio web. 
+        IMPORTANTE: para que el breadcrumb funcione correctamente, los enlaces tiene que ser a páginas
+        independientes, no a secciones de una misma página. Por lo tanto, se recomienda crear una página independiente para cada sección del sitio web. Precisamente por ello
+        en este ejemplo solo se usó para la página de "Inicio" y "Mentoría", esto debido a que tanto "Contacto", como "Acerca", "Servicios" y Portafolio" son enlaces internos
+        a la misma página por ser un sitio "One Page Site". La otra página agregada al breadcrumb es "Mentoría", la cual sí es una página independiente, por eso, también se agregó.
   
   -->
   <script type="application/ld+json">
@@ -288,8 +292,7 @@
       ]
     },
 
-
-
+    
 
     {
       "@type": "LocalBusiness",
@@ -350,6 +353,7 @@
 
 
 
+   
     {
       "@type": "Course",
       "name": "Mentoría de Desarrollo Web",
@@ -359,6 +363,39 @@
         "name": "Andrei Arriaza",
         "url": "https://andreiarriaza.github.io/"
       }
+    },
+
+
+    
+
+    {
+
+       "@type": "BreadcrumbList",
+        "itemListElement":
+    [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item":
+        {
+          "@id": "https://paginaprincipal.com",
+          "name": "Inicio"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item":
+        {
+          "@id": "https://paginaprincipal.com/acerca",
+          "name": "Acerca"
+        }
+      }
+    
+     
+  
+    
+    ]
     }
   ]
 }
