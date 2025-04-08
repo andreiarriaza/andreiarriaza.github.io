@@ -9,6 +9,54 @@
 <html lang="es" data-dark>
 
 <head>
+  <!-- **************** Etiquetas SEO básicas **************** -->
+
+  <meta name="description" content="Soy profesor, programador y desarrollador web, y me pongo a sus órdenes para el diseño, desarrollo y
+        administración de sitios web." />
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+
+  <!-- Por qué aparece el error de “Página alternativa con etiqueta canónica adecuada” en Google Search Console
+  
+          Este mensaje suele aparecer cuando Google detecta que dos URLs muestran esencialmente el mismo contenido, pero una de ellas (la “alternativa”) 
+          incluye una etiqueta rel="canonical" que apunta hacia la otra (la “principal”). Entonces, Google clasifica la primera como “página duplicada” 
+          y la excluye del índice, porque la canonical indica que la página “principal” es otra.
+  
+          En tu caso, tu archivo index.html tiene en el <head> la línea:
+  
+  
+        <link rel="canonical" href="https://andreiarriaza.github.io/">
+          Por ello, Google está tomando la URL https://andreiarriaza.github.io/index.html como “página duplicada” y la URL “oficial” o “principal” es https://andreiarriaza.github.io/.
+        
+        ¿Es realmente un error?
+          En la práctica, no es un error crítico. Google simplemente te avisa que esa página (index.html) no será la que muestre en los resultados de búsqueda, porque la canonical apunta a la raíz. Esto no daña tu SEO ni perjudica el rendimiento del sitio; de hecho, lo común es que “/index.html” redireccione o apunte a la raíz (“/”) y se use rel="canonical" para decirle a Google que la versión canónica es la raíz.
+  
+        ¿Cómo solucionarlo (si deseas “limpiar” el aviso)?
+  
+          1. Dejarlo tal cual: Lo más habitual es que la raíz “/” sea la canonical y que “/index.html” simplemente sea una versión duplicada. 
+            Este aviso en Search Console no es malo. Puedes dejarlo y no pasa nada.
+          2. Eliminar la etiqueta canonical en index.html:
+              Si quitas <link rel="canonical" href="https://andreiarriaza.github.io/">, Google dejará de marcarla como “página alternativa con canonical”.
+              Sin embargo, lo más común en sitios estáticos es que sí exista una canonical, para que Google no interprete ambas URLs (con “/” y con “/index.html”) 
+              como contenido duplicado.
+          3. Redirigir “/index.html” hacia “/”:
+              A veces, se configura una redirección 301 de https://example.com/index.html hacia https://example.com/.
+              De esta forma, ni siquiera se mostraría en los resultados “index.html”, y Google se enfocaría únicamente en la URL raíz.
+              En resumen, no se trata de un problema grave, sino de un aviso que indica que tu página index.html está marcada como duplicada con canonical 
+              a la raíz. Lo más recomendable es mantener esa canonical y, si deseas, configurar una redirección de index.html hacia la raíz. De ese modo, 
+              evitas confusión de URLs y no tendrás que preocuparte por la duplicación de contenido.
+  
+      Pasos prácticos sugeridos
+        - Confirma que prefieres la raíz como URL principal (lo habitual).
+        - Mantén la etiqueta canonical apuntando a la raíz.
+        - (Opcional) Configura una redirección 301 de https://andreiarriaza.github.io/index.html a https://andreiarriaza.github.io/ si deseas que el archivo index.html no sea accesible  
+          directamente.
+      
+      Así, en Google Search Console verás que la URL index.html seguirá apareciendo como “excluida” o “alternativa con etiqueta canónica adecuada”, pero es completamente normal y no daña tu posicionamiento. -->
+
+  <!-- IMPORTANTE: esta etiqueta debe ir antes de cualquier contenido o script.  -->
+  <link rel="canonical" href="https://andreiarriaza.github.io/" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-05VPCCY6QC"></script>
   <script>
@@ -85,52 +133,7 @@
   <!-- Hoja de estilos CSS-->
   <link rel="stylesheet" href="./assets/css/styles.css" />
 
-  <!-- **************** Etiquetas SEO básicas **************** -->
 
-  <meta name="description" content="Soy profesor, programador y desarrollador web, y me pongo a sus órdenes para el diseño, desarrollo y
-      administración de sitios web." />
-
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-
-
-  <!-- Por qué aparece el error de “Página alternativa con etiqueta canónica adecuada” en Google Search Console
-
-        Este mensaje suele aparecer cuando Google detecta que dos URLs muestran esencialmente el mismo contenido, pero una de ellas (la “alternativa”) 
-        incluye una etiqueta rel="canonical" que apunta hacia la otra (la “principal”). Entonces, Google clasifica la primera como “página duplicada” 
-        y la excluye del índice, porque la canonical indica que la página “principal” es otra.
-
-        En tu caso, tu archivo index.html tiene en el <head> la línea:
-
-
-      <link rel="canonical" href="https://andreiarriaza.github.io/">
-        Por ello, Google está tomando la URL https://andreiarriaza.github.io/index.html como “página duplicada” y la URL “oficial” o “principal” es https://andreiarriaza.github.io/.
-      
-      ¿Es realmente un error?
-        En la práctica, no es un error crítico. Google simplemente te avisa que esa página (index.html) no será la que muestre en los resultados de búsqueda, porque la canonical apunta a la raíz. Esto no daña tu SEO ni perjudica el rendimiento del sitio; de hecho, lo común es que “/index.html” redireccione o apunte a la raíz (“/”) y se use rel="canonical" para decirle a Google que la versión canónica es la raíz.
-
-      ¿Cómo solucionarlo (si deseas “limpiar” el aviso)?
-
-        1. Dejarlo tal cual: Lo más habitual es que la raíz “/” sea la canonical y que “/index.html” simplemente sea una versión duplicada. 
-          Este aviso en Search Console no es malo. Puedes dejarlo y no pasa nada.
-        2. Eliminar la etiqueta canonical en index.html:
-            Si quitas <link rel="canonical" href="https://andreiarriaza.github.io/">, Google dejará de marcarla como “página alternativa con canonical”.
-            Sin embargo, lo más común en sitios estáticos es que sí exista una canonical, para que Google no interprete ambas URLs (con “/” y con “/index.html”) 
-            como contenido duplicado.
-        3. Redirigir “/index.html” hacia “/”:
-            A veces, se configura una redirección 301 de https://example.com/index.html hacia https://example.com/.
-            De esta forma, ni siquiera se mostraría en los resultados “index.html”, y Google se enfocaría únicamente en la URL raíz.
-            En resumen, no se trata de un problema grave, sino de un aviso que indica que tu página index.html está marcada como duplicada con canonical 
-            a la raíz. Lo más recomendable es mantener esa canonical y, si deseas, configurar una redirección de index.html hacia la raíz. De ese modo, 
-            evitas confusión de URLs y no tendrás que preocuparte por la duplicación de contenido.
-
-    Pasos prácticos sugeridos
-      - Confirma que prefieres la raíz como URL principal (lo habitual).
-      - Mantén la etiqueta canonical apuntando a la raíz.
-      - (Opcional) Configura una redirección 301 de https://andreiarriaza.github.io/index.html a https://andreiarriaza.github.io/ si deseas que el archivo index.html no sea accesible  
-        directamente.
-    
-    Así, en Google Search Console verás que la URL index.html seguirá apareciendo como “excluida” o “alternativa con etiqueta canónica adecuada”, pero es completamente normal y no daña tu posicionamiento. -->
-  <link rel="canonical" href="https://andreiarriaza.github.io/" />
 
   <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png" />
@@ -210,6 +213,7 @@
   <link rel="manifest" href="./manifest.json" />
 
   <script type="application/ld+json">
+    [
       {
         "@context": "https://schema.org",
         "@type": "EducationalOrganization",
@@ -269,7 +273,66 @@
             "reviewBody": "Excelente experiencia educativa, clases muy claras y bien explicadas."
           }
         ]
-      }
+      },
+
+ {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "image": [
+        "https://example.com/photos/1x1/photo.jpg",
+        "https://example.com/photos/4x3/photo.jpg",
+        "https://example.com/photos/16x9/photo.jpg"
+      ],
+      "name": "Casa del Tornillo",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "5a Avenida 6-06, Zona 1",
+        "addressLocality": "Ciudad de Guatemala",
+        "addressRegion": "Guatemala",
+        "postalCode": "01001",
+        "addressCountry": "GT"
+      },
+      "review": {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": 5,
+          "bestRating": 5
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Lillian Ruiz"
+        }
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 14.623211688458088,
+        "longitude": -90.52344829256205
+      },
+      "url": "https://www.casator.com/",
+      "telephone": "23875050",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "07:30",
+          "closes": "17:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "07:30",
+          "closes": "14:30"
+        }
+      ]
+    }
+    ]
     </script>
 </head>
 
@@ -284,8 +347,7 @@
       <div class="logo">
         <a href="./">andreiarriaza</a>
       </div>
-      <a href="web+micontacto://200">Ver contacto: 200
-        <small>(por medio de <b>protocol_handler</b>)</small></a>
+
 
       <button class="menu-btn">
         <!-- Como las siguientes son imágenes vectoriales, sus respecitivos códigos
