@@ -28,7 +28,16 @@
           Este mensaje suele aparecer cuando Google detecta que dos URLs muestran esencialmente el mismo contenido, pero una de ellas (la “alternativa”) 
           incluye una etiqueta rel="canonical" que apunta hacia la otra (la “principal”). Entonces, Google clasifica la primera como “página duplicada” 
           y la excluye del índice, porque la canonical indica que la página “principal” es otra.
-  
+
+          Lo que estás viendo en Search Console no es un “bug” de tu SEO ni una página rota, sino una clasificación automática de Google: considera que https://andreiarriaza.github.io/index.html es un duplicado de tu página principal (/) porque en ella declaras:
+
+                  <link rel="canonical" href="https://andreiarriaza.github.io/" />
+
+          Por eso Search Console la agrupa bajo “Página alternativa con etiqueta canónica adecuada” y la marca como excluida. Al
+          marcarla como “error” te está diciendo que, tras pedirle que valide la corrección, sigue detectando esa página
+          “duplicada”.
+
+            
           En tu caso, tu archivo index.html tiene en el <head> la línea:
   
   
@@ -44,7 +53,7 @@
             Este aviso en Search Console no es malo. Puedes dejarlo y no pasa nada.
           2. Eliminar la etiqueta canonical en index.html:
               Si quitas <link rel="canonical" href="https://andreiarriaza.github.io/">, Google dejará de marcarla como “página alternativa con canonical”.
-              Sin embargo, lo más común en sitios estáticos es que sí exista una canonical, para que Google no interprete ambas URLs (con “/” y con “/index.html”) 
+              Sin embargo, lo más común en sitios estáticos es que sí exista una canonical, para que Google no interprete ambas URLs (con “/” y con “/index.html”)
               como contenido duplicado.
           3. Redirigir “/index.html” hacia “/”:
               A veces, se configura una redirección 301 de https://example.com/index.html hacia https://example.com/.
@@ -52,17 +61,44 @@
               En resumen, no se trata de un problema grave, sino de un aviso que indica que tu página index.html está marcada como duplicada con canonical 
               a la raíz. Lo más recomendable es mantener esa canonical y, si deseas, configurar una redirección de index.html hacia la raíz. De ese modo, 
               evitas confusión de URLs y no tendrás que preocuparte por la duplicación de contenido.
+
+        ¿Qué puedes hacer?
+        1. Ignorarlo
+              – No es un problema crítico: Google indexará / y omitirá /index.html tal como pretendes.
+              – Si no te preocupa que /index.html aparezca en Google Search Console, no tienes que cambiar nada.
+        
+        2. Redirigir /index.html a /
+            GitHub Pages no permite ".htaccess" (este script solamente debe agregarse en páginas web de Github Pages, ya que GitHub no proporciona
+            el acceso al archivo ".htaccess" para su modificación. En páginas subidas a hosting normales, ahí sí es posible modificar directamente
+            el archivo "ht.access" y crear dentro de ese archivo la redirección de https://example.com/index.html hacia https://example.com/. En ese caso, 
+            este script no debe agregarse porque se agrega un código especial dentro del archivo ".htaccess"), pero puedes forzar una redirección desde cliente. Por ejemplo, al final 
+            de tu <head> añade:
+
+              <script>
+                if (window.location.pathname.endsWith('index.html')) {
+                  window.location.replace('/');
+                }
+              </script>
   
-      Pasos prácticos sugeridos
-        - Confirma que prefieres la raíz como URL principal (lo habitual).
-        - Mantén la etiqueta canonical apuntando a la raíz.
-        - (Opcional) Configura una redirección 301 de https://andreiarriaza.github.io/index.html a https://andreiarriaza.github.io/ si deseas que el archivo index.html no sea accesible  
-          directamente.
+            Así, quien visite /index.html será llevado automáticamente a /.
       
       Así, en Google Search Console verás que la URL index.html seguirá apareciendo como “excluida” o “alternativa con etiqueta canónica adecuada”, pero es completamente normal y no daña tu posicionamiento. -->
 
   <!-- IMPORTANTE: esta etiqueta debe ir antes de cualquier contenido o script.  -->
   <link rel="canonical" href="https://andreiarriaza.github.io/" />
+
+  <!-- ********** Redireccionar https://andreiarriaza.github.io/index.html hacia https://andreiarriaza.github.io/ ********** -->
+  <!-- Este Script es necesario para evitar el error en Google Search Console que indique que hay una página canónica duplicada, y solo es válido
+    cuando la página esté siendo publicada por medio de Github Pages. En una página subida a un hosting normal, este script no es necesario, ya 
+    que en esos casos sí es posible modificar directamente el archivo ".htaccess" y crear dentro de ese archivo el código necesario para establecer
+    la redirección de https://andreiarriaza.github.io/index.html hacia https://andreiarriaza.github.io/.
+    
+   -->
+  <script>
+    if (window.location.pathname.endsWith('index.html')) {
+      window.location.replace('/');
+    }
+  </script>
   <!-- Google tag (gtag.js) -->
 
 
