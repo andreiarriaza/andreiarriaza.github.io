@@ -281,42 +281,93 @@
   
   -->
   <script type="application/ld+json">
+
 {
-
-
-    
-      "@context": "https://schema.org",
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "name": "Andrei Arriaza",
+      "image": [
+        "https://andreiarriaza.github.io/assets/img/screenshot-wide-2560X1440.jpg",
+        "https://andreiarriaza.github.io/assets/img/startup-image-768x1024@2x.jpg",
+        "https://andreiarriaza.github.io/assets/img/startup-image-750x1334@2x.jpg"
+      ],
+      "url": "https://andreiarriaza.github.io/",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Villa Nueva, Guatemala",
+        "addressLocality": "Villa Nueva",
+        "addressRegion": "Guatemala",
+        "postalCode": "01064",
+        "addressCountry": "GT"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 14.623211688458088,
+        "longitude": -90.52344829256205
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5,
+            "bestRating": 5
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Lillian Ruiz"
+          }
+        }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Saturday"
+          ],
+          "opens": "07:00",
+          "closes": "12:00"
+        }
+      ]
+    },
+    {
       "@type": "Person",
       "name": "Andrei Arriaza",
       "url": "https://andreiarriaza.github.io",
-    
+      "image": "https://andreiarriaza.github.io/assets/img/profile-website.jpg",
+      "jobTitle": "Profesor y Desarrollador Web",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Villa Nueva, Guatemala",
+        "addressLocality": "Villa Nueva",
+        "addressRegion": "Guatemala",
+        "postalCode": "01064",
+        "addressCountry": "GT"
+      },
       "sameAs": [
-      
         "https://www.linkedin.com/in/andreiarriaza",
         "https://github.com/andreiarriaza"
-      ],
-      "image": "https://andreiarriaza.github.io/assets/img/profile-website.jpg",
-       "jobTitle": "Profesor y Desarrollador",
-       "knowsAbout": [
-       "Desarrollo Web", 
-       "Programación", 
-       "SEO", 
-       "Social Media",
-       "HTML", 
-       "CSS", 
-       "JavaScript",
-       "PHP",
-       "MySQL",
-       "React JS",
-       "Clases online de desarrollo web", 
-       "Clases a domicilio de desarroll web",
-       "GitHub"
-       ]
-       
-       
+      ]
+    }
+  ]
 }
-
 </script>
+
+  
 </head>
 
 <body>
